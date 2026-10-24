@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-<meta name="bks-build" content="v51-backgrounds">
+<meta name="bks-build" content="v52-rental">
   <meta charset="UTF-8">
   <base target="_top">
   <meta name="description" content="ฝ่ายบริหารการเดินรถ บริษัท ขนส่ง จำกัด — รายงานการเดินรถและข้อมูลหน่วยงาน">
@@ -1683,6 +1683,160 @@ body[data-active-page=revenue]:has(#revenue-detail-view[data-report=target]:not(
 #revenue-detail-view[data-report=overview] .weekly-kpi .report-panel-bg{inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:1;transform:none;filter:none}
 #revenue-detail-view[data-report=overview] .weekly-kpi:before{background:linear-gradient(90deg,#ffffffc9 0%,#ffffffbd 42%,#ffffff8c 62%,#ffffff30 80%,#ffffff00 100%)}
 
+.revenue-detail-view[data-report=rental]{background:#f1f9ff;color:#07166a}
+.revenue-detail-view[data-report=rental] .rental-banner{background:#0c2c54;isolation:isolate}
+.revenue-detail-view[data-report=rental] .rental-banner>img{width:100%;height:100%;inset:0;object-fit:cover;object-position:center 68%;opacity:1;mask-image:none;-webkit-mask-image:none}
+.revenue-detail-view[data-report=rental] .rental-banner:after{background:linear-gradient(90deg,#062952fc 0%,#0a3462f2 27%,#16426db3 42%,#16426d30 65%,transparent 82%)}
+.revenue-detail-view[data-report=rental] .rental-banner h1,.revenue-detail-view[data-report=rental] .rental-banner .detail-breadcrumb,.revenue-detail-view[data-report=rental] .rental-banner .detail-breadcrumb button,.revenue-detail-view[data-report=rental] .rental-banner p{color:white}
+.revenue-detail-view[data-report=rental] .rental-banner h1 small{color:#ff268c;font-size:.5em;letter-spacing:0}
+.revenue-detail-view[data-report=rental] .rental-banner .detail-back{position:absolute;right:2.4vw;top:18px;bottom:auto;color:#07196a;background:white;border:1px solid #dfebf7;border-radius:24px;padding:8px 17px;font-size:14px;font-weight:600}
+.rental-kpis{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:9px;min-height:0}
+.rental-kpi{position:relative;isolation:isolate;display:flex;gap:12px;align-items:flex-start;padding:13px 12px 23px;border:1px solid #d8eafa;border-radius:12px;box-shadow:0 3px 7px #497ca01a;overflow:hidden;min-width:0;background:#f7fbff}
+.rental-kpi>img{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;object-position:center}
+.rental-kpi:before{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,#ffffffe0,#ffffffb8 48%,#ffffff45 76%,#ffffff00)}
+.rental-kpi-icon{width:48px;height:48px;flex-shrink:0;display:grid;place-items:center;border-radius:50%;background:color-mix(in srgb,var(--kpi-color) 14%,#fff);color:var(--kpi-color);margin-top:12px}
+.rental-kpi-icon>.icon{width:29px;height:29px;stroke-width:2}
+.rental-kpi-copy{min-width:0;flex:1}
+.rental-kpi-copy h3{font-size:16px;line-height:1.25;margin:0 0 7px;font-weight:700;white-space:nowrap}
+.rental-kpi-copy strong{display:block;font-size:25px;line-height:1.15;letter-spacing:-.7px;white-space:nowrap;color:#050d65}
+.rental-kpi-copy small{display:block;font-size:15px;line-height:1.35;margin-top:3px;color:#204a89}
+.rental-kpi-progress{position:absolute;left:14px;right:14px;bottom:10px;display:flex;align-items:center;gap:18px}
+.rental-kpi-progress>span{height:7px;flex:1;background:#e5edf7;border-radius:5px;overflow:hidden}
+.rental-kpi-progress>span>i{display:block;height:100%;border-radius:inherit}
+.rental-kpi-progress>b{font-size:12px;color:#06115f;min-width:55px;text-align:right}
+.rental-layout{display:grid;grid-template-columns:1.27fr 1fr;gap:12px;min-height:0}
+.rental-report-panel{display:flex;flex-direction:column;min-height:0;min-width:0;background:#ffffffdb;border:1px solid #d9eafb;border-radius:13px;padding:10px 13px;box-shadow:0 3px 8px #5785ab12;overflow:hidden}
+.rental-report-panel h2{display:flex;align-items:center;gap:12px;color:#06186d;font-size:23px;line-height:1.25;margin:0 0 8px;flex-shrink:0;font-weight:700;letter-spacing:-.4px}
+.rental-report-panel h2>.icon{width:25px;height:25px;color:#00a3ed;flex-shrink:0}
+.rental-grid-scroll{min-height:0;flex:1;overflow:auto;border-radius:8px}
+.rental-grid-table{width:100%;height:100%;table-layout:fixed;border-collapse:separate;border-spacing:0;color:#14488e;font-variant-numeric:tabular-nums;font-size:14px;line-height:1.15}
+.rental-grid-table caption{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+.rental-month-col{width:14%}
+.rental-grid-table th,.rental-grid-table td{border:0;position:relative;white-space:nowrap;padding:4px 8px;text-align:right}
+.rental-grid-table thead th{font-size:15px;color:white;text-align:center;font-weight:600;background:linear-gradient(135deg,#75a9d4,#4979a2);height:36px;border-right:1px solid #c5e0f6;border-radius:7px 7px 0 0}
+.rental-grid-table thead th.rental-col-0{background:linear-gradient(135deg,#4f81bf,#1e4b94)}
+.rental-grid-table thead th.rental-col-1{background:linear-gradient(135deg,#adcae8,#6d9acb)}
+.rental-grid-table thead th.rental-col-2{background:linear-gradient(135deg,#dbbc70,#b58b38)}
+.rental-grid-table thead th.rental-col-3{background:linear-gradient(135deg,#84ced0,#439ba5)}
+.rental-grid-table thead th:last-child{background:linear-gradient(135deg,#398bd0,#15559e)}
+.rental-grid-table thead th .icon{width:20px;height:20px;vertical-align:middle}
+.rental-grid-table tbody th{text-align:left;font-weight:400;color:#143c7b;font-size:inherit}
+.rental-grid-table tbody th button{font:inherit;border:0;background:transparent;color:inherit;text-align:left;padding:0;cursor:pointer}
+.rental-grid-table tbody th small{font-size:10px;color:#7b8c9c}
+.rental-grid-table tbody tr:nth-child(even)>*{background:#edf6ff}
+.rental-grid-table tbody td>span,.rental-grid-table tbody td>strong{position:relative;z-index:1}
+.rental-grid-table .rental-cell-bar{position:absolute;left:6%;top:27%;height:46%;width:calc(var(--size) * .25);background:linear-gradient(90deg,var(--fill),color-mix(in srgb,var(--fill) 20%,white));pointer-events:none}
+.rental-row-total{color:#003d91;font-weight:700}
+.rental-grid-table tbody .rental-peak-row>*{background:#ffe5f1}
+.rental-grid-table tbody .rental-peak-row th,.rental-grid-table tbody .rental-peak-row .rental-row-total{color:#d60068;font-weight:700}
+.rental-crown{color:#ec0876;font-size:22px;line-height:1;margin-right:5px}
+.rental-missing{color:#91a1b6}
+.rental-grid-table tfoot th,.rental-grid-table tfoot td{background:linear-gradient(135deg,#1f5a9e,#082b60);color:white;font-size:16px;font-weight:700;padding:10px 8px;height:44px;border-right:1px solid #a7c8ee5c}
+.rental-grid-table tfoot th{text-align:left}
+.rental-grid-table tfoot td:last-child{background:linear-gradient(135deg,#106ac4,#003d91);box-shadow:inset 0 0 0 1px #b8d8ff;border-radius:8px}
+.rental-right-stack{display:grid;grid-template-rows:260fr 195fr;gap:10px;min-height:0;min-width:0}
+.rental-trend-heading{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;flex-shrink:0}
+.rental-trend-heading h2{font-size:20px;margin:0;white-space:nowrap}
+.rental-trend-legend{display:flex;gap:15px;align-items:center;font-size:12px;color:#214a87;margin-left:auto}
+.rental-trend-legend>span{display:flex;align-items:center;gap:6px;white-space:nowrap}
+.rental-trend-legend i{display:block;width:12px;height:12px;border-radius:50%}
+.rental-trend-canvas{position:relative;min-height:0;flex:1;margin-top:10px}
+.rental-trend-canvas>svg{width:100%;height:100%;display:block;overflow:visible}
+.rental-trend-canvas text{font-family:inherit;font-size:12px;fill:#2c5796}
+.rental-chart-point{cursor:pointer;outline:none}
+.rental-chart-point:focus circle:first-child,.rental-chart-point:hover circle:first-child{r:5;stroke-width:3}
+.rental-point-tooltip{position:absolute;top:20%;z-index:4;width:280px;max-width:95%;background:#fffffff5;border:1px solid #d4e5f7;border-radius:8px;box-shadow:0 4px 18px #1e50752a;padding:10px;font-size:12px;pointer-events:none;color:#153c76}
+.rental-point-tooltip>strong{display:block;font-size:15px;margin-bottom:6px}
+.rental-point-tooltip>span{display:flex;align-items:center;gap:5px;padding:3px 0}
+.rental-point-tooltip b{margin-left:auto}
+.rental-point-tooltip i{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.rental-share-design{display:grid;grid-template-columns:185px minmax(0,1fr);gap:20px;align-items:center;min-height:0;flex:1}
+.rental-share-design>svg{width:100%;height:100%;max-height:170px;font-family:inherit}
+.rental-share-design text{font-size:19px;fill:#07156d}
+.rental-share-design .rental-donut-total{font-size:38px;font-weight:700}
+.rental-share-rows{display:flex;flex-direction:column;justify-content:space-around;height:100%;min-height:0}
+.rental-share-line{display:grid;grid-template-columns:minmax(100px,1fr) auto 60px 120px;align-items:center;gap:10px;font-size:13px;line-height:1.2;color:#15418a;min-width:0}
+.rental-share-name{display:flex;align-items:center;gap:8px;white-space:nowrap}
+.rental-share-name>i{width:12px;height:12px;border-radius:50%;flex-shrink:0}
+.rental-share-line strong,.rental-share-line b{white-space:nowrap;color:#07166a}
+.rental-share-line strong small{font-size:.85em;font-weight:400}
+.rental-share-track{height:12px;background:#e9f0f8;border-radius:8px;overflow:hidden}
+.rental-share-track>i{display:block;height:100%;border-radius:inherit}
+@media(min-width:1200px) and (min-height:650px){
+body[data-active-page=revenue]:has(#revenue-detail-view[data-report=rental]:not([hidden])){--ru:min(calc(100vw / 1869),calc(100dvh / 842))}
+body[data-active-page=revenue]:has(#revenue-detail-view[data-report=rental]:not([hidden])) .site-header{height:calc(72 * var(--ru));padding:0 3.1vw;gap:calc(50 * var(--ru))}
+body[data-active-page=revenue]:has(#revenue-detail-view[data-report=rental]:not([hidden])) .brand img{width:calc(93 * var(--ru))}
+body[data-active-page=revenue]:has(#revenue-detail-view[data-report=rental]:not([hidden])) .brand-name strong{font-size:calc(16 * var(--ru))}
+body[data-active-page=revenue]:has(#revenue-detail-view[data-report=rental]:not([hidden])) .brand-name>span{font-size:calc(13 * var(--ru))}
+body[data-active-page=revenue]:has(#revenue-detail-view[data-report=rental]:not([hidden])) .site-header nav a{font-size:calc(13 * var(--ru))}
+#page-revenue.revenue-detail-active:has(#revenue-detail-view[data-report=rental]){height:var(--report-height);min-height:0}
+#revenue-detail-view[data-report=rental]{height:var(--report-height);min-height:0;display:grid;grid-template-rows:calc(249 * var(--ru)) minmax(0,1fr)}
+#revenue-detail-view[data-report=rental] .rental-banner{min-height:0;flex:none;padding:calc(19 * var(--ru)) 3.1vw calc(20 * var(--ru))}
+#revenue-detail-view[data-report=rental] .rental-banner .detail-breadcrumb{font-size:calc(13 * var(--ru));line-height:1.3;margin:0 0 calc(13 * var(--ru));gap:calc(11 * var(--ru))}
+#revenue-detail-view[data-report=rental] .rental-banner h1{font-size:calc(36 * var(--ru));line-height:1.2;margin:0 0 calc(10 * var(--ru));max-width:90%;letter-spacing:calc(-.5 * var(--ru))}
+#revenue-detail-view[data-report=rental] .rental-banner h1 small{font-size:calc(18 * var(--ru))}
+#revenue-detail-view[data-report=rental] .rental-banner p{font-size:calc(16 * var(--ru));line-height:1.4;gap:calc(9 * var(--ru));display:flex;align-items:center;margin:0}
+#revenue-detail-view[data-report=rental] .rental-banner p>.icon{width:calc(21 * var(--ru));height:calc(21 * var(--ru))}
+#revenue-detail-view[data-report=rental] .rental-banner .detail-back{font-size:calc(14 * var(--ru));padding:calc(8 * var(--ru)) calc(17 * var(--ru));top:calc(18 * var(--ru))}
+#revenue-detail-view[data-report=rental] .detail-content{position:relative;z-index:1;display:grid;grid-template-rows:calc(116 * var(--ru)) minmax(0,1fr);gap:calc(12 * var(--ru));margin-top:calc(-86 * var(--ru));padding:0 2.4vw calc(14 * var(--ru));min-height:0;flex:none}
+#revenue-detail-view[data-report=rental] .rental-kpis{gap:calc(9 * var(--ru))}
+#revenue-detail-view[data-report=rental] .rental-kpi{padding:calc(13 * var(--ru)) calc(12 * var(--ru)) calc(23 * var(--ru));gap:calc(12 * var(--ru));border-radius:calc(12 * var(--ru))}
+#revenue-detail-view[data-report=rental] .rental-kpi-icon{width:calc(48 * var(--ru));height:calc(48 * var(--ru));margin-top:calc(12 * var(--ru))}
+#revenue-detail-view[data-report=rental] .rental-kpi-icon>.icon{width:calc(29 * var(--ru));height:calc(29 * var(--ru))}
+#revenue-detail-view[data-report=rental] .rental-kpi h3{font-size:calc(16 * var(--ru));margin:0 0 calc(7 * var(--ru))}
+#revenue-detail-view[data-report=rental] .rental-kpi strong{font-size:calc(25 * var(--ru));letter-spacing:calc(-.7 * var(--ru))}
+#revenue-detail-view[data-report=rental] .rental-kpi small{font-size:calc(15 * var(--ru))}
+#revenue-detail-view[data-report=rental] .rental-kpi-progress{left:calc(14 * var(--ru));right:calc(14 * var(--ru));bottom:calc(10 * var(--ru));gap:calc(18 * var(--ru))}
+#revenue-detail-view[data-report=rental] .rental-kpi-progress>b{font-size:calc(12 * var(--ru));min-width:calc(55 * var(--ru))}
+#revenue-detail-view[data-report=rental] .rental-layout{grid-template-columns:994fr 781fr;gap:calc(12 * var(--ru))}
+#revenue-detail-view[data-report=rental] .rental-report-panel{padding:calc(10 * var(--ru)) calc(13 * var(--ru));border-radius:calc(13 * var(--ru))}
+#revenue-detail-view[data-report=rental] .rental-report-panel h2{font-size:calc(23 * var(--ru));gap:calc(12 * var(--ru));margin-bottom:calc(8 * var(--ru))}
+#revenue-detail-view[data-report=rental] .rental-report-panel h2>.icon{width:calc(25 * var(--ru));height:calc(25 * var(--ru))}
+#revenue-detail-view[data-report=rental] .rental-grid-table{font-size:calc(14 * var(--ru))}
+#revenue-detail-view[data-report=rental] .rental-grid-table th,#revenue-detail-view[data-report=rental] .rental-grid-table td{padding:calc(4 * var(--ru)) calc(8 * var(--ru))}
+#revenue-detail-view[data-report=rental] .rental-grid-table thead th{font-size:calc(15 * var(--ru));height:calc(36 * var(--ru))}
+#revenue-detail-view[data-report=rental] .rental-grid-table thead th .icon{width:calc(20 * var(--ru));height:calc(20 * var(--ru))}
+#revenue-detail-view[data-report=rental] .rental-grid-table tfoot th,#revenue-detail-view[data-report=rental] .rental-grid-table tfoot td{font-size:calc(16 * var(--ru));height:calc(44 * var(--ru));padding:calc(10 * var(--ru)) calc(8 * var(--ru))}
+#revenue-detail-view[data-report=rental] .rental-right-stack{grid-template-rows:minmax(0,260fr) minmax(0,195fr);gap:calc(10 * var(--ru))}
+#revenue-detail-view[data-report=rental] .rental-trend-heading h2{font-size:calc(20 * var(--ru));margin:0}
+#revenue-detail-view[data-report=rental] .rental-trend-legend{font-size:calc(12 * var(--ru));gap:calc(15 * var(--ru))}
+#revenue-detail-view[data-report=rental] .rental-trend-legend i{width:calc(12 * var(--ru));height:calc(12 * var(--ru))}
+#revenue-detail-view[data-report=rental] .rental-share-design{grid-template-columns:calc(185 * var(--ru)) minmax(0,1fr);gap:calc(20 * var(--ru))}
+#revenue-detail-view[data-report=rental] .rental-share-design>svg{max-height:calc(170 * var(--ru))}
+#revenue-detail-view[data-report=rental] .rental-donut-panel{padding:calc(8 * var(--ru)) calc(13 * var(--ru))}
+#revenue-detail-view[data-report=rental] .rental-donut-panel h2{margin-bottom:calc(3 * var(--ru))}
+#revenue-detail-view[data-report=rental] .rental-share-line{font-size:calc(13 * var(--ru));grid-template-columns:minmax(0,1fr) auto calc(60 * var(--ru)) calc(120 * var(--ru));gap:calc(10 * var(--ru))}
+}
+@media(max-width:1199px){
+#revenue-detail-view[data-report=rental]{height:auto;min-height:var(--report-height)}
+#revenue-detail-view[data-report=rental] .detail-content{display:flex;flex-direction:column;gap:14px;padding:14px 20px 24px;margin:0}
+#revenue-detail-view[data-report=rental] .rental-banner{min-height:230px;padding:65px 24px 24px}
+.rental-kpis{grid-template-columns:repeat(3,minmax(0,1fr))}
+.rental-kpi{min-height:130px}
+.rental-layout{grid-template-columns:1fr}
+.rental-table-panel{min-height:500px}
+.rental-right-stack{grid-template-rows:300px 230px}
+.rental-grid-table{min-width:850px}
+}
+@media(max-width:700px){
+.rental-kpis{grid-template-columns:1fr}
+.rental-kpi{min-height:135px}
+#revenue-detail-view[data-report=rental] .rental-banner h1{font-size:28px;max-width:100%}
+#revenue-detail-view[data-report=rental] .rental-banner h1 small{display:block;font-size:15px;margin-top:8px}
+#revenue-detail-view[data-report=rental] .rental-banner p{font-size:12px}
+#revenue-detail-view[data-report=rental] .rental-banner .detail-back{font-size:12px;right:16px;top:15px}
+.rental-report-panel h2{font-size:19px;gap:8px;letter-spacing:-.5px}
+.rental-trend-heading h2{font-size:18px;white-space:normal}
+.rental-trend-legend{font-size:10px;gap:8px;flex-wrap:wrap;margin-left:0}
+.rental-trend-canvas{overflow-x:auto;overflow-y:hidden}
+.rental-trend-canvas>svg{min-width:650px}
+.rental-right-stack{grid-template-rows:300px 400px}
+.rental-share-design{grid-template-columns:1fr;gap:10px}
+.rental-share-design>svg{height:180px;max-height:180px}
+.rental-share-line{font-size:11px;grid-template-columns:1fr auto 44px;gap:6px}
+.rental-share-track{grid-column:1/-1;height:7px;margin-bottom:4px}
+}
+
 </style>
 
 <script src="config.js"></script><script src="assets-manifest.js"></script><script src="sheet-csv.js"></script></head>
@@ -1836,7 +1990,7 @@ body[data-active-page=revenue]:has(#revenue-detail-view[data-report=target]:not(
   </dialog>
   <div class="toast" id="toast" role="status" hidden></div>
   <noscript><style>.startup-loader{display:none}body.is-loading{overflow:auto}</style><p class="notice">กรุณาเปิด JavaScript เพื่อใช้งานเว็บไซต์</p></noscript>
-  <script>Object.assign(window.BKS_IMAGE_GROUPS.revenue,{"execTotalHero":"assets/execTotalHero-v45.webp","execTop0":"assets/execTop0-v45.webp","execTop1":"assets/execTop1-v45.webp","execTop2":"assets/execTop2-v45.webp","execRegionBg0":"assets/execRegionBg0-v45.webp","execRegionBg1":"assets/execRegionBg1-v45.webp","execRegionBg2":"assets/execRegionBg2-v45.webp","execRegionBg3":"assets/execRegionBg3-v45.webp","execRegionBg4":"assets/execRegionBg4-v45.webp","execRegionMap0":"assets/thailand-region-0-v45.svg","execRegionMap1":"assets/thailand-region-1-v45.svg","execRegionMap2":"assets/thailand-region-2-v45.svg","execRegionMap3":"assets/thailand-region-3-v45.svg","execRegionMap4":"assets/thailand-region-4-v45.svg"});Object.assign(window.BKS_IMAGE_GROUPS.revenue,{"targetHero":"assets/targetHero-v48.webp","targetStat0":"assets/targetStat0-v48.webp","targetStat1":"assets/targetStat1-v48.webp","targetStat2":"assets/targetStat2-v48.webp","targetStat3":"assets/targetStat3-v48.webp","targetStat4":"assets/targetStat4-v48.webp","targetStat5":"assets/targetStat5-v48.webp","targetSuccess":"assets/targetSuccess-v48.webp","targetSummary":"assets/targetSummary-v48.webp"});Object.assign(window.BKS_IMAGE_GROUPS.revenue,{"weeklyHero":"assets/weeklyHero-v49.webp","weeklyStat0":"assets/weeklyStat0-v49.webp","weeklyStat1":"assets/weeklyStat1-v49.webp","weeklyStat2":"assets/weeklyStat2-v49.webp","weeklyStat3":"assets/weeklyStat3-v49.webp"});Object.assign(window.BKS_IMAGE_GROUPS.revenue,{"weeklyHero":"assets/weeklyHero-v50.webp"});Object.assign(window.BKS_IMAGE_GROUPS.revenue,{"weeklyStat0":"assets/weeklyStat0-v51.webp","weeklyStat1":"assets/weeklyStat1-v51.webp","weeklyStat2":"assets/weeklyStat2-v51.webp","weeklyStat3":"assets/weeklyStat3-v51.webp"});window.INITIAL_PAGE=new URLSearchParams(location.search).get('page')||'home';window.INITIAL_IMAGE_GROUP='home';window.INITIAL_IMAGES=Object.assign({},window.BKS_IMAGE_GROUPS.shared,window.BKS_IMAGE_GROUPS.home);</script>
+  <script>Object.assign(window.BKS_IMAGE_GROUPS.revenue,{"execTotalHero":"assets/execTotalHero-v45.webp","execTop0":"assets/execTop0-v45.webp","execTop1":"assets/execTop1-v45.webp","execTop2":"assets/execTop2-v45.webp","execRegionBg0":"assets/execRegionBg0-v45.webp","execRegionBg1":"assets/execRegionBg1-v45.webp","execRegionBg2":"assets/execRegionBg2-v45.webp","execRegionBg3":"assets/execRegionBg3-v45.webp","execRegionBg4":"assets/execRegionBg4-v45.webp","execRegionMap0":"assets/thailand-region-0-v45.svg","execRegionMap1":"assets/thailand-region-1-v45.svg","execRegionMap2":"assets/thailand-region-2-v45.svg","execRegionMap3":"assets/thailand-region-3-v45.svg","execRegionMap4":"assets/thailand-region-4-v45.svg"});Object.assign(window.BKS_IMAGE_GROUPS.revenue,{"targetHero":"assets/targetHero-v48.webp","targetStat0":"assets/targetStat0-v48.webp","targetStat1":"assets/targetStat1-v48.webp","targetStat2":"assets/targetStat2-v48.webp","targetStat3":"assets/targetStat3-v48.webp","targetStat4":"assets/targetStat4-v48.webp","targetStat5":"assets/targetStat5-v48.webp","targetSuccess":"assets/targetSuccess-v48.webp","targetSummary":"assets/targetSummary-v48.webp"});Object.assign(window.BKS_IMAGE_GROUPS.revenue,{"weeklyHero":"assets/weeklyHero-v49.webp","weeklyStat0":"assets/weeklyStat0-v49.webp","weeklyStat1":"assets/weeklyStat1-v49.webp","weeklyStat2":"assets/weeklyStat2-v49.webp","weeklyStat3":"assets/weeklyStat3-v49.webp"});Object.assign(window.BKS_IMAGE_GROUPS.revenue,{"weeklyHero":"assets/weeklyHero-v50.webp"});Object.assign(window.BKS_IMAGE_GROUPS.revenue,{"weeklyStat0":"assets/weeklyStat0-v51.webp","weeklyStat1":"assets/weeklyStat1-v51.webp","weeklyStat2":"assets/weeklyStat2-v51.webp","weeklyStat3":"assets/weeklyStat3-v51.webp"});Object.assign(window.BKS_IMAGE_GROUPS.revenue,{"rentalStat0":"assets/rentalStat0-v52.webp","rentalStat1":"assets/rentalStat1-v52.webp","rentalStat2":"assets/rentalStat2-v52.webp","rentalStat3":"assets/rentalStat3-v52.webp","rentalStat4":"assets/rentalStat4-v52.webp"});window.INITIAL_PAGE=new URLSearchParams(location.search).get('page')||'home';window.INITIAL_IMAGE_GROUP='home';window.INITIAL_IMAGES=Object.assign({},window.BKS_IMAGE_GROUPS.shared,window.BKS_IMAGE_GROUPS.home);</script>
   <script>
 // Set HTTPS image URLs here. Empty reference image URLs use the packaged photos.
 // Station images stay as explicit placeholders until real photographs are supplied.
@@ -2424,17 +2578,39 @@ window.ASSETS = {"loaderCoach":"assets/shared-inline-57-913a14f5605d.webp","load
   }
 
   // Report module: RevenueRental (included inside Scripts.html)
-  function rentalReport(){
-    const totals=[67028422.02,10200882.89,10092114.16,3053050.01],names=['จตุจักร','ใต้ทางด่วนจตุจักร','เอกมัย','ปิ่นเกล้า'],colors=['#087aff','#ff8420','#ff087a','#00a475'];
-    const progress=(pct,color)=>'<div class="detail-progress"><i style="width:'+pct+'%;background:'+color+'"></i></div><b class="detail-percent">'+num(pct,2)+'%</b>';
-    const cards=reportCard('เป้าหมาย','99,800,000.00','trend','#ff087a','บาท',progress(100,'#ff087a'),'rentalStat0')+reportCard('รายได้รวม ปี 2569','90,160,776.73','coins','#087aff','บาท',progress(90.34,'#087aff'),'rentalStat1')+reportCard('คงเหลือจากเป้าหมาย','9,639,223.27','document','#ff623e','บาท',progress(9.66,'#ff623e'),'rentalStat2')+reportCard('เฉลี่ย/เดือน','8,196,434.25','chart','#8542ff','บาท','','rentalStat3')+reportCard('เดือนที่รายได้สูงสุด','กรกฎาคม 2569','calendar','#087aff','8,972,370.44 บาท','','rentalStat4');
-    const rows=rentalRows.map(r=>[r[0],...r.slice(1).map(v=>num(v,2)),num(r.slice(1).reduce((a,b)=>a+b,0),2)]);
-    const legend=names.map((name,i)=>'<span style="--accent:'+colors[i]+'">● '+name+'</span>').join('');
-    return '<div class="detail-stats five-stats">'+cards+'</div><div class="detail-columns rental-columns">'+reportPanel('รายได้ค่าเช่า 4 พื้นที่ส่วนกลาง รายเดือน',reportTable(['เดือน',...names,'รวม'],rows,['รวมทั้งสิ้น',...totals.map(v=>num(v,2)),'90,160,776.73']),'document')+'<div class="detail-panel-stack">'+reportPanel('แนวโน้มรายได้ค่าเช่า 4 พื้นที่ส่วนกลาง','<div class="detail-chart-legend">'+legend+'</div><div class="detail-graph">'+reportGraph(names.map((_,i)=>rentalRows.map(r=>r[i+1]/1e6)),rentalRows.map(r=>r[0]),colors,8)+'</div>','trend')+reportPanel('สัดส่วนรายได้ค่าเช่า ปี 2569','<div class="rental-share">'+reportRing(totals,colors,'90.16 ล้าน','บาท')+'<div>'+names.map((n,i)=>'<div class="detail-summary-row"><span style="color:'+colors[i]+'">● '+n+'</span><strong>'+num(totals[i],2)+' บาท <em style="color:'+colors[i]+'">'+num(totals[i]/90160776.73*100,2)+'%</em></strong></div>').join('')+'</div></div>','pie')+'</div></div>';
+  const rentalDesign={names:['จตุจักร','ใต้ทางด่วนจตุจักร','เอกมัย','ปิ่นเกล้า'],totals:[67028422.02,10200882.89,10092114.16,3053050.01],colors:['#164d91','#82a9db','#cea24c','#55a7ad'],total:90160776.73};
+  function rentalHeader(){return '<div class="detail-banner rental-banner"><img data-asset="rentalHero" alt="พื้นที่จำหน่ายตั๋วและร้านค้าภายในสถานีขนส่ง"><div class="detail-breadcrumb"><button data-back-report>หน้าแรก</button><span>›</span><button data-back-report>รายงานรายได้</button><span>›</span><span>รายงานรายได้ค่าเช่า 4 พื้นที่ส่วนกลาง</span></div><h1 id="revenue-detail-title" tabindex="-1">รายงานรายได้ค่าเช่า 4 พื้นที่ส่วนกลาง <small>(ต.ค. 68 - ส.ค. 69)</small></h1><p>'+icon('calendar')+' ข้อมูล ณ 1 ตุลาคม 2568 - 20 กันยายน 2569</p><button class="detail-back" data-back-report>← กลับรายงานรายได้</button></div>';}
+  function rentalGrid(){
+    const d=rentalDesign,rows=[...rentalRows,['กันยายน',null,null,null,null]],maxima=d.names.map((_,i)=>Math.max(...rentalRows.map(r=>r[i+1]))),maxTotal=Math.max(...rentalRows.map(r=>r.slice(1).reduce((a,b)=>a+b,0)));
+    return '<div class="rental-grid-scroll"><table class="rental-grid-table"><caption>รายได้ค่าเช่า 4 พื้นที่ส่วนกลาง รายเดือน หน่วยบาท</caption><colgroup><col class="rental-month-col">'+Array(5).fill('<col>').join('')+'</colgroup><thead><tr><th scope="col">เดือน</th>'+d.names.map((name,i)=>'<th scope="col" class="rental-col-'+i+'">'+icon(i===0||i===3?'station':i===1?'building':'shop')+' '+name+'</th>').join('')+'<th scope="col">รวม</th></tr></thead><tbody>'+rows.map((r,i)=>{const valid=Number.isFinite(r[1]),sum=valid?r.slice(1).reduce((a,b)=>a+b,0):null;return '<tr class="'+(i===9?'rental-peak-row':'')+'" data-rental-row="'+i+'"><th scope="row">'+(valid?'<button type="button" data-rental-month="'+i+'">'+(i===9?'<span class="rental-crown" aria-label="เดือนที่รายได้สูงสุด">♛</span>':'')+r[0]+'</button>':r[0]+' <small>รอข้อมูล</small>')+'</th>'+r.slice(1).map((value,j)=>'<td>'+(Number.isFinite(value)?'<i class="rental-cell-bar" style="--fill:'+d.colors[j]+';--size:'+Math.max(0,value/maxima[j]*100)+'%" aria-hidden="true"></i><span>'+num(value,2)+'</span>':'<span class="rental-missing">—</span>')+'</td>').join('')+'<td class="rental-row-total">'+(valid?'<i class="rental-cell-bar" style="--fill:#348ad2;--size:'+sum/maxTotal*100+'%" aria-hidden="true"></i><strong>'+num(sum,2)+'</strong>':'<span class="rental-missing">—</span>')+'</td></tr>';}).join('')+'</tbody><tfoot><tr><th scope="row">รวมทั้งสิ้น</th>'+[...d.totals,d.total].map(v=>'<td>'+num(v,2)+'</td>').join('')+'</tr></tfoot></table></div>';
   }
-
-
-
+  function rentalTrend(){
+    const d=rentalDesign,W=780,H=205,L=48,R=18,T=17,B=28,pw=W-L-R,ph=H-T-B,max=10,x=i=>L+i*pw/11,y=v=>T+ph*(1-v/1e6/max),abbreviations=['ต.ค.','พ.ย.','ธ.ค.','ม.ค.','ก.พ.','มี.ค.','เม.ย.','พ.ค.','มิ.ย.','ก.ค.','ส.ค.','ก.ย.'];
+    let svg='<svg viewBox="0 0 '+W+' '+H+'" preserveAspectRatio="none" role="img" aria-label="แนวโน้มรายได้ค่าเช่า 4 พื้นที่ส่วนกลาง หน่วยล้านบาท กันยายนยังไม่มีข้อมูล"><defs><linearGradient id="rental-trend-fill" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#164d91" stop-opacity=".18"/><stop offset="1" stop-color="#164d91" stop-opacity=".015"/></linearGradient></defs><text x="5" y="10">ล้านบาท</text>';
+    for(let v=0;v<=10;v+=2)svg+='<path d="M'+L+' '+y(v*1e6)+'H'+(W-R)+'" stroke="#e3edf8"/><text x="'+(L-8)+'" y="'+(y(v*1e6)+4)+'" text-anchor="end">'+num(v,1)+'</text>';
+    abbreviations.forEach((label,i)=>{svg+='<text x="'+x(i)+'" y="'+(H-6)+'" text-anchor="middle">'+label+'</text>';});
+    d.names.forEach((name,s)=>{let line='';rentalRows.forEach((r,i)=>{const xx=x(i),yy=y(r[s+1]);if(i===0)line='M'+xx+' '+yy;else{const px=x(i-1),py=y(rentalRows[i-1][s+1]),mid=(px+xx)/2;line+=' C'+mid+' '+py+' '+mid+' '+yy+' '+xx+' '+yy;}});if(s===0)svg+='<path d="'+line+' L'+x(rentalRows.length-1)+' '+(H-B)+' L'+x(0)+' '+(H-B)+' Z" fill="url(#rental-trend-fill)"/>';svg+='<path d="'+line+'" fill="none" stroke="'+d.colors[s]+'" stroke-width="2.5" stroke-linejoin="round"/>';rentalRows.forEach((r,i)=>{svg+='<g class="rental-chart-point" tabindex="0" role="button" data-rental-point="'+i+'" aria-label="'+esc(r[0]+' '+name+' '+num(r[s+1],2)+' บาท')+'"><circle cx="'+x(i)+'" cy="'+y(r[s+1])+'" r="3.2" stroke="'+d.colors[s]+'" stroke-width="2" fill="white"/><circle cx="'+x(i)+'" cy="'+y(r[s+1])+'" r="9" fill="transparent"/></g>';});});
+    return '<div class="rental-trend-canvas">'+svg+'</svg><div class="rental-point-tooltip" hidden></div></div>';
+  }
+  function rentalDonut(){
+    const d=rentalDesign,segmentTotal=d.totals.reduce((a,b)=>a+b,0),point=(r,deg)=>{const a=(deg-90)*Math.PI/180;return[100+r*Math.cos(a),100+r*Math.sin(a)].join(' ');};let angle=0;
+    const slices=d.totals.map((v,i)=>{const start=angle;angle+=v/segmentTotal*360;return'<path d="M'+point(94,start)+' A94 94 0 '+(angle-start>180?1:0)+' 1 '+point(94,angle)+' L'+point(68,angle)+' A68 68 0 '+(angle-start>180?1:0)+' 0 '+point(68,start)+' Z" fill="'+d.colors[i]+'"><title>'+d.names[i]+' '+num(v/d.total*100,2)+'%</title></path>';}).join('');
+    return '<div class="rental-share-design"><svg viewBox="0 0 200 200" role="img" aria-label="รายได้รวม 90.16 ล้านบาท">'+slices+'<text x="100" y="101" text-anchor="middle" class="rental-donut-total">90.16</text><text x="100" y="127" text-anchor="middle">ล้านบาท</text></svg><div class="rental-share-rows">'+d.names.map((name,i)=>'<div class="rental-share-line"><span class="rental-share-name"><i style="background:'+d.colors[i]+'"></i>'+name+'</span><strong>'+num(d.totals[i],2)+' <small>บาท</small></strong><b>'+num(d.totals[i]/d.total*100,2)+'%</b><span class="rental-share-track"><i style="width:'+d.totals[i]/d.total*100+'%;background:'+d.colors[i]+'"></i></span></div>').join('')+'</div></div>';
+  }
+  function rentalReport(){
+    const definitions=[['เป้าหมาย','99,800,000.00','บาท','trend',100,'#ee0579'],['รายได้รวม ปี 2569','90,160,776.73','บาท','coins',90.34,'#438be3'],['คงเหลือจากเป้าหมาย','9,639,223.27','บาท','document',9.66,'#c69a46'],['เฉลี่ย/เดือน','8,196,434.25','บาท','chart',null,'#547ddd'],['เดือนที่รายได้สูงสุด','กรกฎาคม 2569','8,972,370.44 บาท','calendar',null,'#547ddd']];
+    const cards=definitions.map(([label,value,note,ico,pct,color],i)=>'<article class="rental-kpi rental-kpi-'+i+'"><img data-asset="rentalStat'+i+'" alt=""><span class="rental-kpi-icon" style="--kpi-color:'+color+'">'+icon(ico)+'</span><div class="rental-kpi-copy"><h3>'+label+'</h3><strong>'+value+'</strong><small>'+note+'</small></div>'+(pct!==null?'<div class="rental-kpi-progress"><span><i style="width:'+pct+'%;background:'+color+'"></i></span><b>'+num(pct,2)+'%</b></div>':'')+'</article>').join('');
+    const legend=rentalDesign.names.map((name,i)=>'<span><i style="background:'+rentalDesign.colors[i]+'"></i>'+name+'</span>').join('');
+    return '<div class="rental-kpis">'+cards+'</div><div class="rental-layout"><article class="rental-report-panel rental-table-panel"><h2>'+icon('document')+'รายได้ค่าเช่า 4 พื้นที่ส่วนกลาง รายเดือน</h2>'+rentalGrid()+'</article><div class="rental-right-stack"><article class="rental-report-panel rental-trend-panel"><div class="rental-trend-heading"><h2>'+icon('chart')+'แนวโน้มรายได้ค่าเช่า 4 พื้นที่ส่วนกลาง</h2><div class="rental-trend-legend">'+legend+'</div></div>'+rentalTrend()+'</article><article class="rental-report-panel rental-donut-panel"><h2>'+icon('pie')+'สัดส่วนรายได้ค่าเช่า ปี 2569</h2>'+rentalDonut()+'</article></div></div>';
+  }
+  function bindRentalReport(){
+    const root=$('#revenue-detail-view'),canvas=root.querySelector('.rental-trend-canvas'),tooltip=root.querySelector('.rental-point-tooltip');
+    const monthDetail=index=>{const r=rentalRows[index];showDialog('รายได้ค่าเช่า · '+r[0],'<div class="detail-table-wrap">'+reportTable(['พื้นที่','รายได้ (บาท)'],rentalDesign.names.map((name,i)=>[name,num(r[i+1],2)]),['รวม',num(r.slice(1).reduce((a,b)=>a+b,0),2)])+'</div>');};
+    root.querySelectorAll('[data-rental-month]').forEach(button=>button.onclick=()=>monthDetail(Number(button.dataset.rentalMonth)));
+    const reveal=index=>{const r=rentalRows[index];tooltip.innerHTML='<strong>'+r[0]+'</strong>'+rentalDesign.names.map((name,i)=>'<span><i style="background:'+rentalDesign.colors[i]+'"></i>'+name+'<b>'+num(r[i+1],2)+'</b></span>').join('');tooltip.style.left=Math.min(52,Math.max(0,index/11*75))+'%';tooltip.hidden=false;};
+    root.querySelectorAll('[data-rental-point]').forEach(point=>{const i=Number(point.dataset.rentalPoint);point.addEventListener('pointerenter',()=>reveal(i));point.addEventListener('focus',()=>reveal(i));point.addEventListener('click',()=>monthDetail(i));point.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();monthDetail(i);}});point.addEventListener('blur',()=>{tooltip.hidden=true;});});
+    canvas.addEventListener('pointerleave',()=>{tooltip.hidden=true;});
+  }
 
 
   // Report module: RevenueContract (included inside Scripts.html)
@@ -2490,6 +2666,7 @@ window.ASSETS = {"loaderCoach":"assets/shared-inline-57-913a14f5605d.webp","load
     view.innerHTML='<div class="detail-banner"><img data-asset="'+({rental:'rentalHero',contract:'contractHero',issues:'regionalHero'}[kind]||'reportTerminal')+'" alt=""><div class="detail-breadcrumb"><button data-back-report>หน้าแรก</button><span>›</span><button data-back-report>รายงานรายได้</button><span>›</span><span>'+esc(detailTitles[kind])+'</span></div><h1 id="revenue-detail-title" tabindex="-1">'+(kind==='issues'?'รายงานสรุปเส้นทางเดินรถโดยสาร<br>ที่มีการจัดเสริมรถโดยสาร':esc(detailTitles[kind]))+(kind==='rental'?' <small>(ต.ค. 68 - ส.ค. 69)</small>':'')+'</h1><p>'+icon('calendar')+period+'</p><button class="detail-back" data-back-report>← กลับรายงานรายได้</button></div><div class="detail-content">'+contents[kind]()+'</div>';
     if(kind==='target'){view.innerHTML=targetHeader()+'<div class="detail-content">'+targetReport()+'</div>';}
     if(kind==='overview'){view.innerHTML=weeklyHeader()+'<div class="detail-content">'+weeklyReport()+'</div>';}
+    if(kind==='rental'){view.innerHTML=rentalHeader()+'<div class="detail-content">'+rentalReport()+'</div>';bindRentalReport();fitRevenuePage();}
     if(kind==='overview')bindWeeklyReport();
     applyAssets({});view.querySelectorAll('[data-back-report]').forEach(b=>b.addEventListener('click',()=>b.textContent==='หน้าแรก'?route('home',true,true):closeRevenueDetail()));updateDataNote();
     view.querySelectorAll('[data-region-detail]').forEach(b=>b.addEventListener('click',()=>{const r=regionalReports[Number(b.dataset.regionDetail)];showDialog('รายละเอียด '+r.name,regionalTable(r)+'<p class="muted">แสดงเส้นทางตามภาพตัวอย่างที่ส่งมา จำนวนเส้นทางทั้งหมด '+r.count+' เส้นทาง</p>');}));
@@ -2727,6 +2904,7 @@ window.ASSETS = {"loaderCoach":"assets/shared-inline-57-913a14f5605d.webp","load
 
 </body>
 </html>
+
 
 
 
