@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-<meta name="bks-build" content="v53-contract">
+<meta name="bks-build" content="v54-regional">
   <meta charset="UTF-8">
   <base target="_top">
   <meta name="description" content="ฝ่ายบริหารการเดินรถ บริษัท ขนส่ง จำกัด — รายงานการเดินรถและข้อมูลหน่วยงาน">
@@ -1976,6 +1976,125 @@ body[data-active-page=revenue]:has(#revenue-detail-view[data-report=contract]:no
 .joint-graph-canvas>svg{min-width:680px}
 }
 
+/* Shared opaque-to-transparent navy hero treatment. */
+#revenue-detail-view:is([data-report=contract],[data-report=issues]) .detail-banner{isolation:isolate;background:#123256}
+#revenue-detail-view:is([data-report=contract],[data-report=issues]) .detail-banner>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:1;filter:none;mask-image:none;-webkit-mask-image:none;z-index:-2}
+#revenue-detail-view:is([data-report=contract],[data-report=issues]) .detail-banner:after{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(90deg,#123256 0%,#123256fc 24%,#123256e6 35%,#123256a6 47%,#1232564d 61%,#1232560d 80%,transparent 94%)}
+#revenue-detail-view:is([data-report=contract],[data-report=issues]) .detail-banner h1{color:#fff;text-shadow:0 1px 3px #071e3530}
+#revenue-detail-view:is([data-report=contract],[data-report=issues]) .detail-banner p,#revenue-detail-view:is([data-report=contract],[data-report=issues]) .detail-breadcrumb,#revenue-detail-view:is([data-report=contract],[data-report=issues]) .detail-breadcrumb button{color:#dfedff}
+#revenue-detail-view:is([data-report=contract],[data-report=issues]) .detail-banner .detail-back{position:absolute;right:2.4vw;top:15px;bottom:auto;margin:0;border:1px solid #dce8f5;border-radius:25px;padding:9px 18px;color:#071961;background:#fff;box-shadow:0 3px 10px #0a29452b;font-size:13px;font-weight:600;z-index:2}
+#revenue-detail-view:is([data-report=contract],[data-report=issues]) .detail-banner .detail-back:hover{background:#edf6ff}
+/* Five regional cards follow the supplied design, using the existing report figures. */
+#revenue-detail-view[data-report=issues]{background:radial-gradient(ellipse at 40% 85%,#dfedff,#f3faff 67%);color:#08165a}
+#revenue-detail-view[data-report=issues] .route-banner{padding:21px 3.3vw 30px;min-height:235px;flex:none}
+#revenue-detail-view[data-report=issues] .route-banner>img{object-position:center 62%}
+#revenue-detail-view[data-report=issues] .detail-breadcrumb{font-size:12px;line-height:1.4;gap:9px;margin:0 0 16px}
+#revenue-detail-view[data-report=issues] .route-banner h1{font-size:35px;line-height:1.28;margin:0 0 13px;max-width:85%;font-weight:700;letter-spacing:-.4px}
+#revenue-detail-view[data-report=issues] .route-banner p{font-size:18px;line-height:1.4;display:flex;align-items:center;gap:10px;margin:0}
+#revenue-detail-view[data-report=issues] .route-banner p .icon{width:20px;height:20px}
+#revenue-detail-view[data-report=issues] .detail-content{position:relative;z-index:1;margin-top:-16px;padding:0 1.7vw 64px;display:flex;flex-direction:column;gap:0;min-height:0}
+.route-summary-panel{display:flex;flex-direction:column;min-height:0;flex:1;background:#ffffffd9;border:1px solid #f6fcff;border-radius:18px;padding:10px 10px 0;box-shadow:0 12px 35px #507fa407}
+.route-summary-heading{display:flex;align-items:center;gap:20px;min-height:47px;padding:0 5px 7px;flex-shrink:0}
+.route-summary-heading h2{font-size:24px;font-weight:700;line-height:1.3;margin:0;display:flex;align-items:center;gap:12px;color:#07155e;white-space:nowrap}
+.route-summary-heading h2>.icon{width:24px;height:24px;color:#215b9f}
+.route-summary-heading p{font-size:13px;color:#314c85;margin:0}
+.route-summary-heading time{font-size:12px;margin-left:auto;color:#39558a;white-space:nowrap}
+.route-regions{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:13px;min-height:0;flex:1}
+.route-region{position:relative;display:flex;flex-direction:column;min-height:0;min-width:0;background:linear-gradient(180deg,#fff,color-mix(in srgb,var(--region-color) 3%,white));border:1px solid #edf5fb;border-radius:13px 13px 20px 20px;overflow:hidden;padding:0 0 15px}
+.route-region-photo{width:100%;height:132px;object-fit:cover;object-position:center 62%;display:block;flex-shrink:0}
+.route-region-info{position:relative;min-height:61px;padding:0 10px 9px 79px;background:linear-gradient(180deg,#ffffffa6,#fff);flex-shrink:0;display:flex;flex-direction:column;justify-content:center}
+.route-region-icon{position:absolute;left:8px;top:-22px;width:64px;height:64px;background:linear-gradient(135deg,color-mix(in srgb,var(--region-color) 85%,white),var(--region-color));color:white;border:4px solid white;border-radius:50%;box-shadow:0 2px 6px #3158811a;display:grid;place-items:center}
+.route-region-icon>.icon{width:28px;height:28px}
+.route-region-info h3{font-size:18px;font-weight:700;line-height:1.3;margin:0 0 4px;color:#071562;white-space:nowrap}
+.route-region:nth-child(4) h3{font-size:13.5px;letter-spacing:-.25px}
+.route-region-meta{display:flex;align-items:center;justify-content:space-between;gap:4px;line-height:1.3;flex-wrap:wrap}
+.route-region-meta>span:first-child{display:flex;gap:3px;align-items:center;color:var(--region-color);font-size:12px;white-space:nowrap}
+.route-region-meta .icon{width:13px;height:13px}
+.route-region-peak{border-radius:15px;background:color-mix(in srgb,var(--region-color) 11%,white);color:var(--region-color);font-size:10px;padding:4px 7px;white-space:nowrap;font-weight:600}
+.route-table-wrap{min-height:0;overflow:auto;flex:1}
+.route-table{width:100%;border-collapse:collapse;table-layout:fixed;color:#173477;font-size:11.5px;line-height:1.25}
+.route-table caption{position:absolute;width:1px;height:1px;clip-path:inset(50%);overflow:hidden}
+.route-table th,.route-table td{padding:6px 5px;border-right:1px solid #e6eef6;vertical-align:middle;white-space:normal}
+.route-table thead th{background:color-mix(in srgb,var(--region-color) 12%,white);font-size:11px;font-weight:600;text-align:center;height:48px;line-height:1.4;color:#10266a}
+.route-table thead small{font-size:10px;font-weight:400}
+.route-table tbody tr{height:43px}
+.route-table tbody tr:nth-child(even){background:#eff6fc}
+#revenue-detail-view[data-report=issues] .route-table tbody th{font-size:inherit;font-weight:400;text-align:left;color:#173477}
+.route-table tbody td{text-align:center}
+.route-table tbody th small{font-size:inherit}
+.route-percentage{display:flex;align-items:center;justify-content:space-between;gap:5px;white-space:nowrap}
+.route-percentage>span{display:block;flex:1;min-width:10px;height:8px;background:color-mix(in srgb,var(--region-color) 14%,white);border-radius:2px;overflow:hidden}
+.route-percentage i{display:block;height:100%;background:var(--region-color);border-radius:2px}
+.route-percentage b{font-weight:400;font-size:11px;min-width:34px;text-align:right}
+.route-empty-note{font-size:11px;color:#6f87ab;text-align:center;padding:20px 8px;margin:0}
+.route-details{display:flex;align-items:center;justify-content:center;gap:15px;font:inherit;font-size:15px;font-weight:600;color:#fff;background:linear-gradient(135deg,color-mix(in srgb,var(--region-color) 85%,white),var(--region-color));border:0;border-radius:17px;min-height:46px;margin:8px 4px 0;flex-shrink:0;cursor:pointer}
+.route-details>.icon{width:21px;height:21px}
+.route-details:hover{filter:brightness(1.07)}
+.route-details:focus-visible{outline:3px solid #83baff;outline-offset:2px}
+@media(min-width:1200px) and (min-height:650px){
+body[data-active-page=revenue]:has(#revenue-detail-view[data-report=issues]:not([hidden])) .site-header{height:calc(74 * var(--du))}
+#page-revenue.revenue-detail-active:has(#revenue-detail-view[data-report=issues]){height:var(--report-height);min-height:0}
+#revenue-detail-view[data-report=issues]{height:var(--report-height);min-height:0;display:grid;grid-template-rows:calc(233 * var(--du)) minmax(0,1fr)}
+#revenue-detail-view[data-report=issues] .route-banner{min-height:0;padding:calc(21 * var(--du)) 3.3vw calc(30 * var(--du))}
+#revenue-detail-view[data-report=issues] .detail-breadcrumb{font-size:calc(12 * var(--du));gap:calc(9 * var(--du));margin-bottom:calc(16 * var(--du))}
+#revenue-detail-view[data-report=issues] .route-banner h1{font-size:calc(35 * var(--du));margin-bottom:calc(13 * var(--du));letter-spacing:calc(-.4 * var(--du))}
+#revenue-detail-view[data-report=issues] .route-banner p{font-size:calc(18 * var(--du));gap:calc(10 * var(--du))}
+#revenue-detail-view[data-report=issues] .route-banner p .icon{width:calc(20 * var(--du));height:calc(20 * var(--du))}
+#revenue-detail-view:is([data-report=contract],[data-report=issues]) .detail-banner .detail-back{font-size:calc(13 * var(--du));top:calc(15 * var(--du));padding:calc(9 * var(--du)) calc(18 * var(--du))}
+#revenue-detail-view[data-report=issues] .detail-content{margin-top:calc(-16 * var(--du));padding:0 1.7vw calc(64 * var(--du))}
+.route-summary-panel{padding:calc(10 * var(--du)) calc(10 * var(--du)) 0;border-radius:calc(18 * var(--du))}
+.route-summary-heading{gap:calc(20 * var(--du));min-height:calc(47 * var(--du));padding:0 calc(5 * var(--du)) calc(7 * var(--du))}
+.route-summary-heading h2{font-size:calc(24 * var(--du));gap:calc(12 * var(--du))}
+.route-summary-heading h2>.icon{width:calc(24 * var(--du));height:calc(24 * var(--du))}
+.route-summary-heading p{font-size:calc(13 * var(--du))}
+.route-summary-heading time{font-size:calc(12 * var(--du))}
+.route-regions{gap:calc(13 * var(--du))}
+.route-region{padding-bottom:calc(10 * var(--du))}
+.route-region-photo{height:calc(124 * var(--du))}
+.route-region-info{min-height:calc(61 * var(--du));padding:0 calc(10 * var(--du)) calc(9 * var(--du)) calc(79 * var(--du))}
+.route-region-icon{left:calc(8 * var(--du));top:calc(-22 * var(--du));width:calc(64 * var(--du));height:calc(64 * var(--du));border-width:calc(4 * var(--du))}
+.route-region-icon>.icon{width:calc(28 * var(--du));height:calc(28 * var(--du))}
+.route-region-info h3{font-size:calc(18 * var(--du));margin-bottom:calc(4 * var(--du))}
+.route-region:nth-child(4) h3{font-size:calc(13.5 * var(--du))}
+.route-region-meta>span:first-child{font-size:calc(12 * var(--du))}
+.route-region-meta .icon{width:calc(13 * var(--du));height:calc(13 * var(--du))}
+.route-region-peak{font-size:calc(10 * var(--du));padding:calc(4 * var(--du)) calc(7 * var(--du))}
+.route-table{font-size:calc(12 * var(--du));line-height:1.15}
+.route-table th,.route-table td{padding:calc(2 * var(--du)) calc(5 * var(--du))}
+.route-table thead th{font-size:calc(10.5 * var(--du));height:calc(44 * var(--du));white-space:nowrap}
+.route-table thead small{font-size:calc(10 * var(--du))}
+.route-table tbody tr{height:calc(46 * var(--du))}
+.route-percentage{gap:calc(5 * var(--du))}
+.route-percentage>span{height:calc(8 * var(--du))}
+.route-percentage b{font-size:calc(11 * var(--du));min-width:calc(34 * var(--du))}
+.route-empty-note{font-size:calc(11 * var(--du))}
+.route-details{font-size:calc(15 * var(--du));min-height:calc(46 * var(--du));gap:calc(15 * var(--du));margin:calc(8 * var(--du)) calc(4 * var(--du)) 0}
+.route-details>.icon{width:calc(21 * var(--du));height:calc(21 * var(--du))}
+}
+@media(max-width:1199px),(max-height:649px){
+#revenue-detail-view[data-report=issues]{height:auto;min-height:var(--report-height)}
+#revenue-detail-view[data-report=issues] .route-banner{padding-top:60px;min-height:280px}
+#revenue-detail-view[data-report=issues] .detail-content{margin:0;padding:16px 20px 24px}
+.route-regions{grid-template-columns:repeat(2,minmax(0,1fr))}
+.route-summary-heading{flex-wrap:wrap;gap:8px;padding:8px 5px 15px}
+.route-summary-heading time{margin-left:0}
+.route-region{min-height:530px}
+}
+@media(max-width:600px){
+#revenue-detail-view:is([data-report=contract],[data-report=issues]) .detail-banner:after{background:linear-gradient(90deg,#123256fa,#123256db 65%,#12325688)}
+#revenue-detail-view[data-report=issues] .route-banner h1{font-size:26px;max-width:100%}
+#revenue-detail-view[data-report=issues] .route-banner p{font-size:14px}
+#revenue-detail-view[data-report=issues] .detail-breadcrumb{font-size:10px;flex-wrap:wrap}
+#revenue-detail-view[data-report=issues] .detail-content{padding:12px}
+.route-regions{grid-template-columns:1fr}
+.route-summary-heading h2{font-size:22px}
+.route-summary-heading p,.route-summary-heading time{font-size:11px}
+.route-region-photo{height:150px}
+.route-region-info{min-height:70px}
+.route-table{font-size:12px}
+.route-region:nth-child(4) h3{font-size:15px}
+}
+
 </style>
 
 <script src="config.js"></script><script src="assets-manifest.js"></script><script src="sheet-csv.js"></script></head>
@@ -2790,13 +2909,17 @@ window.ASSETS = {"loaderCoach":"assets/shared-inline-57-913a14f5605d.webp","load
 
 
   // Report module: RevenueRegional (included inside Scripts.html)
+  const regionPalette=['#204c89','#5e8da6','#94aed4','#bc9347','#398d9d'];
+  function regionalPin(){return '<svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2a10 10 0 0 0-10 10c0 8 10 18 10 18s10-10 10-18A10 10 0 0 0 16 2Z" fill="currentColor" stroke="none"/><circle cx="16" cy="12" r="3.5" fill="white" stroke="none"/></svg>';}
   function regionalTable(region){return reportTable(['ลำดับ','เส้นทาง','เที่ยววิ่งเสริม<br>(เที่ยว)','ร้อยละ<br>การเสริม'],region.rows.map(([r,t,p],i)=>[i+1,esc(r),num(t),num(p,2)+'%']),[],'regional-table');}
-  function regionalReport(){
-    return '<article class="detail-panel regional-panel"><h2>'+icon('chart')+'สรุปข้อมูลรายภาค <small>5 อันดับแรกของร้อยละการเสริมสูงสุดในแต่ละภาค</small></h2><div class="regional-grid">'+regionalReports.map((r,i)=>'<article class="region-card" style="--accent:'+r.color+'"><div class="region-heading"><img data-asset="'+'regionalStat'+i+'" alt=""><span class="detail-stat-icon">'+icon(i===0?'building':i===2?'trend':i===3?'bus':'route')+'</span><div><h3>'+r.name+'</h3><strong>● '+r.count+' เส้นทาง</strong></div></div>'+regionalTable(r)+'<button data-region-detail="'+i+'">ดูรายละเอียด '+icon('arrow')+'</button></article>').join('')+'</div></article><div class="detail-update"><span>'+icon('calendar')+' ข้อมูลรายงานตามภาพตัวอย่าง</span><span>วันที่ 23 กันยายน 2569 เวลา 12:53 น.</span></div>';
+  function regionalHeader(){return '<div class="detail-banner route-banner"><img data-asset="regionalHero" alt="ผู้โดยสารและรถโดยสารที่สถานีขนส่ง"><div class="detail-breadcrumb"><button data-back-report>หน้าแรก</button><span>›</span><button data-back-report>รายงานรายได้</button><span>›</span><span>รายงานสรุปเส้นทางเดินรถโดยสารที่มีการจัดเสริมรถโดยสาร</span></div><h1 id="revenue-detail-title" tabindex="-1">รายงานสรุปเส้นทางเดินรถโดยสาร<br>ที่มีการจัดเสริมรถโดยสาร</h1><p>'+icon('calendar')+' 1 กันยายน 2569 - 20 กันยายน 2569</p><button class="detail-back" data-back-report>← กลับรายงานรายได้</button></div>';}
+  function regionalDesignTable(region){
+    const peak=Math.max(...region.rows.map(r=>r[2]));
+    return '<div class="route-table-wrap"><table class="route-table"><caption>'+esc(region.name)+' สูงสุด 5 อันดับของร้อยละการเสริมรถโดยสาร</caption><colgroup><col style="width:12%"><col style="width:40%"><col style="width:16%"><col style="width:32%"></colgroup><thead><tr><th scope="col">ลำดับ</th><th scope="col">เส้นทาง</th><th scope="col">เที่ยวเสริม<br><small>(เที่ยว)</small></th><th scope="col">ร้อยละการเสริม<br><small>(%)</small></th></tr></thead><tbody>'+region.rows.map(([route,trips,percentage],i)=>{const label=route.replace(/^\d+-\d+\s*/,'').replace(/กรุงเทพฯ \((?:จตุจักร|เอกมัย)\)/,'กรุงเทพฯ').replace(/ \([ขค]\)/g,''),breakAt=label.lastIndexOf(' (ป.');return '<tr><td>'+num(i+1)+'</td><th scope="row" title="'+esc(route)+'">'+(breakAt>=0?esc(label.slice(0,breakAt))+'<br><small>'+esc(label.slice(breakAt+1))+'</small>':esc(label))+'</th><td>'+num(trips)+'</td><td><div class="route-percentage"><span aria-hidden="true"><i style="width:'+percentage/peak*100+'%"></i></span><b>'+num(percentage,2)+'</b></div></td></tr>';}).join('')+'</tbody></table>'+(region.rows.length<5?'<p class="route-empty-note">แสดงครบ '+region.rows.length+' เส้นทางที่มีข้อมูล</p>':'')+'</div>';
   }
-
-
-
+  function regionalReport(){
+    return '<article class="route-summary-panel"><div class="route-summary-heading"><h2>'+icon('chart')+'สรุปข้อมูลรายภาค</h2><p>5 อันดับแรกของร้อยละการเสริมสูงสุดในแต่ละภาค</p><time>ข้อมูลตามรายงานตัวอย่าง · 20 กันยายน 2569</time></div><div class="route-regions">'+regionalReports.map((r,i)=>'<article class="route-region" style="--region-color:'+regionPalette[i]+'"><img class="route-region-photo" data-asset="regionalStat'+i+'" alt="ทิวทัศน์'+r.name+'"><div class="route-region-info"><span class="route-region-icon">'+icon('bus')+'</span><h3>'+r.name+'</h3><div class="route-region-meta"><span>'+regionalPin()+' '+num(r.count)+' เส้นทาง</span><span class="route-region-peak" title="ร้อยละการเสริมสูงสุดของภาคนี้">สูงสุด '+num(Math.max(...r.rows.map(row=>row[2])),2)+'%</span></div></div>'+regionalDesignTable(r)+'<button type="button" class="route-details" data-region-detail="'+i+'">ดูรายละเอียด '+icon('arrow')+'</button></article>').join('')+'</div></article>';
+  }
 
 
   function setReportProcessing(visible){
@@ -2834,6 +2957,7 @@ window.ASSETS = {"loaderCoach":"assets/shared-inline-57-913a14f5605d.webp","load
     if(kind==='overview'){view.innerHTML=weeklyHeader()+'<div class="detail-content">'+weeklyReport()+'</div>';}
     if(kind==='rental'){view.innerHTML=rentalHeader()+'<div class="detail-content">'+rentalReport()+'</div>';bindRentalReport();fitRevenuePage();}
     if(kind==='contract'){view.innerHTML=contractHeader()+'<div class="detail-content">'+contractReport()+'</div>';bindContractReport();fitRevenuePage();}
+    if(kind==='issues'){view.innerHTML=regionalHeader()+'<div class="detail-content">'+regionalReport()+'</div>';fitRevenuePage();}
     if(kind==='overview')bindWeeklyReport();
     applyAssets({});view.querySelectorAll('[data-back-report]').forEach(b=>b.addEventListener('click',()=>b.textContent==='หน้าแรก'?route('home',true,true):closeRevenueDetail()));updateDataNote();
     view.querySelectorAll('[data-region-detail]').forEach(b=>b.addEventListener('click',()=>{const r=regionalReports[Number(b.dataset.regionDetail)];showDialog('รายละเอียด '+r.name,regionalTable(r)+'<p class="muted">แสดงเส้นทางตามภาพตัวอย่างที่ส่งมา จำนวนเส้นทางทั้งหมด '+r.count+' เส้นทาง</p>');}));
@@ -3071,6 +3195,7 @@ window.ASSETS = {"loaderCoach":"assets/shared-inline-57-913a14f5605d.webp","load
 
 </body>
 </html>
+
 
 
 
