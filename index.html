@@ -1257,6 +1257,42 @@ body[data-active-page=revenue]{color:#08086b;background:#f3f9fd}
 @media(prefers-reduced-motion:reduce){.exec-region-card{transition:none}.exec-region-card:hover{transform:none}}
 @media(max-width:600px){.exec-region-card h3{white-space:normal;overflow-wrap:anywhere}}
 
+
+/* Supplied artwork and refinement of the executive dashboard. */
+body[data-active-page=revenue] .site-footer{display:none}
+#page-revenue .exec-total>img,#page-revenue .exec-top-card>img{opacity:1;filter:none;object-fit:cover;object-position:center}
+#page-revenue .exec-top-card>img{object-position:right center}
+#page-revenue .exec-total:before{background:linear-gradient(90deg,#ffffff50,#ffffff05 65%)}
+#page-revenue .exec-top-card:after{background:linear-gradient(90deg,#ffffff55,#ffffff08 65%)}
+#page-revenue .exec-region-card{align-items:center;gap:10px;padding:10px;background:#f5faff}
+#page-revenue .exec-region-card>img:not(.exec-region-map){opacity:1;filter:none;object-fit:cover;object-position:center;z-index:-3}
+/* Hide the map baked into the supplied photo; the geographic SVG is the only map shown. */
+#page-revenue .exec-region-card:before{content:'';position:absolute;inset:0 auto 0 0;width:26%;z-index:-1;background:linear-gradient(90deg,#f6fbff 0%,#f6fbff 82%,#f6fbff00 100%);pointer-events:none}
+#page-revenue .exec-region-card:after{z-index:-2;background:linear-gradient(0deg,#f8fcffeb 0%,#f8fcff9c 37%,#ffffff00 80%)}
+#page-revenue .exec-region-card>img.exec-region-map{position:relative;inset:auto;z-index:0;width:23%;height:100%;max-height:132px;min-height:72px;flex-shrink:0;object-fit:contain;object-position:center;opacity:1;filter:drop-shadow(0 2px 3px #2b568025)}
+#page-revenue .exec-region-card-copy{position:relative;z-index:1}
+#page-revenue .exec-region-metrics{gap:8px}
+#page-revenue .exec-region-card h3{white-space:normal;font-size:clamp(11px,.88vw,16px)}
+#page-revenue .exec-region-pct{padding-left:8px}
+#page-revenue .revenue-charts{grid-template-columns:1.1fr 1.05fr 1.1fr}
+#page-revenue #revenue-share{grid-template-columns:minmax(105px,.8fr) minmax(0,1.8fr);gap:10px}
+#page-revenue #revenue-share .share-legend{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(3,auto);grid-auto-flow:column;gap:4px 8px;align-content:center;align-items:start;justify-content:initial;min-width:0}
+#page-revenue #revenue-share .share-legend button{font-size:clamp(10px,.7vw,13px);line-height:1.18;gap:5px;min-width:0;align-items:flex-start}
+#page-revenue #revenue-share .share-legend button>span{min-width:0;overflow-wrap:anywhere}
+#page-revenue #revenue-share .share-legend strong{font-size:clamp(11px,.78vw,14px);line-height:1.2;white-space:normal;margin:2px 0 0}
+#page-revenue #revenue-share .share-legend small{font-size:.85em;white-space:nowrap}
+#page-revenue #revenue-share .share-legend em{display:block;font-size:clamp(10px,.65vw,12px);line-height:1.15;color:#657ea6;margin:1px 0 0;font-style:normal}
+#page-revenue #revenue-share .share-legend i{width:10px;height:10px;margin-top:2px}
+#page-revenue .revenue-menu button{min-height:116px;padding-top:17px;padding-bottom:17px}
+#page-revenue .exec-map-source{font-size:12px;color:#627c9c;margin-top:16px}
+#page-revenue .exec-map-source a{color:#28518b;text-decoration:underline}
+.exec-region-bar{cursor:pointer}.exec-region-bar:focus{outline:none}.exec-region-bar:focus rect,.exec-region-bar:hover rect{stroke:#183762;stroke-width:2}
+@media(min-width:1200px) and (min-height:780px){#page-revenue:not(.revenue-detail-active){height:auto;min-height:var(--report-height);grid-template-rows:clamp(150px,16vh,180px) auto}#page-revenue .revenue-dashboard{grid-template-rows:minmax(160px,1fr) minmax(185px,1fr) minmax(215px,1.35fr) 116px}#page-revenue .exec-regions,#page-revenue .exec-region-cards{min-height:0}#page-revenue .exec-region-card>img.exec-region-map{height:90px;min-height:0;max-height:100%}#page-revenue .revenue-menu button{min-height:116px}}
+@media(max-width:1350px){#page-revenue .exec-region-card{gap:6px;padding:8px}#page-revenue .exec-region-metrics{gap:5px}#page-revenue .exec-region-pct{padding-left:5px}#page-revenue .exec-region-metrics strong{font-size:clamp(18px,1.7vw,27px)}}
+@media(max-width:1199px){#page-revenue .revenue-charts{grid-template-columns:1fr 1fr}#page-revenue .exec-region-panel{grid-column:1/-1}#page-revenue .revenue-share-panel{min-height:290px}#page-revenue .revenue-menu button{min-height:116px}}
+@media(max-width:850px){#page-revenue .exec-region-card{min-height:145px}#page-revenue .exec-region-card h3{font-size:12px}#page-revenue .exec-region-card>img.exec-region-map{width:24%;max-height:118px}#page-revenue .exec-region-metrics strong{font-size:22px}}
+@media(max-width:600px){#page-revenue .revenue-charts{grid-template-columns:1fr}#page-revenue .exec-region-panel{grid-column:auto}#page-revenue .exec-region-card{padding:7px;gap:5px;min-height:136px}#page-revenue .exec-region-card>img.exec-region-map{width:24%;max-height:114px}#page-revenue .exec-region-metrics{gap:4px}#page-revenue .exec-region-metrics strong{font-size:19px}#page-revenue .exec-region-pct{padding-left:4px}#page-revenue .exec-region-pct b{font-size:12px}#page-revenue .exec-region-pct small{font-size:9px}#page-revenue .exec-region-card h3{font-size:11px}#page-revenue .revenue-share-panel{min-height:380px}#page-revenue #revenue-share{grid-template-columns:minmax(105px,.85fr) minmax(0,1.3fr)}#page-revenue #revenue-share .share-legend{grid-template-columns:1fr;grid-template-rows:repeat(6,auto);grid-auto-flow:row;gap:8px}#page-revenue #revenue-share .share-legend button{font-size:12px}#page-revenue #revenue-share .share-legend strong{font-size:13px}#page-revenue #revenue-share .share-legend em{font-size:11px}#page-revenue .revenue-menu button{min-height:122px}}
+
 </style>
 
 <script src="config.js"></script><script src="assets-manifest.js"></script><script src="sheet-csv.js"></script></head>
@@ -1410,7 +1446,7 @@ body[data-active-page=revenue]{color:#08086b;background:#f3f9fd}
   </dialog>
   <div class="toast" id="toast" role="status" hidden></div>
   <noscript><style>.startup-loader{display:none}body.is-loading{overflow:auto}</style><p class="notice">กรุณาเปิด JavaScript เพื่อใช้งานเว็บไซต์</p></noscript>
-  <script>window.INITIAL_PAGE=new URLSearchParams(location.search).get('page')||'home';window.INITIAL_IMAGE_GROUP='home';window.INITIAL_IMAGES=Object.assign({},window.BKS_IMAGE_GROUPS.shared,window.BKS_IMAGE_GROUPS.home);</script>
+  <script>Object.assign(window.BKS_IMAGE_GROUPS.revenue,{"execTotalHero":"assets/execTotalHero-v45.webp","execTop0":"assets/execTop0-v45.webp","execTop1":"assets/execTop1-v45.webp","execTop2":"assets/execTop2-v45.webp","execRegionBg0":"assets/execRegionBg0-v45.webp","execRegionBg1":"assets/execRegionBg1-v45.webp","execRegionBg2":"assets/execRegionBg2-v45.webp","execRegionBg3":"assets/execRegionBg3-v45.webp","execRegionBg4":"assets/execRegionBg4-v45.webp","execRegionMap0":"assets/thailand-region-0-v45.svg","execRegionMap1":"assets/thailand-region-1-v45.svg","execRegionMap2":"assets/thailand-region-2-v45.svg","execRegionMap3":"assets/thailand-region-3-v45.svg","execRegionMap4":"assets/thailand-region-4-v45.svg"});window.INITIAL_PAGE=new URLSearchParams(location.search).get('page')||'home';window.INITIAL_IMAGE_GROUP='home';window.INITIAL_IMAGES=Object.assign({},window.BKS_IMAGE_GROUPS.shared,window.BKS_IMAGE_GROUPS.home);</script>
   <script>
 // Set HTTPS image URLs here. Empty reference image URLs use the packaged photos.
 // Station images stay as explicit placeholders until real photographs are supplied.
@@ -1801,6 +1837,7 @@ window.ASSETS = {"loaderCoach":"assets/shared-inline-57-913a14f5605d.webp","load
     bindRevenueChart(target,rows,legends,unit);
   }
   // Temporary regional examples from the supplied design; replace once cell ranges are confirmed.
+  const executivePalette=Object.freeze(['#30558e','#7b96c7','#b3c0d5','#c7933e','#62a6a8','#818b9e']);
   const executiveRegions = [
     {name:'ภาคกลาง',value:428615,area:[24,47,31,31]},
     {name:'ภาคตะวันออก',value:238412,area:[51,57,38,28]},
@@ -1812,28 +1849,24 @@ window.ASSETS = {"loaderCoach":"assets/shared-inline-57-913a14f5605d.webp","load
     if(!Number.isFinite(value))return {number:'—',unit:'บาท'};
     return value>=1e6?{number:num(value/1e6,2),unit:'ล้านบาท'}:{number:num(value,2),unit:'บาท'};
   }
-  function executiveMap(index){
-    const region=executiveRegions[index],id='exec-thailand-'+index;
-    const outline='M26 4 38 8 45 5 49 15 46 23 55 28 64 21 72 26 76 34 84 37 87 49 79 56 82 64 73 68 70 77 61 78 55 72 49 73 45 82 44 91 50 99 53 109 63 117 71 123 73 133 67 136 59 127 54 124 49 113 43 107 40 98 36 89 37 80 32 73 32 64 26 56 20 53 23 44 17 38 21 32 17 23 22 17 20 10 Z';
-    return '<svg class="exec-region-map" viewBox="0 0 94 142" aria-hidden="true"><defs><clipPath id="'+id+'"><path d="'+outline+'"/></clipPath><linearGradient id="'+id+'-pink" x2="0" y2="1"><stop stop-color="#ff7abd"/><stop offset="1" stop-color="#ed078b"/></linearGradient></defs><path d="'+outline+'" fill="#fafdff" stroke="#dae6f3" stroke-width="2"/><g clip-path="url(#'+id+')"><path d="M19 46 52 48 78 56M32 69 69 74M39 86 49 92M52 28 52 63" fill="none" stroke="#e5edf7"/><rect x="'+region.area[0]+'" y="'+region.area[1]+'" width="'+region.area[2]+'" height="'+region.area[3]+'" fill="url(#'+id+'-pink)"/></g></svg>';
-  }
+  function executiveMap(index){return '<img class="exec-region-map" data-asset="execRegionMap'+index+'" alt="แผนที่ประเทศไทยสีขาว เน้น'+esc(executiveRegions[index].name)+'ด้วยสีชมพู">';}
   function executiveRegionDialog(index){
     const selected=Number.isInteger(index)?[executiveRegions[index]]:executiveRegions;
     const total=executiveRegions.reduce((sum,r)=>sum+r.value,0);
     showDialog(Number.isInteger(index)?'จำนวนเที่ยววิ่ง · '+executiveRegions[index].name:'จำนวนเที่ยววิ่งสะสม แยกตามภาค',
-      '<div class="exec-region-dialog"><p><span class="exec-example">ข้อมูลตัวอย่างสำหรับดูรูปแบบ</span></p><p>ใช้ตัวเลขจากภาพอ้างอิงชั่วคราว ยังไม่ได้เชื่อมข้อมูลรายภาคจาก Google Sheets</p><table><thead><tr><th scope="col">ภาค</th><th scope="col">เที่ยววิ่ง</th><th scope="col">สัดส่วน</th></tr></thead><tbody>'+selected.map(r=>'<tr><th scope="row">'+esc(r.name)+'</th><td>'+num(r.value)+'</td><td>'+num(r.value/total*100,1)+'%</td></tr>').join('')+'</tbody></table></div>');
+      '<div class="exec-region-dialog"><p><span class="exec-example">ข้อมูลตัวอย่างสำหรับดูรูปแบบ</span></p><p>ใช้ตัวเลขจากภาพอ้างอิงชั่วคราว ยังไม่ได้เชื่อมข้อมูลรายภาคจาก Google Sheets</p><table><thead><tr><th scope="col">ภาค</th><th scope="col">เที่ยววิ่ง</th><th scope="col">สัดส่วน</th></tr></thead><tbody>'+selected.map(r=>'<tr><th scope="row">'+esc(r.name)+'</th><td>'+num(r.value)+'</td><td>'+num(r.value/total*100,1)+'%</td></tr>').join('')+'</tbody></table><p class="exec-map-source">ขอบเขตจังหวัด: <a href="https://www.geoboundaries.org/" target="_blank" rel="noopener">geoBoundaries</a> / © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap contributors</a> · <a href="MAP-SOURCES.md" target="_blank" rel="noopener">แหล่งข้อมูลและสัญญาอนุญาต ODbL 1.0</a> · จัดกลุ่มแสดงผล 5 ภาค</p></div>');
   }
   function renderExecutiveRegions(){
     const total=executiveRegions.reduce((sum,r)=>sum+r.value,0);
-    $('#exec-region-cards').innerHTML=executiveRegions.map((r,i)=>'<button type="button" class="exec-region-card" data-exec-region="'+i+'" aria-label="ดูข้อมูลตัวอย่าง '+esc(r.name)+'"><img data-asset="revenueTotal1" alt="">'+executiveMap(i)+'<div class="exec-region-card-copy"><h3>'+esc(r.name)+'<span aria-hidden="true">›</span></h3><div class="exec-region-metrics"><div><strong>'+num(r.value)+'</strong><small>เที่ยว</small></div><div class="exec-region-pct"><b>'+num(r.value/total*100,1)+'%</b><small>ของทั้งหมด</small></div></div></div></button>').join('');
+    $('#exec-region-cards').innerHTML=executiveRegions.map((r,i)=>'<button type="button" class="exec-region-card" data-exec-region="'+i+'" aria-label="ดูข้อมูลตัวอย่าง '+esc(r.name)+'"><img data-asset="execRegionBg'+i+'" alt="">'+executiveMap(i)+'<div class="exec-region-card-copy"><h3>'+esc(r.name)+'<span aria-hidden="true">›</span></h3><div class="exec-region-metrics"><div><strong>'+num(r.value)+'</strong><small>เที่ยว</small></div><div class="exec-region-pct"><b>'+num(r.value/total*100,1)+'%</b><small>ของทั้งหมด</small></div></div></div></button>').join('');
     $('#exec-region-period').textContent='ข้อมูลตั้งแต่ '+(revenueOverview.period||'ยังไม่ระบุช่วงข้อมูล');
     $('#exec-region-detail').onclick=()=>executiveRegionDialog();
     $$('#exec-region-cards [data-exec-region]').forEach(el=>el.onclick=()=>executiveRegionDialog(Number(el.dataset.execRegion)));
     const sorted=executiveRegions.map((r,i)=>({...r,index:i})).sort((a,b)=>b.value-a.value);
     const W=600,H=232,L=52,R=12,T=27,B=39,max=Math.ceil(sorted[0].value/1e5)*1e5,pw=W-L-R,ph=H-T-B;
-    let svg='<svg viewBox="0 0 '+W+' '+H+'" preserveAspectRatio="none" role="img" aria-label="กราฟจำนวนเที่ยววิ่งรายภาค ข้อมูลตัวอย่าง"><defs><linearGradient id="exec-bar-gradient" x2="0" y2="1"><stop stop-color="#92a9d4"/><stop offset="1" stop-color="#24487d"/></linearGradient></defs><text x="7" y="16">เที่ยว</text>';
+    let svg='<svg viewBox="0 0 '+W+' '+H+'" preserveAspectRatio="none" role="img" aria-label="กราฟจำนวนเที่ยววิ่งรายภาค ข้อมูลตัวอย่าง"><defs>'+executivePalette.slice(0,5).map((color,i)=>'<linearGradient id="exec-bar-gradient-'+i+'" x2="0" y2="1"><stop stop-color="'+color+'" stop-opacity=".66"/><stop offset="1" stop-color="'+color+'"/></linearGradient>').join('')+'</defs><text x="7" y="16">เที่ยว</text>';
     for(let i=0;i<=6;i++){const v=max*i/6,y=T+ph*(1-v/max);svg+='<path d="M'+L+' '+y+'H'+(W-R)+'" stroke="#e6eef8"/><text x="'+(L-6)+'" y="'+(y+4)+'" text-anchor="end">'+num(v)+'</text>';}
-    sorted.forEach((r,i)=>{const slot=pw/5,w=slot*.65,x=L+slot*i+(slot-w)/2,h=r.value/max*ph,y=T+ph-h;svg+='<g tabindex="0" role="button" class="exec-region-bar" data-exec-region="'+r.index+'" aria-label="'+esc(r.name)+' '+num(r.value)+' เที่ยว ข้อมูลตัวอย่าง"><rect x="'+x+'" y="'+y+'" width="'+w+'" height="'+h+'" rx="5" fill="url(#exec-bar-gradient)"/><text x="'+(x+w/2)+'" y="'+(y-7)+'" text-anchor="middle" style="fill:#000c67;font-size:14px;font-weight:700">'+num(r.value)+'</text><text x="'+(x+w/2)+'" y="'+(H-15)+'" text-anchor="middle" style="font-size:11px;font-weight:600">'+esc(r.name)+'</text></g>';});
+    sorted.forEach((r,i)=>{const slot=pw/5,w=slot*.65,x=L+slot*i+(slot-w)/2,h=r.value/max*ph,y=T+ph-h;svg+='<g tabindex="0" role="button" class="exec-region-bar" data-exec-region="'+r.index+'" aria-label="'+esc(r.name)+' '+num(r.value)+' เที่ยว ข้อมูลตัวอย่าง"><rect x="'+x+'" y="'+y+'" width="'+w+'" height="'+h+'" rx="5" fill="url(#exec-bar-gradient-'+i+')"/><text x="'+(x+w/2)+'" y="'+(y-7)+'" text-anchor="middle" style="fill:#000c67;font-size:14px;font-weight:700">'+num(r.value)+'</text><text x="'+(x+w/2)+'" y="'+(H-15)+'" text-anchor="middle" style="font-size:11px;font-weight:600">'+esc(r.name)+'</text></g>';});
     $('#revenue-trip-chart').innerHTML=svg+'</svg>';
     $$('#revenue-trip-chart [data-exec-region]').forEach(el=>{el.onclick=()=>executiveRegionDialog(Number(el.dataset.execRegion));el.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();el.onclick();}};});
   }
@@ -1843,7 +1876,9 @@ window.ASSETS = {"loaderCoach":"assets/shared-inline-57-913a14f5605d.webp","load
     const legends=[comparison.previousLabel,comparison.currentLabel],colors=['#244b87','#c58e35'];
     $('#exec-income-legend').innerHTML=legends.map((label,i)=>'<span><i style="background:'+colors[i]+'"></i>'+esc(label)+'</span>').join('');
     const values=rows.flatMap(r=>[r.previous,r.current]).filter(Number.isFinite),magnitude=Math.max(0,...values),scale=magnitude>=1e6?1e6:1;
-    const max=Math.max(1,Math.ceil(magnitude/scale/5)*5),W=640,H=232,L=46,R=46,T=25,B=31,pw=W-L-R,ph=H-T-B;
+    const desired=Math.max(1,magnitude/scale*1.8),power=10**Math.floor(Math.log10(desired/5));
+    const tick=[1,2,2.5,5,10].find(n=>n>=desired/5/power)*power;
+    const max=Math.ceil(desired/tick)*tick,W=640,H=232,L=46,R=46,T=25,B=31,pw=W-L-R,ph=H-T-B;
     const x=i=>L+i*pw/Math.max(1,rows.length-1),y=value=>T+ph*(1-value/scale/max);
     let svg='<svg viewBox="0 0 '+W+' '+H+'" preserveAspectRatio="none" role="img" aria-label="แนวโน้มรายได้รายเดือน"><text x="5" y="13">'+(scale===1e6?'ล้านบาท':'บาท')+'</text>';
     for(let i=0;i<=5;i++){const v=max*i/5;svg+='<path d="M'+L+' '+y(v*scale)+'H'+(W-R)+'" stroke="#e5edf8"/><text x="'+(L-7)+'" y="'+(y(v*scale)+4)+'" text-anchor="end">'+num(v,max<5?1:0)+'</text>';}
@@ -1867,18 +1902,18 @@ window.ASSETS = {"loaderCoach":"assets/shared-inline-57-913a14f5605d.webp","load
     const total=revenueOverview.categories.length?revenueOverview.categoryTotal:main.value,amount=executiveAmount(total);
     const top=revenueOverview.categories.filter(x=>x.label!=='อื่นๆ').slice(0,3);
     const assetFor=label=>/เช่า/.test(label)?'revenueTotal3':/สถานี/.test(label)?'revenueTotal2':'revenueTotal1';
-    $('#revenue-summary').innerHTML='<article class="exec-total"><img data-asset="revenueTotal0" alt=""><span class="exec-icon">'+icon('coins')+'</span><div><h2>'+esc(main.label)+' <button type="button" id="exec-total-info" aria-label="แหล่งข้อมูลรายได้ทั้งหมด">ⓘ</button></h2><strong class="exec-main-number">'+amount.number+'</strong><div class="exec-main-unit">'+amount.unit+'</div><div class="exec-comparison"><span>รอข้อมูลเทียบปีก่อน</span></div></div></article><section class="exec-top-group" aria-labelledby="exec-top-title"><h2 id="exec-top-title" class="exec-section-title">'+icon('chart')+'3 อันดับรายการรายได้สูงสุด</h2><div class="exec-top-cards">'+top.map((item,i)=>{const a=executiveAmount(item.value);return '<article class="exec-top-card"><img data-asset="'+assetFor(item.label)+'" alt=""><span class="exec-icon">'+icon(['bus','shop','building'][i])+'</span><div><h3>'+esc(item.label)+'</h3><strong>'+a.number+'</strong><small>'+a.unit+'</small></div></article>';}).join('')+(top.length?'':'<p>ยังไม่มีข้อมูลรายได้แยกประเภท</p>')+'</div></section>';
+    $('#revenue-summary').innerHTML='<article class="exec-total"><img data-asset="execTotalHero" alt=""><span class="exec-icon">'+icon('coins')+'</span><div><h2>'+esc(main.label)+' <button type="button" id="exec-total-info" aria-label="แหล่งข้อมูลรายได้ทั้งหมด">ⓘ</button></h2><strong class="exec-main-number">'+amount.number+'</strong><div class="exec-main-unit">'+amount.unit+'</div><div class="exec-comparison"><span>รอข้อมูลเทียบปีก่อน</span></div></div></article><section class="exec-top-group" aria-labelledby="exec-top-title"><h2 id="exec-top-title" class="exec-section-title">'+icon('chart')+'3 อันดับรายการรายได้สูงสุด</h2><div class="exec-top-cards">'+top.map((item,i)=>{const a=executiveAmount(item.value);return '<article class="exec-top-card"><img data-asset="execTop'+i+'" alt=""><span class="exec-icon">'+icon(['bus','shop','building'][i])+'</span><div><h3>'+esc(item.label)+'</h3><strong>'+a.number+'</strong><small>'+a.unit+'</small></div></article>';}).join('')+(top.length?'':'<p>ยังไม่มีข้อมูลรายได้แยกประเภท</p>')+'</div></section>';
     $('#exec-total-info').onclick=()=>showDialog('แหล่งข้อมูลรายได้ทั้งหมด','<p>หน้ารูปแบบใหม่นี้แสดงยอดรวมรายได้ทุกประเภทจาก N41:N50 เพื่อให้ตรงกับยอดรวมในกราฟสัดส่วนรายได้</p><p>ยอดของกล่องเดิม B3 คือ '+(Number.isFinite(main.value)?num(main.value,2)+' บาท':'ยังไม่มีข้อมูล')+' ตำแหน่งข้อมูลของหน้าใหม่สามารถปรับได้เมื่อยืนยันช่วงเซลล์</p><p>เปอร์เซ็นต์เทียบปีก่อนจะเชื่อมเมื่อยืนยันตำแหน่งข้อมูลแล้ว</p>');
     renderExecutiveRegions();executiveIncomeChart();renderRevenueShare();applyAssets({});fitRevenuePage();
   }
   function renderRevenueShare(){
     const source=revenueOverview.categories,total=revenueOverview.categoryTotal;
-    const items=source.slice(0,3).map(x=>({...x}));
-    if(source.length>3)items.push({label:'รายได้อื่น ๆ',value:source.slice(3).reduce((sum,x)=>sum+x.value,0)});
-    const colors=['#30558e','#7b96c7','#b3c0d5','#c7933e'];let offset=0;
+    const items=source.slice(0,5).map(x=>({...x}));
+    if(source.length>5)items.push({label:'อื่นๆ',value:source.slice(5).reduce((sum,x)=>sum+x.value,0)});
+    const colors=executivePalette;let offset=0;
     const circles=items.map((item,i)=>{const pct=total?item.value/total*100:0,markup='<circle class="share-segment" data-share="'+i+'" cx="110" cy="110" r="83" fill="none" stroke="'+colors[i]+'" stroke-width="31" pathLength="100" stroke-dasharray="'+pct+' '+(100-pct)+'" stroke-dashoffset="'+(-offset)+'" transform="rotate(-90 110 110)"><title>'+esc(item.label)+' '+num(pct,2)+'%</title></circle>';offset+=pct;return markup;}).join('');
     const a=executiveAmount(total);
-    $('#revenue-share').innerHTML='<svg viewBox="0 0 220 220" role="img" aria-label="สัดส่วนรายได้รวม '+num(total,2)+' บาท"><circle cx="110" cy="110" r="83" fill="none" stroke="#e4edf7" stroke-width="31"/>'+circles+'<circle cx="110" cy="110" r="65" fill="#f8fcff"/><text x="110" y="88" text-anchor="middle" style="font-size:17px;font-weight:600">รวม</text><text class="share-total" x="110" y="122" text-anchor="middle" style="font-size:28px">'+a.number+'</text><text x="110" y="149" text-anchor="middle" style="font-size:17px">'+a.unit+'</text></svg><div class="share-legend">'+items.map((item,i)=>{const value=executiveAmount(item.value);return '<button type="button" data-share="'+i+'" aria-pressed="false"><i style="background:'+colors[i]+'"></i><span>'+esc(item.label)+'<strong>'+value.number+' '+value.unit+' ('+num(total?item.value/total*100:0,2)+'%)</strong></span></button>';}).join('')+'</div>';
+    $('#revenue-share').innerHTML='<svg viewBox="0 0 220 220" role="img" aria-label="สัดส่วนรายได้รวม '+num(total,2)+' บาท"><circle cx="110" cy="110" r="83" fill="none" stroke="#e4edf7" stroke-width="31"/>'+circles+'<circle cx="110" cy="110" r="65" fill="#f8fcff"/><text x="110" y="88" text-anchor="middle" style="font-size:17px;font-weight:600">รวม</text><text class="share-total" x="110" y="122" text-anchor="middle" style="font-size:28px">'+a.number+'</text><text x="110" y="149" text-anchor="middle" style="font-size:17px">'+a.unit+'</text></svg><div class="share-legend">'+items.map((item,i)=>{const value=executiveAmount(item.value);return '<button type="button" data-share="'+i+'" aria-pressed="false"><i style="background:'+colors[i]+'"></i><span>'+esc(item.label)+'<strong>'+value.number+' <small>'+value.unit+'</small></strong><em>สัดส่วน '+num(total?item.value/total*100:0,2)+'%</em></span></button>';}).join('')+'</div>';
     $$('#revenue-share .share-legend button').forEach(button=>button.onclick=()=>{const selected=button.dataset.share,clear=button.getAttribute('aria-pressed')==='true';$$('#revenue-share .share-segment').forEach(el=>el.style.opacity=clear||el.dataset.share===selected?'1':'.25');$$('#revenue-share .share-legend button').forEach(el=>el.setAttribute('aria-pressed',String(!clear&&el===button)));});
   }
 
@@ -2275,4 +2310,5 @@ window.ASSETS = {"loaderCoach":"assets/shared-inline-57-913a14f5605d.webp","load
 
 </body>
 </html>
+
 
