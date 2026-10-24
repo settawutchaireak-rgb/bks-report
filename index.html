@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-<meta name="bks-build" content="v48-target">
+<meta name="bks-build" content="v49-weekly">
   <meta charset="UTF-8">
   <base target="_top">
   <meta name="description" content="ฝ่ายบริหารการเดินรถ บริษัท ขนส่ง จำกัด — รายงานการเดินรถและข้อมูลหน่วยงาน">
@@ -1493,6 +1493,162 @@ body[data-active-page=revenue]:has(#revenue-detail-view[data-report=target]:not(
 #revenue-detail-view[data-report=target] .target-summary-row .target-change{font-size:calc(12 * var(--du));padding:calc(6 * var(--du)) calc(11 * var(--du));min-width:calc(78 * var(--du));white-space:nowrap}
 }
 
+/* Remove the white inset baked into the three overview panoramas. */
+#page-revenue .exec-top-card>img{inset:-12% -3%;width:106%;height:124%;object-fit:fill;transform:none}
+.revenue-detail-view[data-report=overview]{background:linear-gradient(115deg,#f2faff,#f6fbff);color:#07196a}
+.revenue-detail-view[data-report=overview] .weekly-banner{background:#153e69;isolation:isolate}
+.revenue-detail-view[data-report=overview] .weekly-banner>img{inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:1;mask-image:none;-webkit-mask-image:none;z-index:-2}
+.revenue-detail-view[data-report=overview] .weekly-banner:after{background:linear-gradient(90deg,#103c6b30,transparent 65%)}
+.revenue-detail-view[data-report=overview] .weekly-banner h1,.revenue-detail-view[data-report=overview] .weekly-banner .detail-breadcrumb,.revenue-detail-view[data-report=overview] .weekly-banner .detail-breadcrumb button{color:white}
+.revenue-detail-view[data-report=overview] .weekly-banner h1 em{color:#f3459a;font-style:normal}
+.revenue-detail-view[data-report=overview] .weekly-banner>p{color:white;background:#15436c8a;border:1px solid #c5e3ff75;border-radius:8px;padding:5px 14px;width:max-content;max-width:100%}
+.revenue-detail-view[data-report=overview] .weekly-kpi{position:relative;isolation:isolate;border:1px solid #deebf7;border-radius:12px;overflow:hidden;box-shadow:0 2px 4px #22487514;--accent:#164982}
+.revenue-detail-view[data-report=overview] .weekly-kpi .report-panel-bg{position:absolute;inset:-3%;width:106%;height:106%;object-fit:fill;object-position:center;opacity:1;z-index:-2}
+.revenue-detail-view[data-report=overview] .weekly-kpi:before{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,#fffffff0,#ffffffb0 50%,#ffffff08 90%)}
+.revenue-detail-view[data-report=overview] .weekly-kpi h3{color:#071565!important}
+.revenue-detail-view[data-report=overview] .weekly-kpi .detail-stat-icon{color:white;background:linear-gradient(135deg,#315f91,#052859);border:1px solid #ffffff80;box-shadow:inset 0 1px 4px #ffffff40}
+.revenue-detail-view[data-report=overview] .weekly-kpi-1 .detail-stat-icon{background:linear-gradient(135deg,#67c0f8,#0065b4)}
+.revenue-detail-view[data-report=overview] .weekly-kpi-2 .detail-stat-icon{background:linear-gradient(135deg,#e9c571,#b17e28)}
+.revenue-detail-view[data-report=overview] .weekly-kpi-3 .detail-stat-icon{background:linear-gradient(135deg,#59cad3,#087c90)}
+.weekly-workspace{display:grid;grid-template-columns:204px minmax(0,1fr);gap:8px;min-height:0;flex:1}
+.weekly-sidebar,.weekly-data-panel{border:1px solid #dcebf8;background:#ffffffc9;border-radius:13px;box-shadow:0 2px 6px #3b73951a;min-width:0;min-height:0}
+.weekly-sidebar{padding:12px 9px;display:flex;flex-direction:column;gap:12px}
+.weekly-sidebar h2{font-size:16px;display:flex;align-items:center;gap:10px;margin:3px 6px 8px;line-height:1.3;white-space:nowrap}
+.weekly-sidebar h2>.icon{width:22px;height:22px;color:#06478d;flex-shrink:0}
+.weekly-sidebar button{display:flex;align-items:center;gap:15px;width:100%;border:0;border-radius:9px;background:transparent;color:#07196a;text-align:left;padding:9px 14px;font:inherit;font-size:15px;line-height:1.3}
+.weekly-sidebar button .icon{width:22px;height:22px;flex-shrink:0}
+.weekly-sidebar button[aria-pressed=true]{background:linear-gradient(135deg,#2469ac,#082c60);color:white;box-shadow:0 4px 8px #174b8120;font-weight:600}
+.weekly-sidebar button:hover{background-color:#e9f5ff}
+.weekly-sigma{width:22px;text-align:center;font-size:25px;font-weight:700;line-height:1}
+.weekly-view-list{margin-top:6px;border-top:1px solid #e0edf8;padding-top:15px;background:linear-gradient(0deg,#f2f9ff,transparent);border-radius:0 0 12px 12px}
+.weekly-view-list button[aria-pressed=true]{background:linear-gradient(140deg,#62c7ff,#1686df);box-shadow:none}
+.weekly-data-panel{display:flex;flex-direction:column;padding:9px;overflow:visible}
+.weekly-data-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:7px;min-width:0;flex-shrink:0}
+.weekly-heading-title{display:flex;align-items:center;gap:12px;min-width:0}
+.weekly-heading-icon{display:grid;place-items:center;background:linear-gradient(135deg,#276fa7,#06285c);color:white;border-radius:8px;width:43px;height:43px;flex-shrink:0}
+.weekly-heading-icon>.icon{width:25px;height:25px}
+.weekly-heading-title h2{font-size:23px;line-height:1.2;margin:0;color:#07116c;white-space:nowrap}
+.weekly-heading-title p{font-size:14px;margin:2px 0 0;color:#355d97;line-height:1.25}
+.weekly-table-tools{display:flex;align-items:center;gap:20px;font-size:13px;white-space:nowrap}
+.weekly-table-tools>span{display:flex;align-items:center;gap:9px}
+.weekly-table-tools>span>.icon{width:21px;height:21px;color:#1154a1}
+.weekly-download{position:relative}
+.weekly-download summary{display:flex;align-items:center;gap:9px;cursor:pointer;list-style:none;color:white;background:linear-gradient(135deg,#1e5a94,#092c61);padding:10px 15px;border-radius:7px;font-size:14px}
+.weekly-download summary::-webkit-details-marker{display:none}
+.weekly-download summary>.icon{width:21px;height:21px}
+.weekly-download>div{position:absolute;right:0;top:calc(100% + 5px);z-index:20;min-width:180px;background:white;border:1px solid #dce9f5;border-radius:8px;box-shadow:0 6px 18px #15385b30;padding:5px}
+.weekly-download button{display:block;width:100%;border:0;background:white;color:#12396c;font:inherit;text-align:left;padding:10px;border-radius:5px}
+.weekly-download button:hover{background:#edf6ff}
+.weekly-grid-scroll{min-height:0;flex:1;overflow:auto;border-radius:7px}
+.weekly-grid-table{width:100%;height:100%;table-layout:fixed;border-collapse:separate;border-spacing:0;color:#315e98;font-variant-numeric:tabular-nums;font-size:14px;line-height:1.15}
+.weekly-grid-table .weekly-period-col{width:16%}
+.weekly-grid-table caption{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.weekly-grid-table .weekly-trips-col{width:9%}
+.weekly-grid-table .weekly-fees-col{width:12%}
+.weekly-grid-table th,.weekly-grid-table td{border:0;padding:3px 8px;vertical-align:middle;text-align:right;white-space:nowrap;overflow:hidden}
+.weekly-grid-table thead th{text-align:center;color:#061a5f;font-weight:600}
+.weekly-grid-table .weekly-period-head{background:linear-gradient(135deg,#246ca8,#0b2e63);color:white;font-size:16px;line-height:1.5;border-radius:7px 7px 0 7px}
+.weekly-grid-table .weekly-group-head{color:white;font-size:17px;line-height:1.4;border-radius:6px 6px 0 0;height:34px;background:linear-gradient(135deg,#56b9ef,#0961b3)}
+.weekly-group-head .icon{width:23px;height:23px;vertical-align:middle;margin-right:7px;stroke-width:2.3}
+.weekly-grid-table .weekly-group-head.group-1{background:linear-gradient(135deg,#74c9ff,#1791e8)}
+.weekly-grid-table .weekly-group-head.group-2{background:linear-gradient(135deg,#e8c46e,#b2873d)}
+.weekly-grid-table .weekly-group-head.group-3{background:linear-gradient(135deg,#65cbd0,#218c9e)}
+.weekly-grid-table .weekly-subhead{height:32px;background:#d8ebfa;font-size:13px}
+.weekly-grid-table .weekly-subhead.group-1{background:#dcefff}
+.weekly-grid-table .weekly-subhead.group-2{background:#f4e9ca}
+.weekly-grid-table .weekly-subhead.group-3{background:#ceeff0}
+.weekly-grid-table tbody th{text-align:left;font-weight:400;padding-left:15px}
+.weekly-grid-table tbody th{font-size:inherit;color:#315e98}
+.weekly-grid-table tbody tr:nth-child(even)>*{background:#edf5fb}
+.weekly-grid-table tbody tr:nth-child(even)>:first-child{border-radius:7px 0 0 7px}
+.weekly-grid-table tbody tr:nth-child(even)>:last-child{border-radius:0 7px 7px 0}
+.weekly-grid-table .weekly-trips{position:relative}
+.weekly-data-bar{position:absolute;left:10%;top:22%;height:56%;width:calc(var(--value) * .36);background:linear-gradient(90deg,var(--bar),color-mix(in srgb,var(--bar) 28%,white));border-radius:2px;pointer-events:none}
+.weekly-trips>span:last-child{position:relative;z-index:1}
+.weekly-grid-table tfoot th,.weekly-grid-table tfoot td{background:linear-gradient(135deg,#195b9b,#092c63);color:white;font-size:16px;font-weight:700;padding:9px 8px;height:40px}
+.weekly-grid-table tfoot .group-0{background:linear-gradient(135deg,#36b5f1,#0a66b8)}
+.weekly-grid-table tfoot .group-1{background:linear-gradient(135deg,#49b9f8,#1977cf)}
+.weekly-grid-table tfoot .group-2{background:linear-gradient(135deg,#dbc17c,#9a7846)}
+.weekly-grid-table tfoot .group-3{background:linear-gradient(135deg,#225c95,#092755)}
+.weekly-grid-table tfoot th{text-align:left;border-radius:6px 0 0 6px}
+.weekly-grid-table tfoot td:last-child{border-radius:0 0 6px 0}
+.weekly-carry-info{border:0;background:transparent;color:inherit;padding:0;font:inherit;cursor:pointer}
+@media(min-width:1200px) and (min-height:700px){
+#page-revenue.revenue-detail-active:has(#revenue-detail-view[data-report=overview]){height:var(--report-height);min-height:0}
+#revenue-detail-view[data-report=overview]{display:grid;grid-template-rows:calc(201 * var(--du)) minmax(0,1fr);height:var(--report-height);min-height:0}
+#revenue-detail-view[data-report=overview] .weekly-banner{min-height:0;flex:none;padding:calc(18 * var(--du)) 3.75vw calc(16 * var(--du));overflow:hidden}
+#revenue-detail-view[data-report=overview] .weekly-banner .detail-breadcrumb{font-size:calc(13 * var(--du));line-height:1.3;margin:0 0 calc(10 * var(--du));gap:calc(10 * var(--du));color:#cfe6f7}
+#revenue-detail-view[data-report=overview] .weekly-banner .detail-breadcrumb>.icon{width:calc(19 * var(--du));height:calc(19 * var(--du))}
+#revenue-detail-view[data-report=overview] .weekly-banner h1{font-size:calc(42 * var(--du));line-height:1.04;margin:0 0 calc(12 * var(--du));letter-spacing:calc(-.7 * var(--du))}
+#revenue-detail-view[data-report=overview] .weekly-banner>p{font-size:calc(17 * var(--du));line-height:1.4;padding:calc(5 * var(--du)) calc(13 * var(--du));gap:calc(10 * var(--du));margin:0}
+#revenue-detail-view[data-report=overview] .weekly-banner>p>.icon{width:calc(24 * var(--du));height:calc(24 * var(--du))}
+#revenue-detail-view[data-report=overview] .detail-content{display:grid;grid-template-rows:calc(134 * var(--du)) minmax(0,1fr);gap:calc(12 * var(--du));padding:calc(10 * var(--du)) 2.5vw calc(23 * var(--du));margin:0;min-height:0;flex:none}
+#revenue-detail-view[data-report=overview] .four-stats{grid-template-columns:minmax(0,412fr) minmax(0,375fr) minmax(0,389fr) minmax(0,376fr);gap:calc(12 * var(--du));min-height:0;flex:none}
+#revenue-detail-view[data-report=overview] .weekly-kpi{min-height:0;padding:calc(16 * var(--du));gap:calc(17 * var(--du));align-items:flex-start;border-radius:calc(12 * var(--du))}
+#revenue-detail-view[data-report=overview] .weekly-kpi .detail-stat-icon{width:calc(54 * var(--du));height:calc(54 * var(--du));flex-shrink:0;margin-top:calc(3 * var(--du))}
+#revenue-detail-view[data-report=overview] .weekly-kpi .detail-stat-icon>.icon{width:calc(29 * var(--du));height:calc(29 * var(--du))}
+#revenue-detail-view[data-report=overview] .weekly-kpi h3{font-size:calc(16 * var(--du));line-height:1.25;margin:calc(5 * var(--du)) 0 calc(6 * var(--du));white-space:nowrap}
+#revenue-detail-view[data-report=overview] .weekly-kpi strong{font-size:calc(31 * var(--du));line-height:1.2;letter-spacing:calc(-.7 * var(--du));margin:0}
+#revenue-detail-view[data-report=overview] .weekly-kpi small{font-size:calc(19 * var(--du));line-height:1.4;color:#23548b;margin:calc(3 * var(--du)) 0 0}
+#revenue-detail-view[data-report=overview] .weekly-kpi:nth-child(n+3) strong{font-size:calc(20 * var(--du));line-height:1.3;letter-spacing:calc(-.3 * var(--du))}
+#revenue-detail-view[data-report=overview] .weekly-kpi:nth-child(n+3) small{font-size:calc(20 * var(--du))}
+#revenue-detail-view[data-report=overview] .weekly-workspace{grid-template-columns:calc(204 * var(--du)) minmax(0,1fr);gap:calc(8 * var(--du))}
+#revenue-detail-view[data-report=overview] .weekly-sidebar{padding:calc(12 * var(--du)) calc(9 * var(--du));gap:calc(12 * var(--du))}
+#revenue-detail-view[data-report=overview] .weekly-sidebar h2{font-size:calc(16 * var(--du));gap:calc(10 * var(--du));margin:calc(3 * var(--du)) calc(6 * var(--du)) calc(8 * var(--du))}
+#revenue-detail-view[data-report=overview] .weekly-sidebar h2>.icon{width:calc(22 * var(--du));height:calc(22 * var(--du))}
+#revenue-detail-view[data-report=overview] .weekly-view-list h2{font-size:calc(14.5 * var(--du));gap:calc(8 * var(--du))}
+#revenue-detail-view[data-report=overview] .weekly-sidebar button{font-size:calc(15 * var(--du));gap:calc(15 * var(--du));padding:calc(9 * var(--du)) calc(14 * var(--du))}
+#revenue-detail-view[data-report=overview] .weekly-sidebar button .icon{width:calc(22 * var(--du));height:calc(22 * var(--du))}
+#revenue-detail-view[data-report=overview] .weekly-view-list{padding-top:calc(15 * var(--du));margin-top:calc(6 * var(--du))}
+#revenue-detail-view[data-report=overview] .weekly-data-panel{padding:calc(9 * var(--du))}
+#revenue-detail-view[data-report=overview] .weekly-data-heading{margin-bottom:calc(7 * var(--du));gap:calc(12 * var(--du))}
+#revenue-detail-view[data-report=overview] .weekly-heading-title{gap:calc(12 * var(--du))}
+#revenue-detail-view[data-report=overview] .weekly-heading-icon{width:calc(43 * var(--du));height:calc(43 * var(--du))}
+#revenue-detail-view[data-report=overview] .weekly-heading-icon>.icon{width:calc(25 * var(--du));height:calc(25 * var(--du))}
+#revenue-detail-view[data-report=overview] .weekly-heading-title h2{font-size:calc(23 * var(--du));line-height:1.2}
+#revenue-detail-view[data-report=overview] .weekly-heading-title p{font-size:calc(14 * var(--du))}
+#revenue-detail-view[data-report=overview] .weekly-table-tools{gap:calc(20 * var(--du));font-size:calc(13 * var(--du))}
+#revenue-detail-view[data-report=overview] .weekly-table-tools>span>.icon{width:calc(21 * var(--du));height:calc(21 * var(--du))}
+#revenue-detail-view[data-report=overview] .weekly-download summary{font-size:calc(14 * var(--du));padding:calc(10 * var(--du)) calc(15 * var(--du))}
+#revenue-detail-view[data-report=overview] .weekly-download summary>.icon{width:calc(21 * var(--du));height:calc(21 * var(--du))}
+#revenue-detail-view[data-report=overview] .weekly-grid-table{font-size:calc(14 * var(--du))}
+#revenue-detail-view[data-report=overview] .weekly-grid-table th,#revenue-detail-view[data-report=overview] .weekly-grid-table td{padding:calc(3 * var(--du)) calc(8 * var(--du))}
+#revenue-detail-view[data-report=overview] .weekly-grid-table .weekly-period-head{font-size:calc(16 * var(--du))}
+#revenue-detail-view[data-report=overview] .weekly-grid-table .weekly-group-head{font-size:calc(17 * var(--du));height:calc(34 * var(--du))}
+#revenue-detail-view[data-report=overview] .weekly-grid-table .weekly-group-head .icon{width:calc(23 * var(--du));height:calc(23 * var(--du))}
+#revenue-detail-view[data-report=overview] .weekly-grid-table .weekly-subhead{font-size:calc(13 * var(--du));height:calc(32 * var(--du))}
+#revenue-detail-view[data-report=overview] .weekly-grid-table tfoot th,#revenue-detail-view[data-report=overview] .weekly-grid-table tfoot td{font-size:calc(16 * var(--du));height:calc(40 * var(--du));padding:calc(9 * var(--du)) calc(8 * var(--du))}
+}
+@media(max-width:1199px){
+#revenue-detail-view[data-report=overview]{height:auto;min-height:var(--report-height)}
+#revenue-detail-view[data-report=overview] .detail-content{display:flex;flex-direction:column;padding:12px 18px 24px}
+.weekly-workspace{grid-template-columns:180px minmax(0,1fr);min-height:560px}
+.weekly-grid-table{min-width:1050px;height:auto}
+.weekly-data-heading{align-items:flex-start;flex-wrap:wrap}
+.weekly-table-tools{margin-left:auto}
+}
+@media(max-width:700px){
+#revenue-detail-view[data-report=overview] .weekly-banner{min-height:240px;padding:18px 20px;display:block}
+#revenue-detail-view[data-report=overview] .weekly-banner h1{font-size:29px;max-width:100%;line-height:1.1}
+#revenue-detail-view[data-report=overview] .weekly-banner .detail-breadcrumb{font-size:10px;margin-bottom:18px;gap:5px;flex-wrap:wrap}
+#revenue-detail-view[data-report=overview] .weekly-banner p{font-size:12px;gap:6px;padding:5px 8px}
+#revenue-detail-view[data-report=overview] .four-stats{grid-template-columns:1fr}
+#revenue-detail-view[data-report=overview] .weekly-kpi{min-height:135px}
+.weekly-workspace{display:flex;flex-direction:column;min-height:0}
+.weekly-sidebar{gap:4px;padding:10px}
+.weekly-category-list,.weekly-view-list{display:flex;gap:5px;flex-wrap:wrap;margin:0;padding:0;border:0;background:none}
+.weekly-view-list h2{width:100%;margin-top:10px}
+.weekly-sidebar button{width:auto;padding:8px;font-size:13px;gap:7px}
+.weekly-sidebar button .icon{width:18px;height:18px}
+.weekly-data-panel{min-height:570px;padding:8px}
+.weekly-heading-title h2{font-size:20px}
+.weekly-heading-title p{font-size:12px}
+.weekly-heading-icon{width:34px;height:34px}
+.weekly-table-tools{gap:10px;font-size:11px;flex-wrap:wrap;margin-left:0}
+.weekly-download summary{font-size:12px;padding:7px 10px}
+.weekly-grid-scroll{max-height:600px}
+}
+
 </style>
 
 <script src="config.js"></script><script src="assets-manifest.js"></script><script src="sheet-csv.js"></script></head>
@@ -1646,7 +1802,7 @@ body[data-active-page=revenue]:has(#revenue-detail-view[data-report=target]:not(
   </dialog>
   <div class="toast" id="toast" role="status" hidden></div>
   <noscript><style>.startup-loader{display:none}body.is-loading{overflow:auto}</style><p class="notice">กรุณาเปิด JavaScript เพื่อใช้งานเว็บไซต์</p></noscript>
-  <script>Object.assign(window.BKS_IMAGE_GROUPS.revenue,{"execTotalHero":"assets/execTotalHero-v45.webp","execTop0":"assets/execTop0-v45.webp","execTop1":"assets/execTop1-v45.webp","execTop2":"assets/execTop2-v45.webp","execRegionBg0":"assets/execRegionBg0-v45.webp","execRegionBg1":"assets/execRegionBg1-v45.webp","execRegionBg2":"assets/execRegionBg2-v45.webp","execRegionBg3":"assets/execRegionBg3-v45.webp","execRegionBg4":"assets/execRegionBg4-v45.webp","execRegionMap0":"assets/thailand-region-0-v45.svg","execRegionMap1":"assets/thailand-region-1-v45.svg","execRegionMap2":"assets/thailand-region-2-v45.svg","execRegionMap3":"assets/thailand-region-3-v45.svg","execRegionMap4":"assets/thailand-region-4-v45.svg"});Object.assign(window.BKS_IMAGE_GROUPS.revenue,{"targetHero":"assets/targetHero-v48.webp","targetStat0":"assets/targetStat0-v48.webp","targetStat1":"assets/targetStat1-v48.webp","targetStat2":"assets/targetStat2-v48.webp","targetStat3":"assets/targetStat3-v48.webp","targetStat4":"assets/targetStat4-v48.webp","targetStat5":"assets/targetStat5-v48.webp","targetSuccess":"assets/targetSuccess-v48.webp","targetSummary":"assets/targetSummary-v48.webp"});window.INITIAL_PAGE=new URLSearchParams(location.search).get('page')||'home';window.INITIAL_IMAGE_GROUP='home';window.INITIAL_IMAGES=Object.assign({},window.BKS_IMAGE_GROUPS.shared,window.BKS_IMAGE_GROUPS.home);</script>
+  <script>Object.assign(window.BKS_IMAGE_GROUPS.revenue,{"execTotalHero":"assets/execTotalHero-v45.webp","execTop0":"assets/execTop0-v45.webp","execTop1":"assets/execTop1-v45.webp","execTop2":"assets/execTop2-v45.webp","execRegionBg0":"assets/execRegionBg0-v45.webp","execRegionBg1":"assets/execRegionBg1-v45.webp","execRegionBg2":"assets/execRegionBg2-v45.webp","execRegionBg3":"assets/execRegionBg3-v45.webp","execRegionBg4":"assets/execRegionBg4-v45.webp","execRegionMap0":"assets/thailand-region-0-v45.svg","execRegionMap1":"assets/thailand-region-1-v45.svg","execRegionMap2":"assets/thailand-region-2-v45.svg","execRegionMap3":"assets/thailand-region-3-v45.svg","execRegionMap4":"assets/thailand-region-4-v45.svg"});Object.assign(window.BKS_IMAGE_GROUPS.revenue,{"targetHero":"assets/targetHero-v48.webp","targetStat0":"assets/targetStat0-v48.webp","targetStat1":"assets/targetStat1-v48.webp","targetStat2":"assets/targetStat2-v48.webp","targetStat3":"assets/targetStat3-v48.webp","targetStat4":"assets/targetStat4-v48.webp","targetStat5":"assets/targetStat5-v48.webp","targetSuccess":"assets/targetSuccess-v48.webp","targetSummary":"assets/targetSummary-v48.webp"});Object.assign(window.BKS_IMAGE_GROUPS.revenue,{"weeklyHero":"assets/weeklyHero-v49.webp","weeklyStat0":"assets/weeklyStat0-v49.webp","weeklyStat1":"assets/weeklyStat1-v49.webp","weeklyStat2":"assets/weeklyStat2-v49.webp","weeklyStat3":"assets/weeklyStat3-v49.webp"});window.INITIAL_PAGE=new URLSearchParams(location.search).get('page')||'home';window.INITIAL_IMAGE_GROUP='home';window.INITIAL_IMAGES=Object.assign({},window.BKS_IMAGE_GROUPS.shared,window.BKS_IMAGE_GROUPS.home);</script>
   <script>
 // Set HTTPS image URLs here. Empty reference image URLs use the packaged photos.
 // Station images stay as explicit placeholders until real photographs are supplied.
@@ -1694,6 +1850,7 @@ window.ASSETS = {"loaderCoach":"assets/shared-inline-57-913a14f5605d.webp","load
 
   paths.executiveBus='<rect x="5" y="3" width="22" height="25" rx="5" fill="currentColor" stroke="none"/><path d="M9 8h14v11H9z" fill="white" stroke="none"/><path d="M11 5h10" stroke="white" stroke-width="1.2"/><circle cx="10" cy="23" r="1.7" fill="white"/><circle cx="22" cy="23" r="1.7" fill="white"/><path d="M8 27v3m16-3v3M3 10v9m26-9v9" stroke="currentColor" stroke-width="2.6"/>';
   paths.handshake='<path d="m2 13 5-7 6 2 6-2 6 2 5 7-4 4-6 8-3 1-3-2-3-1-4-4-5-4 4-8m7-1-4 6 3 2 5-5 8 8m-15-4 9 9m-6-13 9 9m-6-12 9 9M2 13l5 3m18-8-3 7" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>';
+  paths.download='<path d="M16 3v18m-6-6 6 6 6-6M5 22v6h22v-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>';
   function icon(name) { return '<svg class="icon" viewBox="0 0 32 32" aria-hidden="true">' + (paths[name] || paths.document) + '</svg>'; }
   $$('[data-icon]').forEach(el => el.innerHTML = icon(el.dataset.icon));
   const pages = ['home','revenue','trips','departments','documents'];
@@ -2209,18 +2366,34 @@ window.ASSETS = {"loaderCoach":"assets/shared-inline-57-913a14f5605d.webp","load
 
 
   // Report module: RevenueWeekly (included inside Scripts.html)
-  function weeklyHeader(){return '<div class="detail-banner weekly-banner"><img data-asset="weeklyHero" alt="รถโดยสารจอดที่ชานชาลา 2"><div class="detail-breadcrumb"><button data-back-report>'+icon('station')+'</button><span>›</span><button data-back-report>หน้าแรก</button><span>›</span><button data-back-report>รายงานรายได้</button><span>›</span><span>รายงานรายได้ค่าธรรมเนียมประจำปีงบประมาณ 2569</span></div><h1 id="revenue-detail-title" tabindex="-1">รายงานรายได้ค่าธรรมเนียม <span>ประจำปีงบประมาณ <em>2569</em></span></h1><p>'+icon('calendar')+'ข้อมูลรายสัปดาห์ (13 สัปดาห์ย้อนหลัง)</p><button class="detail-back" data-back-report>← กลับรายงานรายได้</button></div>';}
-  function weeklyReport(){
-    const stats=reportCard('รายได้ค่าธรรมเนียมรวมทั้งสิ้น','501,597,574.52','coins','#ff087a','บาท','','weeklyStat0')+reportCard('เฉลี่ยรายได้ต่อสัปดาห์','9,475,389.23','pie','#087aff','บาท','','weeklyStat1')+reportCard('สัปดาห์ที่มีรายได้สูงสุด','29 ธันวาคม - 4 มกราคม','calendar','#8542ff','13,115,154.79 บาท','','weeklyStat2')+reportCard('สัปดาห์ที่มีรายได้ต่ำสุด','13 - 19 เมษายน','chart','#00b797','7,897,791.98 บาท','','weeklyStat3');
-    const rows=weeklyRows.map(r=>[r[0],num(r[1]),num(r[2],2),num(r[3]),num(r[4],2),num(r[5]),num(r[6],2),num(r[1]+r[3]+r[5]),num(r[2]+r[4]+r[6],2)]);
-    let table=reportTable(['ช่วงสัปดาห์<br>ปีงบประมาณ 2569','เที่ยววิ่ง','ค่าธรรมเนียม (บาท)','เที่ยววิ่ง','ค่าธรรมเนียม (บาท)','เที่ยววิ่ง','ค่าธรรมเนียม (บาท)','เที่ยววิ่ง','ค่าธรรมเนียม (บาท)'],rows,['รวม','1,975,037','453,983,253.05','463,207','46,719,706.39','49,419','894,615.08','2,487,663','501,597,574.52'],'weekly-table');
-    table=table.replace('<th scope="col">ช่วงสัปดาห์<br>ปีงบประมาณ 2569</th>','');
-    table=table.replace('<thead>','<thead><tr class="group-heading"><th rowspan="2">ช่วงสัปดาห์<br>ปีงบประมาณ 2569</th><th colspan="2">'+icon('bus')+' รถหมวด 2</th><th colspan="2">'+icon('bus')+' รถหมวด 3</th><th colspan="2">'+icon('bus')+' รถหมวด 4</th><th colspan="2">'+icon('bus')+' รวมทั้งสิ้น</th></tr>');
-    return '<div class="detail-stats four-stats">'+stats+'</div>'+'<article class="detail-panel weekly-panel"><div class="weekly-panel-heading"><div><h2>'+icon('calendar')+'รายละเอียดรายได้รายสัปดาห์</h2><p>ปีงบประมาณ 2569 (หน่วย: บาท)</p></div><span>'+icon('calendar')+' ข้อมูลล่าสุด: 13 สัปดาห์ย้อนหลัง</span></div>'+table+'</article>';
+  function weeklyHeader(){return '<div class="detail-banner weekly-banner"><img data-asset="weeklyHero" alt="รถโดยสารจอดที่ชานชาลา 2 ท่ามกลางเมืองและแสงอาทิตย์"><div class="detail-breadcrumb">'+icon('station')+'<button data-back-report>หน้าแรก</button><span>›</span><button data-back-report>รายงานรายได้</button><span>›</span><span>รายงานรายได้ค่าธรรมเนียม</span></div><h1 id="revenue-detail-title" tabindex="-1">รายงานรายได้ค่าธรรมเนียม<br>ประจำปีงบประมาณ <em>2569</em></h1><p>'+icon('calendar')+'ข้อมูลรายสัปดาห์ (13 สัปดาห์ย้อนหลัง)</p></div>';}
+  const weeklyGroups=[{name:'รถหมวด 2',color:'#2085c8',total:[1975037,453983253.05]},{name:'รถหมวด 3',color:'#279df3',total:[463207,46719706.39]},{name:'รถหมวด 4',color:'#c39949',total:[49419,894615.08]},{name:'รวมทั้งหมด',color:'#269ca9',total:[2487663,501597574.52]}];
+  function weeklyGroupValues(row,index){return index===3?[row[1]+row[3]+row[5],row[2]+row[4]+row[6]]:[row[index*2+1],row[index*2+2]];}
+  function weeklyGridMarkup(group='all'){
+    const indices=group==='all'?[0,1,2,3]:[Number(group)];
+    const rows=weeklyRows.filter(r=>r[0]!=='ยอดยกมา');
+    const maxima=weeklyGroups.map((_,i)=>Math.max(1,...rows.map(r=>weeklyGroupValues(r,i)[0])));
+    return '<table class="weekly-grid-table"><caption class="sr-only">รายได้ค่าธรรมเนียมรายสัปดาห์ ปีงบประมาณ 2569 ยอดรวมรวมยอดยกมา</caption><colgroup><col class="weekly-period-col">'+indices.map(()=>'<col class="weekly-trips-col"><col class="weekly-fees-col">').join('')+'</colgroup><thead><tr><th scope="col" rowspan="2" class="weekly-period-head">ช่วงสัปดาห์<br>ปีงบประมาณ 2569</th>'+indices.map(i=>'<th scope="colgroup" colspan="2" class="weekly-group-head group-'+i+'">'+icon('bus')+' '+weeklyGroups[i].name+'</th>').join('')+'</tr><tr>'+indices.map(i=>'<th scope="col" class="weekly-subhead group-'+i+'">เที่ยววิ่ง</th><th scope="col" class="weekly-subhead group-'+i+'">ค่าธรรมเนียม (บาท)</th>').join('')+'</tr></thead><tbody>'+rows.map(r=>'<tr><th scope="row">'+esc(r[0])+'</th>'+indices.map(i=>{const [trips,fees]=weeklyGroupValues(r,i);return '<td class="weekly-trips"><span class="weekly-data-bar" style="--bar:'+weeklyGroups[i].color+';--value:'+Math.max(0,trips/maxima[i]*100)+'%" aria-hidden="true"></span><span>'+num(trips)+'</span></td><td>'+num(fees,2)+'</td>';}).join('')+'</tr>').join('')+'</tbody><tfoot><tr><th scope="row"><button type="button" class="weekly-carry-info" title="ยอดรวมรวมยอดยกมาจากสัปดาห์ก่อนหน้า" data-weekly-carry>รวม</button></th>'+indices.map(i=>'<td class="group-'+i+'">'+num(weeklyGroups[i].total[0])+'</td><td class="group-'+i+'">'+num(weeklyGroups[i].total[1],2)+'</td>').join('')+'</tr></tfoot></table>';
   }
-
-
-
+  function weeklyReport(){
+    const stats=[['รายได้ค่าธรรมเนียมรวมทั้งสิ้น','501,597,574.52','บาท','coins'],['เฉลี่ยรายได้ต่อสัปดาห์','9,475,389.23','บาท','chart'],['สัปดาห์ที่มีรายได้สูงสุด','29 ธันวาคม - 4 มกราคม','13,115,154.79 บาท','calendar'],['สัปดาห์ที่มีรายได้ต่ำสุด','13 - 19 เมษายน','7,897,791.98 บาท','chart']].map(([label,value,note,ico],i)=>'<article class="detail-stat weekly-kpi weekly-kpi-'+i+'"><img class="report-panel-bg" data-asset="weeklyStat'+i+'" alt=""><span class="detail-stat-icon">'+icon(ico)+'</span><div><h3>'+label+'</h3><strong>'+value+'</strong><small>'+note+'</small></div></article>').join('');
+    const categories=[['all','ภาพรวมทั้งหมด'],['0','รถหมวด 2'],['1','รถหมวด 3'],['2','รถหมวด 4'],['3','รวมทั้งหมด']];
+    const sidebar='<aside class="weekly-sidebar" aria-label="ตัวเลือกแสดงรายงาน"><h2>'+icon('document')+'หมวดข้อมูล</h2><div class="weekly-category-list">'+categories.map(([id,label])=>'<button type="button" data-weekly-group="'+id+'" aria-pressed="'+(id==='all')+'">'+(id==='3'?'<span class="weekly-sigma" aria-hidden="true">Σ</span>':icon('bus'))+label+'</button>').join('')+'</div><div class="weekly-view-list"><h2>'+icon('calendar')+'รูปแบบการแสดงข้อมูล</h2>'+[['daily','รายวัน'],['weekly','รายสัปดาห์'],['monthly','รายเดือน']].map(([mode,label])=>'<button type="button" data-weekly-view="'+mode+'" aria-pressed="'+(mode==='weekly')+'">'+icon('calendar')+label+'</button>').join('')+'</div></aside>';
+    return '<div class="detail-stats four-stats">'+stats+'</div><div class="weekly-workspace">'+sidebar+'<article class="weekly-data-panel"><div class="weekly-data-heading"><div class="weekly-heading-title"><span class="weekly-heading-icon">'+icon('calendar')+'</span><div><h2>รายละเอียดรายได้รายสัปดาห์</h2><p>ปีงบประมาณ 2569 (หน่วย: บาท)</p></div></div><div class="weekly-table-tools"><span>'+icon('calendar')+'ข้อมูลล่าสุด: 20 กันยายน 2569</span><details class="weekly-download"><summary>'+icon('download')+'ดาวน์โหลดข้อมูล <b aria-hidden="true">⌄</b></summary><div><button type="button" data-weekly-download>ดาวน์โหลด CSV</button><button type="button" data-weekly-carry>ดูยอดยกมา</button></div></details></div></div><div class="weekly-grid-scroll" id="weekly-grid">'+weeklyGridMarkup()+'</div></article></div>';
+  }
+  function bindWeeklyReport(){
+    const root=$('#revenue-detail-view');let group='all';
+    const showCarry=()=>showDialog('ยอดยกมาในยอดรวมรายงาน','<p>ยอดรวมด้านล่างรวมยอดยกมาจากสัปดาห์ก่อนหน้า ตารางหลักแสดง 13 สัปดาห์ล่าสุด</p><div class="detail-table-wrap">'+reportTable(['หมวดข้อมูล','เที่ยววิ่ง','ค่าธรรมเนียม (บาท)'],weeklyGroups.map((g,i)=>{const v=weeklyGroupValues(weeklyRows[0],i);return[g.name,num(v[0]),num(v[1],2)];}))+'</div>');
+    const bindCarry=()=>root.querySelectorAll('[data-weekly-carry]').forEach(b=>b.onclick=showCarry);bindCarry();
+    root.querySelectorAll('[data-weekly-group]').forEach(button=>button.onclick=()=>{group=button.dataset.weeklyGroup;root.querySelectorAll('[data-weekly-group]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));$('#weekly-grid').innerHTML=weeklyGridMarkup(group);bindCarry();});
+    root.querySelectorAll('[data-weekly-view]').forEach(button=>button.onclick=()=>{if(button.dataset.weeklyView!=='weekly')showDialog('ข้อมูล'+button.textContent.trim(),'<p>รายงานนี้มีข้อมูลต้นทางแบบรายสัปดาห์ จึงยังแสดงข้อมูล'+button.textContent.trim()+'ไม่ได้</p><p>เมื่อระบุแหล่งข้อมูลสำหรับช่วงเวลานี้แล้ว จะเชื่อมให้เลือกดูจากเมนูนี้ได้</p>');});
+    root.querySelector('[data-weekly-download]').onclick=()=>{
+      const indices=group==='all'?[0,1,2,3]:[Number(group)],head=['ช่วงสัปดาห์',...indices.flatMap(i=>[weeklyGroups[i].name+' เที่ยววิ่ง',weeklyGroups[i].name+' ค่าธรรมเนียม (บาท)'])];
+      const rows=weeklyRows.map(row=>[row[0],...indices.flatMap(i=>weeklyGroupValues(row,i))]);rows.push(['รวม',...indices.flatMap(i=>weeklyGroups[i].total)]);
+      const csv='\ufeff'+[head,...rows].map(row=>row.map(value=>'"'+String(value).replaceAll('"','""')+'"').join(',')).join('\r\n');
+      const url=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8;'})),link=document.createElement('a');link.href=url;link.download='BKS-fee-weekly-2569.csv';link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);root.querySelector('.weekly-download').open=false;
+    };
+  }
 
 
   // Report module: RevenueRental (included inside Scripts.html)
@@ -2290,6 +2463,7 @@ window.ASSETS = {"loaderCoach":"assets/shared-inline-57-913a14f5605d.webp","load
     view.innerHTML='<div class="detail-banner"><img data-asset="'+({rental:'rentalHero',contract:'contractHero',issues:'regionalHero'}[kind]||'reportTerminal')+'" alt=""><div class="detail-breadcrumb"><button data-back-report>หน้าแรก</button><span>›</span><button data-back-report>รายงานรายได้</button><span>›</span><span>'+esc(detailTitles[kind])+'</span></div><h1 id="revenue-detail-title" tabindex="-1">'+(kind==='issues'?'รายงานสรุปเส้นทางเดินรถโดยสาร<br>ที่มีการจัดเสริมรถโดยสาร':esc(detailTitles[kind]))+(kind==='rental'?' <small>(ต.ค. 68 - ส.ค. 69)</small>':'')+'</h1><p>'+icon('calendar')+period+'</p><button class="detail-back" data-back-report>← กลับรายงานรายได้</button></div><div class="detail-content">'+contents[kind]()+'</div>';
     if(kind==='target'){view.innerHTML=targetHeader()+'<div class="detail-content">'+targetReport()+'</div>';}
     if(kind==='overview'){view.innerHTML=weeklyHeader()+'<div class="detail-content">'+weeklyReport()+'</div>';}
+    if(kind==='overview')bindWeeklyReport();
     applyAssets({});view.querySelectorAll('[data-back-report]').forEach(b=>b.addEventListener('click',()=>b.textContent==='หน้าแรก'?route('home',true,true):closeRevenueDetail()));updateDataNote();
     view.querySelectorAll('[data-region-detail]').forEach(b=>b.addEventListener('click',()=>{const r=regionalReports[Number(b.dataset.regionDetail)];showDialog('รายละเอียด '+r.name,regionalTable(r)+'<p class="muted">แสดงเส้นทางตามภาพตัวอย่างที่ส่งมา จำนวนเส้นทางทั้งหมด '+r.count+' เส้นทาง</p>');}));
     await Promise.allSettled(Array.from(view.querySelectorAll('img')).map(img =>
@@ -2526,6 +2700,7 @@ window.ASSETS = {"loaderCoach":"assets/shared-inline-57-913a14f5605d.webp","load
 
 </body>
 </html>
+
 
 
 
