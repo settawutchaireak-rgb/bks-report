@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
+<meta name="bks-build" content="v46-fidelity">
   <meta charset="UTF-8">
   <base target="_top">
   <meta name="description" content="ฝ่ายบริหารการเดินรถ บริษัท ขนส่ง จำกัด — รายงานการเดินรถและข้อมูลหน่วยงาน">
@@ -1293,6 +1294,104 @@ body[data-active-page=revenue] .site-footer{display:none}
 @media(max-width:850px){#page-revenue .exec-region-card{min-height:145px}#page-revenue .exec-region-card h3{font-size:12px}#page-revenue .exec-region-card>img.exec-region-map{width:24%;max-height:118px}#page-revenue .exec-region-metrics strong{font-size:22px}}
 @media(max-width:600px){#page-revenue .revenue-charts{grid-template-columns:1fr}#page-revenue .exec-region-panel{grid-column:auto}#page-revenue .exec-region-card{padding:7px;gap:5px;min-height:136px}#page-revenue .exec-region-card>img.exec-region-map{width:24%;max-height:114px}#page-revenue .exec-region-metrics{gap:4px}#page-revenue .exec-region-metrics strong{font-size:19px}#page-revenue .exec-region-pct{padding-left:4px}#page-revenue .exec-region-pct b{font-size:12px}#page-revenue .exec-region-pct small{font-size:9px}#page-revenue .exec-region-card h3{font-size:11px}#page-revenue .revenue-share-panel{min-height:380px}#page-revenue #revenue-share{grid-template-columns:minmax(105px,.85fr) minmax(0,1.3fr)}#page-revenue #revenue-share .share-legend{grid-template-columns:1fr;grid-template-rows:repeat(6,auto);grid-auto-flow:row;gap:8px}#page-revenue #revenue-share .share-legend button{font-size:12px}#page-revenue #revenue-share .share-legend strong{font-size:13px}#page-revenue #revenue-share .share-legend em{font-size:11px}#page-revenue .revenue-menu button{min-height:122px}}
 
+/* Reference canvas: 1672 x 941. Scale typography together with the rows. */
+#page-revenue.revenue-detail-active>.revenue-dashboard,#page-revenue.revenue-detail-active>.revenue-banner{display:none}
+@media(min-width:1200px) and (min-height:700px){
+body[data-active-page=revenue]{--du:min(calc(100vw / 1672),calc(100dvh / 941))}
+body[data-active-page=revenue] .site-header{height:calc(75 * var(--du));padding:0 2.75vw;gap:calc(45 * var(--du));background:linear-gradient(110deg,#fff,#f3faff)}
+body[data-active-page=revenue] .brand{gap:calc(27 * var(--du))}
+body[data-active-page=revenue] .brand img{width:calc(93 * var(--du))}
+body[data-active-page=revenue] .brand-name{padding-left:calc(23 * var(--du));line-height:1.5}
+body[data-active-page=revenue] .brand-name strong{font-size:calc(16 * var(--du));letter-spacing:-.3px}
+body[data-active-page=revenue] .brand-name>span{font-size:calc(13 * var(--du))}
+body[data-active-page=revenue] .site-header nav{gap:calc(26 * var(--du))}
+body[data-active-page=revenue] .site-header nav a{font-size:calc(13 * var(--du))}
+body[data-active-page=revenue] .header-actions{gap:calc(20 * var(--du))}
+body[data-active-page=revenue] .header-actions button{font-size:calc(12 * var(--du))}
+body[data-active-page=revenue] .header-actions button>.icon{width:calc(25 * var(--du));height:calc(25 * var(--du))}
+#page-revenue:not(.revenue-detail-active){height:var(--report-height);min-height:0;grid-template-rows:calc(150 * var(--du)) minmax(0,1fr)}
+#page-revenue .revenue-banner-copy{padding:calc(9 * var(--du)) 3.1vw;gap:calc(9 * var(--du))}
+#page-revenue .revenue-banner-copy h1{font-size:calc(42 * var(--du));line-height:1.06;letter-spacing:-.5px}
+#page-revenue .revenue-range{font-size:calc(15 * var(--du));padding:calc(4 * var(--du)) calc(13 * var(--du));border-radius:calc(9 * var(--du))}
+#page-revenue #revenue-refresh{font-size:calc(14 * var(--du));padding:calc(5 * var(--du)) calc(14 * var(--du))}
+#page-revenue .revenue-refresh-control{bottom:calc(7 * var(--du))}
+#page-revenue .revenue-refresh-control small{font-size:calc(10 * var(--du))}
+#page-revenue .revenue-dashboard{padding:calc(15 * var(--du)) 2.3vw calc(11 * var(--du));gap:calc(10 * var(--du));grid-template-rows:minmax(0,176fr) minmax(0,191fr) minmax(0,209fr) minmax(0,85fr);min-height:0}
+#page-revenue .revenue-totals{grid-template-columns:29.5% minmax(0,1fr);gap:calc(10 * var(--du));min-height:0}
+#page-revenue .exec-total{padding:calc(12 * var(--du)) calc(15 * var(--du));gap:calc(29 * var(--du));align-items:flex-start;min-height:0;border-radius:calc(11 * var(--du))}
+#page-revenue .exec-icon{width:calc(62 * var(--du));height:calc(62 * var(--du))}
+#page-revenue .exec-icon .icon{width:calc(45 * var(--du));height:calc(45 * var(--du));stroke-width:1.9}
+#page-revenue .exec-total h2{font-size:calc(24 * var(--du));line-height:1.25;gap:calc(8 * var(--du))}
+#page-revenue .exec-total h2 button{font-size:calc(16 * var(--du))}
+#page-revenue .exec-main-number{font-size:calc(55 * var(--du));letter-spacing:calc(-1.8 * var(--du));margin-top:calc(4 * var(--du));line-height:1}
+#page-revenue .exec-main-unit{font-size:calc(23 * var(--du));line-height:1.25}
+#page-revenue .exec-comparison{position:absolute;left:calc(21 * var(--du));bottom:calc(9 * var(--du));font-size:calc(13 * var(--du));margin:0}
+#page-revenue .exec-comparison>span{padding:calc(5 * var(--du)) calc(10 * var(--du));border-radius:calc(6 * var(--du))}
+#page-revenue .exec-top-group{padding:calc(7 * var(--du)) calc(11 * var(--du)) 0;min-height:0}
+#page-revenue .exec-section-title{font-size:calc(20 * var(--du));gap:calc(11 * var(--du));line-height:1.4}
+#page-revenue .exec-section-title>.icon{width:calc(28 * var(--du));height:calc(28 * var(--du))}
+#page-revenue .exec-top-cards{margin-top:calc(7 * var(--du));gap:calc(11 * var(--du));min-height:0}
+#page-revenue .exec-top-card{padding:calc(11 * var(--du)) calc(8 * var(--du));gap:calc(16 * var(--du));min-height:0;border-radius:calc(9 * var(--du));align-items:flex-start}
+#page-revenue .exec-top-card .exec-icon{width:calc(46 * var(--du));height:calc(46 * var(--du))}
+#page-revenue .exec-top-card .exec-icon>.icon{width:calc(32 * var(--du));height:calc(32 * var(--du))}
+#page-revenue .exec-top-card h3{font-size:calc(20 * var(--du));line-height:1.2;margin:calc(1 * var(--du)) 0 calc(9 * var(--du));overflow-wrap:normal;white-space:nowrap}
+#page-revenue .exec-top-card strong{font-size:calc(36 * var(--du));line-height:1.05;letter-spacing:calc(-.8 * var(--du))}
+#page-revenue .exec-top-card small{font-size:calc(20 * var(--du));line-height:1.5}
+#page-revenue .exec-total:before{background:linear-gradient(90deg,#fff6,#fff1 70%)}
+#page-revenue .exec-top-card:after{background:linear-gradient(90deg,#ffffffe8,#ffffffb0 45%,#ffffff05 85%)}
+#page-revenue .exec-regions{padding:calc(8 * var(--du));gap:calc(8 * var(--du));min-height:0}
+#page-revenue .exec-regions-header{padding:0 calc(14 * var(--du));min-height:calc(43 * var(--du));flex-shrink:0}
+#page-revenue .exec-region-heading{gap:calc(22 * var(--du))}
+#page-revenue .exec-region-heading>.icon{width:calc(39 * var(--du));height:calc(39 * var(--du));stroke-width:2.3}
+#page-revenue .exec-region-heading h2{font-size:calc(23 * var(--du));line-height:1.2}
+#page-revenue .exec-region-heading p{font-size:calc(14 * var(--du));line-height:1.3}
+#page-revenue .exec-example{font-size:calc(9 * var(--du))!important;padding:calc(2 * var(--du)) calc(5 * var(--du))}
+#page-revenue .exec-detail-button{font-size:calc(16 * var(--du));padding:calc(7 * var(--du)) calc(18 * var(--du));gap:calc(12 * var(--du))}
+#page-revenue .exec-region-cards{gap:calc(12 * var(--du));min-height:0}
+#page-revenue .exec-region-card{padding:calc(7 * var(--du));gap:calc(12 * var(--du));align-items:flex-end;min-height:0;height:100%}
+#page-revenue .exec-region-card>img.exec-region-map{width:calc(76 * var(--du));height:calc(110 * var(--du));min-height:0;max-height:100%;object-fit:contain;flex-shrink:0}
+#page-revenue .exec-region-card-copy{padding-bottom:calc(1 * var(--du));min-width:0}
+#page-revenue .exec-region-card h3{font-size:calc(16 * var(--du));line-height:1.15;margin-bottom:calc(4 * var(--du));white-space:nowrap;letter-spacing:-.3px}
+#page-revenue .exec-region-card h3 span{font-size:calc(18 * var(--du));margin-left:calc(3 * var(--du))}
+#page-revenue .exec-region-metrics{gap:calc(15 * var(--du))}
+#page-revenue .exec-region-metrics strong{font-size:calc(28 * var(--du));line-height:1.05;letter-spacing:calc(-.7 * var(--du))}
+#page-revenue .exec-region-metrics small{font-size:calc(13 * var(--du));line-height:1.5}
+#page-revenue .exec-region-pct{padding-left:calc(15 * var(--du))}
+#page-revenue .exec-region-pct b{font-size:calc(16 * var(--du))}
+#page-revenue .exec-region-card:after{background:linear-gradient(0deg,#f8fcff 0%,#f8fcffed 35%,#f8fcff00 85%)}
+#page-revenue .revenue-charts{grid-template-columns:607fr 431fr 540fr;gap:calc(10 * var(--du));min-height:0}
+#page-revenue .revenue-panel,#page-revenue .revenue-share-panel{min-height:0;grid-column:auto;padding:calc(6 * var(--du)) calc(10 * var(--du)) calc(3 * var(--du));overflow:hidden}
+#page-revenue .revenue-panel-heading{margin:0;gap:calc(3 * var(--du));flex-wrap:nowrap;min-height:calc(29 * var(--du));flex-shrink:0}
+#page-revenue .revenue-panel-heading h2{font-size:calc(20 * var(--du));gap:calc(10 * var(--du));line-height:1.2;white-space:nowrap}
+#page-revenue .revenue-panel-heading h2 .icon{width:calc(27 * var(--du));height:calc(27 * var(--du))}
+#page-revenue .exec-income-legend{font-size:calc(11.5 * var(--du));gap:calc(17 * var(--du))}
+#page-revenue .exec-income-legend i{width:calc(10 * var(--du));height:calc(10 * var(--du))}
+#page-revenue #revenue-chart,#page-revenue #revenue-trip-chart{min-height:0;flex:1;height:0}
+#page-revenue #revenue-share{grid-template-columns:calc(164 * var(--du)) minmax(0,1fr);gap:calc(12 * var(--du));height:0;min-height:0;flex:1}
+#page-revenue .revenue-share>svg{width:100%;height:100%;max-height:none}
+#page-revenue #revenue-share .share-legend{grid-template-columns:1fr;grid-template-rows:repeat(6,minmax(0,1fr));grid-auto-flow:row;gap:calc(1 * var(--du));height:100%;align-content:center;padding:calc(2 * var(--du)) 0}
+#page-revenue #revenue-share .share-legend button{font-size:calc(11 * var(--du));line-height:1.05;gap:calc(6 * var(--du));padding:0;align-items:flex-start}
+#page-revenue #revenue-share .share-legend strong{font-size:calc(12 * var(--du));line-height:1.12;margin:calc(1 * var(--du)) 0 0;white-space:nowrap}
+#page-revenue #revenue-share .share-legend small{font-size:inherit}
+#page-revenue #revenue-share .share-legend em{display:inline;font-size:inherit;color:inherit;margin:0 0 0 calc(3 * var(--du));font-weight:700}
+#page-revenue #revenue-share .share-legend i{width:calc(10 * var(--du));height:calc(10 * var(--du));margin-top:calc(2 * var(--du))}
+#page-revenue .revenue-menu{gap:calc(10 * var(--du));min-height:0}
+#page-revenue .revenue-menu button{height:100%;min-height:0;padding:calc(10 * var(--du)) calc(15 * var(--du));gap:calc(16 * var(--du));font-size:calc(14 * var(--du));line-height:1.5;border-radius:calc(7 * var(--du))}
+#page-revenue .revenue-menu button>span:first-of-type .icon{width:calc(43 * var(--du));height:calc(43 * var(--du));stroke-width:1.8}
+#page-revenue .revenue-menu-arrow{width:calc(34 * var(--du));height:calc(34 * var(--du));flex-shrink:0}
+#page-revenue .exec-total>img,#page-revenue .exec-top-card>img{transform:scale(1.09)}
+#page-revenue .exec-region-card>img:not(.exec-region-map){transform:scale(1.12)}
+#page-revenue .exec-region-card>img.exec-region-map{filter:drop-shadow(0 2px 2px #496c994d) drop-shadow(0 0 2px white)}
+#page-revenue .exec-region-card:before{width:27%;background:linear-gradient(90deg,#f6fbff 75%,#f6fbff00)}
+#page-revenue .trend-chart text,#page-revenue #revenue-trip-chart svg>text{font-size:15px}
+#page-revenue .revenue-panel-heading h2{letter-spacing:-.6px}
+#page-revenue .exec-income-legend{gap:calc(11 * var(--du))}
+#page-revenue .exec-region-heading>.icon{color:#f3168b}
+#page-revenue .exec-region-heading>[data-icon]{color:#f3168b}
+#page-revenue .exec-region-heading>[data-icon] .icon{width:calc(39 * var(--du));height:calc(39 * var(--du))}
+#page-revenue .revenue-menu button:last-child{gap:calc(12 * var(--du));font-size:calc(13 * var(--du))}
+}
+
 </style>
 
 <script src="config.js"></script><script src="assets-manifest.js"></script><script src="sheet-csv.js"></script></head>
@@ -1388,7 +1487,7 @@ body[data-active-page=revenue] .site-footer{display:none}
     <select id="revenue-month" aria-label="เดือนที่รายงาน" hidden></select>
     <div id="revenue-summary" class="revenue-totals" aria-live="polite"></div>
     <section class="exec-regions" aria-labelledby="exec-regions-title">
-      <div class="exec-regions-header"><div class="exec-region-heading"><span data-icon="bus"></span><div><h2 id="exec-regions-title">จำนวนเที่ยววิ่งสะสม แยกตามภาค <span class="exec-example">ข้อมูลตัวอย่าง</span></h2><p id="exec-region-period"></p></div></div><button type="button" class="exec-detail-button" id="exec-region-detail">ดูรายละเอียด <span data-icon="arrow"></span></button></div>
+      <div class="exec-regions-header"><div class="exec-region-heading"><span data-icon="executiveBus"></span><div><h2 id="exec-regions-title">จำนวนเที่ยววิ่งสะสม แยกตามภาค <span class="exec-example">ข้อมูลตัวอย่าง</span></h2><p id="exec-region-period"></p></div></div><button type="button" class="exec-detail-button" id="exec-region-detail">ดูรายละเอียด <span data-icon="arrow"></span></button></div>
       <div class="exec-region-cards" id="exec-region-cards"></div>
     </section>
     <div class="revenue-charts">
@@ -1400,7 +1499,7 @@ body[data-active-page=revenue] .site-footer{display:none}
       <button data-revenue-detail="target"><img data-asset="revenueMenu0" alt=""><span data-icon="chart"></span><span>บทวิเคราะห์รายได้<br>และผลการดำเนินงาน</span><span class="revenue-menu-arrow" data-icon="arrow"></span></button>
       <button data-revenue-detail="overview"><img data-asset="revenueMenu1" alt=""><span data-icon="coins"></span><span>รายงานค่าธรรมเนียม<br>และรายได้รายประเภท</span><span class="revenue-menu-arrow" data-icon="arrow"></span></button>
       <button data-revenue-detail="rental"><img data-asset="revenueMenu2" alt=""><span data-icon="route"></span><span>รายได้รายสถานี<br>และพื้นที่ให้บริการ</span><span class="revenue-menu-arrow" data-icon="arrow"></span></button>
-      <button data-revenue-detail="contract"><img data-asset="revenueMenu3" alt=""><span data-icon="people"></span><span>รายได้จาก<br>สัญญารถร่วม</span><span class="revenue-menu-arrow" data-icon="arrow"></span></button>
+      <button data-revenue-detail="contract"><img data-asset="revenueMenu3" alt=""><span data-icon="handshake"></span><span>รายได้จาก<br>สัญญารถร่วม</span><span class="revenue-menu-arrow" data-icon="arrow"></span></button>
       <button data-revenue-detail="issues"><img data-asset="revenueMenu4" alt=""><span data-icon="document"></span><span>รายงานสรุปเส้นทางเดินรถโดยสาร<br>ที่มีการจัดเสริมรถโดยสาร</span><span class="revenue-menu-arrow" data-icon="arrow"></span></button>
     </div>
     <div id="station-list" hidden></div>
@@ -1491,6 +1590,9 @@ window.ASSETS = {"loaderCoach":"assets/shared-inline-57-913a14f5605d.webp","load
     fare:'<rect x="4" y="9" width="22" height="20" rx="3"/><path d="M4 13h22M8 5h17l3 7M9 18h8m-8 5h5"/><circle cx="25" cy="23" r="5"/>',
     station:'<path d="M3 29h26M6 29V13h20v16M3 13 16 3l13 10M11 29V19h10v10M11 14h10"/>'
   };
+
+  paths.executiveBus='<rect x="5" y="3" width="22" height="25" rx="5" fill="currentColor" stroke="none"/><path d="M9 8h14v11H9z" fill="white" stroke="none"/><path d="M11 5h10" stroke="white" stroke-width="1.2"/><circle cx="10" cy="23" r="1.7" fill="white"/><circle cx="22" cy="23" r="1.7" fill="white"/><path d="M8 27v3m16-3v3M3 10v9m26-9v9" stroke="currentColor" stroke-width="2.6"/>';
+  paths.handshake='<path d="m2 13 5-7 6 2 6-2 6 2 5 7-4 4-6 8-3 1-3-2-3-1-4-4-5-4 4-8m7-1-4 6 3 2 5-5 8 8m-15-4 9 9m-6-13 9 9m-6-12 9 9M2 13l5 3m18-8-3 7" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>';
   function icon(name) { return '<svg class="icon" viewBox="0 0 32 32" aria-hidden="true">' + (paths[name] || paths.document) + '</svg>'; }
   $$('[data-icon]').forEach(el => el.innerHTML = icon(el.dataset.icon));
   const pages = ['home','revenue','trips','departments','documents'];
@@ -1866,7 +1968,7 @@ window.ASSETS = {"loaderCoach":"assets/shared-inline-57-913a14f5605d.webp","load
     const W=600,H=232,L=52,R=12,T=27,B=39,max=Math.ceil(sorted[0].value/1e5)*1e5,pw=W-L-R,ph=H-T-B;
     let svg='<svg viewBox="0 0 '+W+' '+H+'" preserveAspectRatio="none" role="img" aria-label="กราฟจำนวนเที่ยววิ่งรายภาค ข้อมูลตัวอย่าง"><defs>'+executivePalette.slice(0,5).map((color,i)=>'<linearGradient id="exec-bar-gradient-'+i+'" x2="0" y2="1"><stop stop-color="'+color+'" stop-opacity=".66"/><stop offset="1" stop-color="'+color+'"/></linearGradient>').join('')+'</defs><text x="7" y="16">เที่ยว</text>';
     for(let i=0;i<=6;i++){const v=max*i/6,y=T+ph*(1-v/max);svg+='<path d="M'+L+' '+y+'H'+(W-R)+'" stroke="#e6eef8"/><text x="'+(L-6)+'" y="'+(y+4)+'" text-anchor="end">'+num(v)+'</text>';}
-    sorted.forEach((r,i)=>{const slot=pw/5,w=slot*.65,x=L+slot*i+(slot-w)/2,h=r.value/max*ph,y=T+ph-h;svg+='<g tabindex="0" role="button" class="exec-region-bar" data-exec-region="'+r.index+'" aria-label="'+esc(r.name)+' '+num(r.value)+' เที่ยว ข้อมูลตัวอย่าง"><rect x="'+x+'" y="'+y+'" width="'+w+'" height="'+h+'" rx="5" fill="url(#exec-bar-gradient-'+i+')"/><text x="'+(x+w/2)+'" y="'+(y-7)+'" text-anchor="middle" style="fill:#000c67;font-size:14px;font-weight:700">'+num(r.value)+'</text><text x="'+(x+w/2)+'" y="'+(H-15)+'" text-anchor="middle" style="font-size:11px;font-weight:600">'+esc(r.name)+'</text></g>';});
+    sorted.forEach((r,i)=>{const slot=pw/5,w=slot*.65,x=L+slot*i+(slot-w)/2,h=r.value/max*ph,y=T+ph-h;svg+='<g tabindex="0" role="button" class="exec-region-bar" data-exec-region="'+r.index+'" aria-label="'+esc(r.name)+' '+num(r.value)+' เที่ยว ข้อมูลตัวอย่าง"><rect x="'+x+'" y="'+y+'" width="'+w+'" height="'+h+'" rx="5" fill="url(#exec-bar-gradient-'+i+')"/><text x="'+(x+w/2)+'" y="'+(y-7)+'" text-anchor="middle" style="fill:#000c67;font-size:18px;font-weight:700">'+num(r.value)+'</text><text x="'+(x+w/2)+'" y="'+(H-15)+'" text-anchor="middle" style="font-size:14px;font-weight:600">'+esc(r.name)+'</text></g>';});
     $('#revenue-trip-chart').innerHTML=svg+'</svg>';
     $$('#revenue-trip-chart [data-exec-region]').forEach(el=>{el.onclick=()=>executiveRegionDialog(Number(el.dataset.execRegion));el.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();el.onclick();}};});
   }
@@ -1888,7 +1990,7 @@ window.ASSETS = {"loaderCoach":"assets/shared-inline-57-913a14f5605d.webp","load
       rows.forEach((r,i)=>{if(!Number.isFinite(r[key])){drawing=false;return;}path+=(drawing?' L':' M')+x(i)+' '+y(r[key]);drawing=true;last=i;});
       svg+='<path d="'+path+'" fill="none" stroke="'+colors[s]+'" stroke-width="2.5"/>';
       rows.forEach((r,i)=>{if(!Number.isFinite(r[key]))return;svg+='<g tabindex="0" role="button" class="chart-point" data-month="'+i+'" data-series="'+s+'" aria-label="'+esc(chartPointDescription(r,s,legends,'บาท'))+'"><circle cx="'+x(i)+'" cy="'+y(r[key])+'" r="3.4" fill="white" stroke="'+colors[s]+'" stroke-width="2"/><circle class="point-hit" cx="'+x(i)+'" cy="'+y(r[key])+'" r="10" fill="transparent"/></g>';});
-      if(last>=0){const label=num(rows[last][key]/scale,2),width=Math.max(46,label.length*7+10),xx=Math.min(W-width-2,Math.max(L,x(last)-width/2)),yy=Math.max(1,y(rows[last][key])+(s===0?-29:9));svg+='<rect x="'+xx+'" y="'+yy+'" width="'+width+'" height="21" rx="4" fill="'+colors[s]+'"/><text x="'+(xx+width/2)+'" y="'+(yy+15)+'" text-anchor="middle" style="fill:#fff;font-weight:700;font-size:12px">'+label+'</text>';}
+      if(last>=0){const label=num(rows[last][key]/scale,2),width=Math.max(46,label.length*7+10),xx=Math.min(W-width-2,Math.max(L,x(last)-width/2)),yy=Math.max(1,y(rows[last][key])+(s===0?-29:9));svg+='<rect x="'+xx+'" y="'+yy+'" width="'+width+'" height="21" rx="4" fill="'+colors[s]+'"/><text x="'+(xx+width/2)+'" y="'+(yy+15)+'" text-anchor="middle" style="fill:#fff;font-weight:700;font-size:15px">'+label+'</text>';}
     });
     if(!values.length)svg+='<text x="'+(W/2)+'" y="'+(H/2)+'" text-anchor="middle">ยังไม่มีข้อมูลรายเดือนครบทั้งสองฝั่ง</text>';
     $('#revenue-chart').innerHTML=svg+'</svg><div class="point-card" role="region" aria-label="รายละเอียดจุดกราฟ" hidden></div>';
@@ -1902,7 +2004,7 @@ window.ASSETS = {"loaderCoach":"assets/shared-inline-57-913a14f5605d.webp","load
     const total=revenueOverview.categories.length?revenueOverview.categoryTotal:main.value,amount=executiveAmount(total);
     const top=revenueOverview.categories.filter(x=>x.label!=='อื่นๆ').slice(0,3);
     const assetFor=label=>/เช่า/.test(label)?'revenueTotal3':/สถานี/.test(label)?'revenueTotal2':'revenueTotal1';
-    $('#revenue-summary').innerHTML='<article class="exec-total"><img data-asset="execTotalHero" alt=""><span class="exec-icon">'+icon('coins')+'</span><div><h2>'+esc(main.label)+' <button type="button" id="exec-total-info" aria-label="แหล่งข้อมูลรายได้ทั้งหมด">ⓘ</button></h2><strong class="exec-main-number">'+amount.number+'</strong><div class="exec-main-unit">'+amount.unit+'</div><div class="exec-comparison"><span>รอข้อมูลเทียบปีก่อน</span></div></div></article><section class="exec-top-group" aria-labelledby="exec-top-title"><h2 id="exec-top-title" class="exec-section-title">'+icon('chart')+'3 อันดับรายการรายได้สูงสุด</h2><div class="exec-top-cards">'+top.map((item,i)=>{const a=executiveAmount(item.value);return '<article class="exec-top-card"><img data-asset="execTop'+i+'" alt=""><span class="exec-icon">'+icon(['bus','shop','building'][i])+'</span><div><h3>'+esc(item.label)+'</h3><strong>'+a.number+'</strong><small>'+a.unit+'</small></div></article>';}).join('')+(top.length?'':'<p>ยังไม่มีข้อมูลรายได้แยกประเภท</p>')+'</div></section>';
+    $('#revenue-summary').innerHTML='<article class="exec-total"><img data-asset="execTotalHero" alt=""><span class="exec-icon">'+icon('coins')+'</span><div><h2>'+esc(main.label)+' <button type="button" id="exec-total-info" aria-label="แหล่งข้อมูลรายได้ทั้งหมด">ⓘ</button></h2><strong class="exec-main-number">'+amount.number+'</strong><div class="exec-main-unit">'+amount.unit+'</div><div class="exec-comparison"><span>รอข้อมูลเทียบปีก่อน</span></div></div></article><section class="exec-top-group" aria-labelledby="exec-top-title"><h2 id="exec-top-title" class="exec-section-title">'+icon('chart')+'3 อันดับรายการรายได้สูงสุด</h2><div class="exec-top-cards">'+top.map((item,i)=>{const a=executiveAmount(item.value);return '<article class="exec-top-card"><img data-asset="execTop'+i+'" alt=""><span class="exec-icon">'+icon(['executiveBus','shop','building'][i])+'</span><div><h3>'+esc(item.label)+'</h3><strong>'+a.number+'</strong><small>'+a.unit+'</small></div></article>';}).join('')+(top.length?'':'<p>ยังไม่มีข้อมูลรายได้แยกประเภท</p>')+'</div></section>';
     $('#exec-total-info').onclick=()=>showDialog('แหล่งข้อมูลรายได้ทั้งหมด','<p>หน้ารูปแบบใหม่นี้แสดงยอดรวมรายได้ทุกประเภทจาก N41:N50 เพื่อให้ตรงกับยอดรวมในกราฟสัดส่วนรายได้</p><p>ยอดของกล่องเดิม B3 คือ '+(Number.isFinite(main.value)?num(main.value,2)+' บาท':'ยังไม่มีข้อมูล')+' ตำแหน่งข้อมูลของหน้าใหม่สามารถปรับได้เมื่อยืนยันช่วงเซลล์</p><p>เปอร์เซ็นต์เทียบปีก่อนจะเชื่อมเมื่อยืนยันตำแหน่งข้อมูลแล้ว</p>');
     renderExecutiveRegions();executiveIncomeChart();renderRevenueShare();applyAssets({});fitRevenuePage();
   }
@@ -1913,7 +2015,7 @@ window.ASSETS = {"loaderCoach":"assets/shared-inline-57-913a14f5605d.webp","load
     const colors=executivePalette;let offset=0;
     const circles=items.map((item,i)=>{const pct=total?item.value/total*100:0,markup='<circle class="share-segment" data-share="'+i+'" cx="110" cy="110" r="83" fill="none" stroke="'+colors[i]+'" stroke-width="31" pathLength="100" stroke-dasharray="'+pct+' '+(100-pct)+'" stroke-dashoffset="'+(-offset)+'" transform="rotate(-90 110 110)"><title>'+esc(item.label)+' '+num(pct,2)+'%</title></circle>';offset+=pct;return markup;}).join('');
     const a=executiveAmount(total);
-    $('#revenue-share').innerHTML='<svg viewBox="0 0 220 220" role="img" aria-label="สัดส่วนรายได้รวม '+num(total,2)+' บาท"><circle cx="110" cy="110" r="83" fill="none" stroke="#e4edf7" stroke-width="31"/>'+circles+'<circle cx="110" cy="110" r="65" fill="#f8fcff"/><text x="110" y="88" text-anchor="middle" style="font-size:17px;font-weight:600">รวม</text><text class="share-total" x="110" y="122" text-anchor="middle" style="font-size:28px">'+a.number+'</text><text x="110" y="149" text-anchor="middle" style="font-size:17px">'+a.unit+'</text></svg><div class="share-legend">'+items.map((item,i)=>{const value=executiveAmount(item.value);return '<button type="button" data-share="'+i+'" aria-pressed="false"><i style="background:'+colors[i]+'"></i><span>'+esc(item.label)+'<strong>'+value.number+' <small>'+value.unit+'</small></strong><em>สัดส่วน '+num(total?item.value/total*100:0,2)+'%</em></span></button>';}).join('')+'</div>';
+    $('#revenue-share').innerHTML='<svg viewBox="10 10 200 200" role="img" aria-label="สัดส่วนรายได้รวม '+num(total,2)+' บาท"><circle cx="110" cy="110" r="83" fill="none" stroke="#e4edf7" stroke-width="31"/>'+circles+'<circle cx="110" cy="110" r="65" fill="#f8fcff"/><text x="110" y="88" text-anchor="middle" style="font-size:17px;font-weight:600">รวม</text><text class="share-total" x="110" y="122" text-anchor="middle" style="font-size:28px">'+a.number+'</text><text x="110" y="149" text-anchor="middle" style="font-size:17px">'+a.unit+'</text></svg><div class="share-legend">'+items.map((item,i)=>{const value=executiveAmount(item.value);return '<button type="button" data-share="'+i+'" aria-pressed="false"><i style="background:'+colors[i]+'"></i><span>'+esc(item.label)+'<strong>'+value.number+' <small>'+value.unit+'</small> ('+num(total?item.value/total*100:0,2)+'%)</strong></span></button>';}).join('')+'</div>';
     $$('#revenue-share .share-legend button').forEach(button=>button.onclick=()=>{const selected=button.dataset.share,clear=button.getAttribute('aria-pressed')==='true';$$('#revenue-share .share-segment').forEach(el=>el.style.opacity=clear||el.dataset.share===selected?'1':'.25');$$('#revenue-share .share-legend button').forEach(el=>el.setAttribute('aria-pressed',String(!clear&&el===button)));});
   }
 
@@ -2310,5 +2412,6 @@ window.ASSETS = {"loaderCoach":"assets/shared-inline-57-913a14f5605d.webp","load
 
 </body>
 </html>
+
 
 
