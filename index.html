@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-<meta name="bks-build" content="v47-polish">
+<meta name="bks-build" content="v48-target">
   <meta charset="UTF-8">
   <base target="_top">
   <meta name="description" content="ฝ่ายบริหารการเดินรถ บริษัท ขนส่ง จำกัด — รายงานการเดินรถและข้อมูลหน่วยงาน">
@@ -1405,6 +1405,94 @@ body[data-active-page=revenue] .header-actions button>.icon{width:calc(25 * var(
 @keyframes exec-area-enter{from{opacity:0}to{opacity:1}}
 @media(prefers-reduced-motion:reduce){#page-revenue .exec-income-area{animation:none}}
 
+/* Analysis report: navy typography, supplied photography and reference proportions. */
+.revenue-detail-view[data-report=target] .target-banner{background:#12365a;color:white;isolation:isolate}
+.revenue-detail-view[data-report=target] .target-banner>img{width:100%;height:100%;inset:0;opacity:1;mask-image:none;-webkit-mask-image:none;object-fit:cover;object-position:center 52%;z-index:-2}
+.revenue-detail-view[data-report=target] .target-banner:after{display:block;content:'';position:absolute;inset:0;background:linear-gradient(90deg,#102f55f2 0%,#16385bdb 28%,#15355755 45%,#12335500 65%);z-index:-1}
+.revenue-detail-view[data-report=target] .target-banner h1,.revenue-detail-view[data-report=target] .target-banner .detail-breadcrumb{color:#fff}
+.revenue-detail-view[data-report=target] .target-title-row p{width:max-content;max-width:100%;padding:4px 12px;border:1px solid #c2d5eb80;border-radius:8px;color:white;background:#102d4b55}
+.revenue-detail-view[data-report=target] .target-banner .detail-back{background:#fff;color:#071865;border-color:#e2ebf7;box-shadow:0 2px 5px #06193124}
+.revenue-detail-view[data-report=target] .target-stats .detail-stat{--accent:#133f82!important;border-color:#dceafa;background:#f5faff;isolation:isolate}
+.revenue-detail-view[data-report=target] .target-stats .report-panel-bg{object-fit:cover;object-position:center 75%;opacity:1;filter:none;z-index:-2}
+.revenue-detail-view[data-report=target] .target-stats .detail-stat-icon{color:#062b75;background:linear-gradient(135deg,#ffffffdf,#edf7ffb3);border-color:#dce8f6;box-shadow:0 3px 7px #193c6410}
+.revenue-detail-view[data-report=target] .target-card-copy h3,.revenue-detail-view[data-report=target] .target-card-copy strong{color:#000e67}
+.revenue-detail-view[data-report=target] .target-stats .detail-unit{color:#0065ee}
+.revenue-detail-view[data-report=target] .target-bottom .detail-panel{isolation:isolate;border-color:#dceafa}
+.revenue-detail-view[data-report=target] .target-bottom .detail-panel>.report-panel-bg{z-index:-2;object-fit:cover;object-position:center 65%;opacity:1;mask-image:none;-webkit-mask-image:none}
+.revenue-detail-view[data-report=target] .target-bottom .detail-panel h2,.revenue-detail-view[data-report=target] .target-bottom .detail-panel h2>.icon{color:#001474}
+.revenue-detail-view[data-report=target] .target-bottom .target-legend,.revenue-detail-view[data-report=target] .target-bottom .target-summary{background:#ffffffeb;border:1px solid #e2edfa;border-radius:8px}
+.revenue-detail-view[data-report=target] .target-legend-row strong,.revenue-detail-view[data-report=target] .target-summary-row strong{color:#073982!important}
+.revenue-detail-view[data-report=target] .target-legend-row:nth-child(3) strong,.revenue-detail-view[data-report=target] .target-summary-row:nth-child(3) strong{color:#000e67!important}
+.revenue-detail-view[data-report=target] .target-summary-icon{color:#073982}
+.revenue-detail-view[data-report=target] .target-change{background:#e4f6e9;color:#16853c;border:0;border-radius:24px;font-weight:600}
+.revenue-detail-view[data-report=target] .target-change.negative{background:#ffe7eb;color:#f13b56}
+@media(max-width:1199px){
+#revenue-detail-view[data-report=target]{height:auto;min-height:var(--report-height)}
+#revenue-detail-view[data-report=target] .target-bottom{grid-template-columns:1fr;flex:0 0 auto;min-height:0}
+#revenue-detail-view[data-report=target] .target-bottom .detail-panel{min-height:250px}
+}
+@media(max-width:600px){
+#revenue-detail-view[data-report=target] .target-banner .detail-back{position:relative;inset:auto;align-self:flex-start;order:-1;width:max-content;margin:0 0 14px}
+#revenue-detail-view[data-report=target] .target-banner{display:flex;flex-direction:column;padding:18px 16px 24px;min-height:300px}
+#revenue-detail-view[data-report=target] .target-banner h1{font-size:25px}
+#revenue-detail-view[data-report=target] .target-title-row p{font-size:12px;padding:4px 8px}
+#revenue-detail-view[data-report=target] .target-bottom .target-progress{grid-template-columns:1fr}
+#revenue-detail-view[data-report=target] .target-progress .detail-ring{width:210px;height:210px;transform:none;justify-self:center}
+#revenue-detail-view[data-report=target] .target-bottom .detail-panel{padding:16px;min-height:0}
+#revenue-detail-view[data-report=target] .target-bottom .detail-panel h2{font-size:23px}
+#revenue-detail-view[data-report=target] .target-legend-row,#revenue-detail-view[data-report=target] .target-legend-row strong{font-size:13px}
+#revenue-detail-view[data-report=target] .target-summary-row{font-size:13px;gap:7px}
+#revenue-detail-view[data-report=target] .target-summary-row strong{font-size:13px}
+}
+.revenue-detail-view[data-report=target] .target-banner>img{object-fit:cover;object-position:center 45%}
+.revenue-detail-view[data-report=target] .target-banner .detail-breadcrumb button{color:white}
+.revenue-detail-view[data-report=target] .target-card-3>.detail-stat-icon .icon{transform:none}
+.revenue-detail-view[data-report=target] .target-stats .report-panel-bg{object-fit:fill}
+.revenue-detail-view[data-report=target] .target-bottom .detail-panel>.report-panel-bg{object-fit:cover;object-position:center 65%}
+.revenue-detail-view[data-report=target] .target-stats .detail-stat:before{display:block;content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,#ffffff65,#ffffff20 65%,#ffffff08)}
+.revenue-detail-view[data-report=target] .target-bottom .detail-panel:before{content:'';position:absolute;inset:0;z-index:-1;background:#ffffff40;pointer-events:none}
+body[data-active-page=revenue]:has(#revenue-detail-view[data-report=target]:not([hidden])) .site-header nav a[aria-current=page]:after{background:#193c97}
+@media(min-width:1200px) and (min-height:700px){
+#page-revenue.revenue-detail-active:has(.revenue-detail-view[data-report=target]){height:var(--report-height);min-height:0}
+#revenue-detail-view[data-report=target]{height:var(--report-height);min-height:0;display:grid;grid-template-rows:calc(191 * var(--du)) minmax(0,1fr);background:#f2faff}
+#revenue-detail-view[data-report=target] .target-banner{min-height:0;flex:none;padding:calc(22 * var(--du)) 3.1vw calc(12 * var(--du));display:flex;flex-direction:column;justify-content:flex-start}
+#revenue-detail-view[data-report=target] .detail-breadcrumb{margin:0 0 calc(12 * var(--du));font-size:calc(13 * var(--du));gap:calc(12 * var(--du));line-height:1.4}
+#revenue-detail-view[data-report=target] .target-banner h1{font-size:calc(39 * var(--du));line-height:1.08;letter-spacing:calc(-.6 * var(--du));margin:0 0 calc(10 * var(--du));font-weight:700}
+#revenue-detail-view[data-report=target] .target-title-row p{font-size:calc(16 * var(--du));line-height:1.5;padding:calc(3 * var(--du)) calc(12 * var(--du));gap:calc(10 * var(--du));margin:0}
+#revenue-detail-view[data-report=target] .target-title-row p .icon{width:calc(21 * var(--du));height:calc(21 * var(--du))}
+#revenue-detail-view[data-report=target] .detail-back{position:absolute;right:2.4vw;top:calc(18 * var(--du));bottom:auto;font-size:calc(14 * var(--du));padding:calc(7 * var(--du)) calc(17 * var(--du));border-radius:24px}
+#revenue-detail-view[data-report=target] .detail-content{display:grid;grid-template-rows:minmax(0,365fr) minmax(0,250fr);gap:calc(14 * var(--du));padding:calc(15 * var(--du)) 2.3vw calc(31 * var(--du));margin:0;min-height:0;flex:none}
+#revenue-detail-view[data-report=target] .target-stats{min-height:0;flex:none;grid-template-columns:minmax(0,532fr) minmax(0,504fr) minmax(0,532fr);grid-template-rows:minmax(0,180fr) minmax(0,172fr);gap:calc(13 * var(--du))}
+#revenue-detail-view[data-report=target] .target-stats .detail-stat{padding:calc(14 * var(--du)) calc(14 * var(--du));gap:calc(23 * var(--du));min-height:0;align-items:flex-start;border-radius:calc(10 * var(--du))}
+#revenue-detail-view[data-report=target] .target-stats .detail-stat-icon{width:calc(65 * var(--du));height:calc(65 * var(--du));flex-shrink:0;margin-top:calc(1 * var(--du))}
+#revenue-detail-view[data-report=target] .target-stats .detail-stat-icon .icon{width:calc(33 * var(--du));height:calc(33 * var(--du));stroke-width:2}
+#revenue-detail-view[data-report=target] .target-card-copy{width:auto;max-width:none;min-width:0}
+#revenue-detail-view[data-report=target] .target-stats .detail-stat h3{font-size:calc(22 * var(--du));line-height:1.12;margin:0 0 calc(5 * var(--du));font-weight:700;letter-spacing:calc(-.35 * var(--du))}
+#revenue-detail-view[data-report=target] .target-stats .detail-stat strong{font-size:calc(38 * var(--du));line-height:1.12;letter-spacing:calc(-1.1 * var(--du));margin:calc(7 * var(--du)) 0 0}
+#revenue-detail-view[data-report=target] .target-stats .detail-stat small{font-size:calc(15 * var(--du));line-height:1.4;margin:calc(3 * var(--du)) 0 0;color:#5c75a9}
+#revenue-detail-view[data-report=target] .target-stats .detail-unit{font-size:calc(18 * var(--du));line-height:1.3;margin:calc(2 * var(--du)) 0 0}
+#revenue-detail-view[data-report=target] .target-stats .target-card-2{align-items:center}
+#revenue-detail-view[data-report=target] .target-stats .target-card-3,#revenue-detail-view[data-report=target] .target-stats .target-card-5{align-items:center}
+#revenue-detail-view[data-report=target] .target-stats .target-card-4{align-items:center}
+#revenue-detail-view[data-report=target] .target-bottom{grid-template-columns:1.03fr 1fr;gap:calc(14 * var(--du));min-height:0;flex:none}
+#revenue-detail-view[data-report=target] .target-bottom .detail-panel{padding:calc(9 * var(--du)) calc(16 * var(--du));min-height:0;border-radius:calc(10 * var(--du))}
+#revenue-detail-view[data-report=target] .target-bottom .detail-panel h2{font-size:calc(26 * var(--du));line-height:1.2;margin:0 0 calc(5 * var(--du));gap:calc(12 * var(--du));letter-spacing:calc(-.6 * var(--du))}
+#revenue-detail-view[data-report=target] .target-bottom .detail-panel h2>.icon{width:calc(26 * var(--du));height:calc(26 * var(--du))}
+#revenue-detail-view[data-report=target] .target-progress{grid-template-columns:calc(263 * var(--du)) minmax(0,1fr);gap:calc(14 * var(--du));min-height:0}
+#revenue-detail-view[data-report=target] .target-progress .detail-ring{width:calc(197 * var(--du));height:calc(197 * var(--du));max-height:100%;transform:none;justify-self:center}
+#revenue-detail-view[data-report=target] .target-progress .detail-ring{position:relative;left:calc(15 * var(--du))}
+#revenue-detail-view[data-report=target] .target-bottom .target-legend{padding:0 calc(14 * var(--du));border-radius:calc(7 * var(--du))}
+#revenue-detail-view[data-report=target] .target-legend-row,#revenue-detail-view[data-report=target] .target-legend-row strong{font-size:calc(16 * var(--du));line-height:1.3}
+#revenue-detail-view[data-report=target] .target-legend-row{padding:calc(12 * var(--du)) 0;gap:calc(10 * var(--du))}
+#revenue-detail-view[data-report=target] .target-legend-row i{width:calc(13 * var(--du));height:calc(13 * var(--du))}
+#revenue-detail-view[data-report=target] .target-bottom .detail-period{font-size:calc(16 * var(--du));margin:calc(-2 * var(--du)) 0 calc(8 * var(--du)) calc(42 * var(--du));line-height:1.3}
+#revenue-detail-view[data-report=target] .target-bottom .target-summary{padding:0 calc(10 * var(--du));min-height:0;flex:1}
+#revenue-detail-view[data-report=target] .target-summary-row{padding:calc(6 * var(--du)) 0;gap:calc(12 * var(--du));font-size:calc(17 * var(--du));line-height:1.2;min-height:0;flex-wrap:nowrap}
+#revenue-detail-view[data-report=target] .target-summary-row strong{font-size:calc(17 * var(--du));line-height:1.2}
+#revenue-detail-view[data-report=target] .target-summary-icon .icon{width:calc(22 * var(--du));height:calc(22 * var(--du))}
+#revenue-detail-view[data-report=target] .target-summary-row .target-change{font-size:calc(12 * var(--du));padding:calc(6 * var(--du)) calc(11 * var(--du));min-width:calc(78 * var(--du));white-space:nowrap}
+}
+
 </style>
 
 <script src="config.js"></script><script src="assets-manifest.js"></script><script src="sheet-csv.js"></script></head>
@@ -1558,7 +1646,7 @@ body[data-active-page=revenue] .header-actions button>.icon{width:calc(25 * var(
   </dialog>
   <div class="toast" id="toast" role="status" hidden></div>
   <noscript><style>.startup-loader{display:none}body.is-loading{overflow:auto}</style><p class="notice">กรุณาเปิด JavaScript เพื่อใช้งานเว็บไซต์</p></noscript>
-  <script>Object.assign(window.BKS_IMAGE_GROUPS.revenue,{"execTotalHero":"assets/execTotalHero-v45.webp","execTop0":"assets/execTop0-v45.webp","execTop1":"assets/execTop1-v45.webp","execTop2":"assets/execTop2-v45.webp","execRegionBg0":"assets/execRegionBg0-v45.webp","execRegionBg1":"assets/execRegionBg1-v45.webp","execRegionBg2":"assets/execRegionBg2-v45.webp","execRegionBg3":"assets/execRegionBg3-v45.webp","execRegionBg4":"assets/execRegionBg4-v45.webp","execRegionMap0":"assets/thailand-region-0-v45.svg","execRegionMap1":"assets/thailand-region-1-v45.svg","execRegionMap2":"assets/thailand-region-2-v45.svg","execRegionMap3":"assets/thailand-region-3-v45.svg","execRegionMap4":"assets/thailand-region-4-v45.svg"});window.INITIAL_PAGE=new URLSearchParams(location.search).get('page')||'home';window.INITIAL_IMAGE_GROUP='home';window.INITIAL_IMAGES=Object.assign({},window.BKS_IMAGE_GROUPS.shared,window.BKS_IMAGE_GROUPS.home);</script>
+  <script>Object.assign(window.BKS_IMAGE_GROUPS.revenue,{"execTotalHero":"assets/execTotalHero-v45.webp","execTop0":"assets/execTop0-v45.webp","execTop1":"assets/execTop1-v45.webp","execTop2":"assets/execTop2-v45.webp","execRegionBg0":"assets/execRegionBg0-v45.webp","execRegionBg1":"assets/execRegionBg1-v45.webp","execRegionBg2":"assets/execRegionBg2-v45.webp","execRegionBg3":"assets/execRegionBg3-v45.webp","execRegionBg4":"assets/execRegionBg4-v45.webp","execRegionMap0":"assets/thailand-region-0-v45.svg","execRegionMap1":"assets/thailand-region-1-v45.svg","execRegionMap2":"assets/thailand-region-2-v45.svg","execRegionMap3":"assets/thailand-region-3-v45.svg","execRegionMap4":"assets/thailand-region-4-v45.svg"});Object.assign(window.BKS_IMAGE_GROUPS.revenue,{"targetHero":"assets/targetHero-v48.webp","targetStat0":"assets/targetStat0-v48.webp","targetStat1":"assets/targetStat1-v48.webp","targetStat2":"assets/targetStat2-v48.webp","targetStat3":"assets/targetStat3-v48.webp","targetStat4":"assets/targetStat4-v48.webp","targetStat5":"assets/targetStat5-v48.webp","targetSuccess":"assets/targetSuccess-v48.webp","targetSummary":"assets/targetSummary-v48.webp"});window.INITIAL_PAGE=new URLSearchParams(location.search).get('page')||'home';window.INITIAL_IMAGE_GROUP='home';window.INITIAL_IMAGES=Object.assign({},window.BKS_IMAGE_GROUPS.shared,window.BKS_IMAGE_GROUPS.home);</script>
   <script>
 // Set HTTPS image URLs here. Empty reference image URLs use the packaged photos.
 // Station images stay as explicit placeholders until real photographs are supplied.
@@ -2105,13 +2193,14 @@ window.ASSETS = {"loaderCoach":"assets/shared-inline-57-913a14f5605d.webp","load
   $('#header-user').addEventListener('click',()=>showDialog('ผู้ใช้งานระบบ','<p>ฝ่ายบริหารการเดินรถ · บริษัท ขนส่ง จำกัด</p><p class="muted">เว็บไซต์นี้ยังไม่ได้เชื่อมระบบบัญชีผู้ใช้งาน</p>'));
   // Report module: RevenueTarget (included inside Scripts.html)
   function targetChange(value,negative=false,caption=false){return '<span class="target-change '+(negative?'negative':'')+'"><b>'+(negative?'↓ ':'↑ ')+value+'%</b>'+(caption?'<small>จากปีก่อน</small>':'')+'</span>';}
+  function targetAnalysisRing(){return '<svg class="detail-ring" viewBox="0 0 220 220" role="img" aria-label="ความสำเร็จ 90.90% ของเป้าหมาย"><circle cx="110" cy="110" r="90" fill="white" stroke="#d6e6f6" stroke-width="25"/><circle cx="110" cy="110" r="90" fill="none" stroke="#1c4f91" stroke-width="25" pathLength="100" stroke-dasharray="90.9 9.1" transform="rotate(-90 110 110)"/><text x="110" y="111" text-anchor="middle" class="ring-number" style="font-size:35px;fill:#000e67">90.90%</text><text x="110" y="138" text-anchor="middle" style="font-size:17px;fill:#000e67">ของเป้าหมาย</text></svg>';}
   function targetReport(){
-    const cards=[['เป้าหมายรายได้<br>ค่าธรรมเนียม/ปี','567,350,000.00','trend','#ff087a','(1 ต.ค. 68 - 30 ก.ย. 69)','12.60'],['เป้าหมายรายได้<br>ค่าธรรมเนียม','551,806,164.38','calendar','#087aff','(1 ต.ค. 68 - 20 ก.ย. 69)','8.45'],['รายได้ค่าธรรมเนียม','501,597,574.52','coins','#00a9b0','(1 ต.ค. 68 - 20 ก.ย. 69)','6.17'],['ต่ำกว่าเป้าหมาย','(50,208,589.86)','trend','#ff087a','','10.32'],['คงเหลือรายได้<br>ตามเป้าหมาย','65,752,425.48','document','#8542ff','','15.21'],['เฉลี่ยรายได้/สัปดาห์','65,752,425.48','chart','#087aff','','4.85']];
-    const rows=[['เป้าหมายสะสม','551,806,164.38','#087aff','trend','8.45'],['รายได้ค่าธรรมเนียมสะสม','501,597,574.52','#00a9b0','coins','6.17'],['ต่ำกว่าเป้าหมาย','(50,208,589.86)','#ff087a','trend','10.32'],['คงเหลือรายได้ตามเป้าหมาย','65,752,425.48','#8542ff','document','15.21']];
-    const stats=cards.map(([label,value,ico,color,period,change],i)=>'<article class="detail-stat target-card target-card-'+i+'" style="--accent:'+color+'"><img class="report-panel-bg" data-asset="targetStat'+i+'" alt=""><span class="detail-card-number">'+String(i+1).padStart(2,'0')+'</span><span class="detail-stat-icon">'+icon(ico)+'</span><div class="target-card-copy"><h3>'+label+'</h3>'+(period?'<small>'+period+'</small>':'')+'<strong>'+value+'</strong><span class="detail-unit">บาท</span></div>'+'</article>').join('');
+    const cards=[['เป้าหมายรายได้<br>ค่าธรรมเนียม/ปี','567,350,000.00','trend','#194b8e','(1 ต.ค. 68 - 30 ก.ย. 69)','12.60'],['เป้าหมายรายได้<br>ค่าธรรมเนียม','551,806,164.38','calendar','#194b8e','(1 ต.ค. 68 - 20 ก.ย. 69)','8.45'],['รายได้ค่าธรรมเนียม','501,597,574.52','coins','#194b8e','(1 ต.ค. 68 - 20 ก.ย. 69)','6.17'],['ต่ำกว่าเป้าหมาย','(50,208,589.86)','trend','#194b8e','','10.32'],['คงเหลือรายได้<br>ตามเป้าหมาย','65,752,425.48','document','#194b8e','','15.21'],['เฉลี่ยรายได้/สัปดาห์','65,752,425.48','chart','#194b8e','','4.85']];
+    const rows=[['เป้าหมายสะสม','551,806,164.38','#194b8e','trend','8.45'],['รายได้ค่าธรรมเนียมสะสม','501,597,574.52','#194b8e','coins','6.17'],['ต่ำกว่าเป้าหมาย','(50,208,589.86)','#7b9bc5','trend','10.32'],['คงเหลือรายได้ตามเป้าหมาย','65,752,425.48','#194b8e','document','15.21']];
+    const stats=cards.map(([label,value,ico,color,period,change],i)=>'<article class="detail-stat target-card target-card-'+i+'" style="--accent:'+color+'"><img class="report-panel-bg" data-asset="targetStat'+i+'" alt=""><span class="detail-card-number">'+String(i+1).padStart(2,'0')+'</span><span class="detail-stat-icon">'+(i===3?'<svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><path d="M4 7 12 18 18 12 28 26M20 26h8v-8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>':icon(ico))+'</span><div class="target-card-copy"><h3>'+label+'</h3>'+(period?'<small>'+period+'</small>':'')+'<strong>'+value+'</strong><span class="detail-unit">บาท</span></div>'+'</article>').join('');
     const legend=rows.slice(0,3).map(([label,value,color],i)=>'<div class="target-legend-row"><span><i style="background:'+color+'"></i>'+label+'</span><strong style="color:'+color+'">'+value+' บาท</strong></div>').join('');
     const summary=rows.map(([label,value,color,ico,change],i)=>'<div class="target-summary-row" style="--accent:'+color+'"><span class="target-summary-icon">'+icon(ico)+'</span><span>'+label+'</span><strong style="color:'+color+'">'+value+' บาท</strong>'+targetChange(change,i===2)+'</div>').join('');
-    return '<div class="detail-stats target-stats">'+stats+'</div><div class="detail-columns target-bottom">'+reportPanel('ความสำเร็จเทียบเป้าหมาย','<div class="target-progress">'+reportRing([90.9,9.1],['#087aff','#e3ebfa'],'90.90%','ของเป้าหมาย').replace('<text x="110" y="105"','<circle cx="110" cy="110" r="74" fill="white"/><text x="110" y="105"')+'<div class="target-legend">'+legend+'</div></div>','trend','targetSuccess')+reportPanel('สรุปภาพรวม','<p class="detail-period">1 ตุลาคม 2568 - 20 กันยายน 2569</p><div class="target-summary">'+summary+'</div>','chart','targetSummary')+'</div>';
+    return '<div class="detail-stats target-stats">'+stats+'</div><div class="detail-columns target-bottom">'+reportPanel('ความสำเร็จเทียบเป้าหมาย','<div class="target-progress">'+targetAnalysisRing()+'<div class="target-legend">'+legend+'</div></div>','trend','targetSuccess')+reportPanel('สรุปภาพรวม','<p class="detail-period">1 ตุลาคม 2568 - 20 กันยายน 2569</p><div class="target-summary">'+summary+'</div>','chart','targetSummary')+'</div>';
   }
   function targetHeader(){return '<div class="detail-banner target-banner"><img data-asset="targetHero" alt="รถตู้ รถโดยสาร และผู้โดยสารภายในสถานีขนส่ง"><div class="detail-breadcrumb"><button data-back-report>หน้าแรก</button><span>›</span><button data-back-report>รายงานรายได้</button><span>›</span><span>เปรียบเทียบเป้าหมายค่าธรรมเนียมกับรายได้จริง</span></div><div class="target-title-row"><div><h1 id="revenue-detail-title" tabindex="-1">เปรียบเทียบเป้าหมายค่าธรรมเนียม<br>กับรายได้จริง</h1><p>'+icon('calendar')+' ข้อมูล ณ 1 ตุลาคม 2568 - 20 กันยายน 2569</p></div></div><button class="detail-back" data-back-report>← กลับรายงานรายได้</button></div>';}
 
@@ -2437,6 +2526,7 @@ window.ASSETS = {"loaderCoach":"assets/shared-inline-57-913a14f5605d.webp","load
 
 </body>
 </html>
+
 
 
 
