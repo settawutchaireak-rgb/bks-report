@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-<meta name="bks-build" content="v50-photo">
+<meta name="bks-build" content="v51-backgrounds">
   <meta charset="UTF-8">
   <base target="_top">
   <meta name="description" content="ฝ่ายบริหารการเดินรถ บริษัท ขนส่ง จำกัด — รายงานการเดินรถและข้อมูลหน่วยงาน">
@@ -1671,6 +1671,18 @@ body[data-active-page=revenue]:has(#revenue-detail-view[data-report=target]:not(
 #revenue-detail-view[data-report=overview] .weekly-banner .detail-back{top:14px;right:16px;padding:7px 12px;font-size:12px}
 }
 
+/* One palette definition shared by each column header and its total cells. */
+.weekly-grid-table .group-0{--weekly-column-fill:linear-gradient(135deg,#56b9ef,#0961b3)}
+.weekly-grid-table .group-1{--weekly-column-fill:linear-gradient(135deg,#74c9ff,#1791e8)}
+.weekly-grid-table .group-2{--weekly-column-fill:linear-gradient(135deg,#65cbd0,#218c9e)}
+.weekly-grid-table .group-3{--weekly-column-fill:linear-gradient(135deg,#e8c46e,#b2873d)}
+#revenue-detail-view[data-report=overview] .weekly-grid-table .weekly-group-head,
+#revenue-detail-view[data-report=overview] .weekly-grid-table tfoot td{background:var(--weekly-column-fill)}
+#revenue-detail-view[data-report=overview] .weekly-grid-table .weekly-period-head,
+#revenue-detail-view[data-report=overview] .weekly-grid-table tfoot th{background:linear-gradient(135deg,#246ca8,#0b2e63)}
+#revenue-detail-view[data-report=overview] .weekly-kpi .report-panel-bg{inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:1;transform:none;filter:none}
+#revenue-detail-view[data-report=overview] .weekly-kpi:before{background:linear-gradient(90deg,#ffffffc9 0%,#ffffffbd 42%,#ffffff8c 62%,#ffffff30 80%,#ffffff00 100%)}
+
 </style>
 
 <script src="config.js"></script><script src="assets-manifest.js"></script><script src="sheet-csv.js"></script></head>
@@ -1824,7 +1836,7 @@ body[data-active-page=revenue]:has(#revenue-detail-view[data-report=target]:not(
   </dialog>
   <div class="toast" id="toast" role="status" hidden></div>
   <noscript><style>.startup-loader{display:none}body.is-loading{overflow:auto}</style><p class="notice">กรุณาเปิด JavaScript เพื่อใช้งานเว็บไซต์</p></noscript>
-  <script>Object.assign(window.BKS_IMAGE_GROUPS.revenue,{"execTotalHero":"assets/execTotalHero-v45.webp","execTop0":"assets/execTop0-v45.webp","execTop1":"assets/execTop1-v45.webp","execTop2":"assets/execTop2-v45.webp","execRegionBg0":"assets/execRegionBg0-v45.webp","execRegionBg1":"assets/execRegionBg1-v45.webp","execRegionBg2":"assets/execRegionBg2-v45.webp","execRegionBg3":"assets/execRegionBg3-v45.webp","execRegionBg4":"assets/execRegionBg4-v45.webp","execRegionMap0":"assets/thailand-region-0-v45.svg","execRegionMap1":"assets/thailand-region-1-v45.svg","execRegionMap2":"assets/thailand-region-2-v45.svg","execRegionMap3":"assets/thailand-region-3-v45.svg","execRegionMap4":"assets/thailand-region-4-v45.svg"});Object.assign(window.BKS_IMAGE_GROUPS.revenue,{"targetHero":"assets/targetHero-v48.webp","targetStat0":"assets/targetStat0-v48.webp","targetStat1":"assets/targetStat1-v48.webp","targetStat2":"assets/targetStat2-v48.webp","targetStat3":"assets/targetStat3-v48.webp","targetStat4":"assets/targetStat4-v48.webp","targetStat5":"assets/targetStat5-v48.webp","targetSuccess":"assets/targetSuccess-v48.webp","targetSummary":"assets/targetSummary-v48.webp"});Object.assign(window.BKS_IMAGE_GROUPS.revenue,{"weeklyHero":"assets/weeklyHero-v49.webp","weeklyStat0":"assets/weeklyStat0-v49.webp","weeklyStat1":"assets/weeklyStat1-v49.webp","weeklyStat2":"assets/weeklyStat2-v49.webp","weeklyStat3":"assets/weeklyStat3-v49.webp"});Object.assign(window.BKS_IMAGE_GROUPS.revenue,{"weeklyHero":"assets/weeklyHero-v50.webp"});window.INITIAL_PAGE=new URLSearchParams(location.search).get('page')||'home';window.INITIAL_IMAGE_GROUP='home';window.INITIAL_IMAGES=Object.assign({},window.BKS_IMAGE_GROUPS.shared,window.BKS_IMAGE_GROUPS.home);</script>
+  <script>Object.assign(window.BKS_IMAGE_GROUPS.revenue,{"execTotalHero":"assets/execTotalHero-v45.webp","execTop0":"assets/execTop0-v45.webp","execTop1":"assets/execTop1-v45.webp","execTop2":"assets/execTop2-v45.webp","execRegionBg0":"assets/execRegionBg0-v45.webp","execRegionBg1":"assets/execRegionBg1-v45.webp","execRegionBg2":"assets/execRegionBg2-v45.webp","execRegionBg3":"assets/execRegionBg3-v45.webp","execRegionBg4":"assets/execRegionBg4-v45.webp","execRegionMap0":"assets/thailand-region-0-v45.svg","execRegionMap1":"assets/thailand-region-1-v45.svg","execRegionMap2":"assets/thailand-region-2-v45.svg","execRegionMap3":"assets/thailand-region-3-v45.svg","execRegionMap4":"assets/thailand-region-4-v45.svg"});Object.assign(window.BKS_IMAGE_GROUPS.revenue,{"targetHero":"assets/targetHero-v48.webp","targetStat0":"assets/targetStat0-v48.webp","targetStat1":"assets/targetStat1-v48.webp","targetStat2":"assets/targetStat2-v48.webp","targetStat3":"assets/targetStat3-v48.webp","targetStat4":"assets/targetStat4-v48.webp","targetStat5":"assets/targetStat5-v48.webp","targetSuccess":"assets/targetSuccess-v48.webp","targetSummary":"assets/targetSummary-v48.webp"});Object.assign(window.BKS_IMAGE_GROUPS.revenue,{"weeklyHero":"assets/weeklyHero-v49.webp","weeklyStat0":"assets/weeklyStat0-v49.webp","weeklyStat1":"assets/weeklyStat1-v49.webp","weeklyStat2":"assets/weeklyStat2-v49.webp","weeklyStat3":"assets/weeklyStat3-v49.webp"});Object.assign(window.BKS_IMAGE_GROUPS.revenue,{"weeklyHero":"assets/weeklyHero-v50.webp"});Object.assign(window.BKS_IMAGE_GROUPS.revenue,{"weeklyStat0":"assets/weeklyStat0-v51.webp","weeklyStat1":"assets/weeklyStat1-v51.webp","weeklyStat2":"assets/weeklyStat2-v51.webp","weeklyStat3":"assets/weeklyStat3-v51.webp"});window.INITIAL_PAGE=new URLSearchParams(location.search).get('page')||'home';window.INITIAL_IMAGE_GROUP='home';window.INITIAL_IMAGES=Object.assign({},window.BKS_IMAGE_GROUPS.shared,window.BKS_IMAGE_GROUPS.home);</script>
   <script>
 // Set HTTPS image URLs here. Empty reference image URLs use the packaged photos.
 // Station images stay as explicit placeholders until real photographs are supplied.
@@ -2715,6 +2727,7 @@ window.ASSETS = {"loaderCoach":"assets/shared-inline-57-913a14f5605d.webp","load
 
 </body>
 </html>
+
 
 
 
