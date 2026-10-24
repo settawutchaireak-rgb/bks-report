@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-<meta name="bks-build" content="v46-fidelity">
+<meta name="bks-build" content="v47-polish">
   <meta charset="UTF-8">
   <base target="_top">
   <meta name="description" content="ฝ่ายบริหารการเดินรถ บริษัท ขนส่ง จำกัด — รายงานการเดินรถและข้อมูลหน่วยงาน">
@@ -1392,6 +1392,19 @@ body[data-active-page=revenue] .header-actions button>.icon{width:calc(25 * var(
 #page-revenue .revenue-menu button:last-child{gap:calc(12 * var(--du));font-size:calc(13 * var(--du))}
 }
 
+/* Let the full panorama show through on the left, including the city skyline. */
+#page-revenue .exec-total>img,#page-revenue .exec-top-card>img{object-fit:fill;object-position:center;transform:scale(1.07)}
+#page-revenue .exec-total:before{background:linear-gradient(90deg,#ffffff18,#ffffff00 72%)}
+#page-revenue .exec-top-card:after{background:linear-gradient(90deg,#ffffff38,#ffffff14 48%,#ffffff00 80%)}
+#page-revenue .exec-region-card>img:not(.exec-region-map){width:140%;max-width:none;left:-40%;object-fit:fill;object-position:center;transform:none}
+#page-revenue .exec-region-card:before{width:28%;background:linear-gradient(90deg,#f6fbff40,#f6fbff00)}
+#page-revenue .exec-region-card:after{background:linear-gradient(0deg,#f8fcfff0 0%,#f8fcff85 30%,#f8fcff00 70%)}
+#page-revenue .exec-region-map{background:transparent}
+#page-revenue .share-segment{stroke:none;stroke-linejoin:round}
+#page-revenue .exec-income-area{animation:exec-area-enter .65s ease-out both}
+@keyframes exec-area-enter{from{opacity:0}to{opacity:1}}
+@media(prefers-reduced-motion:reduce){#page-revenue .exec-income-area{animation:none}}
+
 </style>
 
 <script src="config.js"></script><script src="assets-manifest.js"></script><script src="sheet-csv.js"></script></head>
@@ -1978,24 +1991,32 @@ window.ASSETS = {"loaderCoach":"assets/shared-inline-57-913a14f5605d.webp","load
     const legends=[comparison.previousLabel,comparison.currentLabel],colors=['#244b87','#c58e35'];
     $('#exec-income-legend').innerHTML=legends.map((label,i)=>'<span><i style="background:'+colors[i]+'"></i>'+esc(label)+'</span>').join('');
     const values=rows.flatMap(r=>[r.previous,r.current]).filter(Number.isFinite),magnitude=Math.max(0,...values),scale=magnitude>=1e6?1e6:1;
-    const desired=Math.max(1,magnitude/scale*1.8),power=10**Math.floor(Math.log10(desired/5));
-    const tick=[1,2,2.5,5,10].find(n=>n>=desired/5/power)*power;
-    const max=Math.ceil(desired/tick)*tick,W=640,H=232,L=46,R=46,T=25,B=31,pw=W-L-R,ph=H-T-B;
-    const x=i=>L+i*pw/Math.max(1,rows.length-1),y=value=>T+ph*(1-value/scale/max);
-    let svg='<svg viewBox="0 0 '+W+' '+H+'" preserveAspectRatio="none" role="img" aria-label="แนวโน้มรายได้รายเดือน"><text x="5" y="13">'+(scale===1e6?'ล้านบาท':'บาท')+'</text>';
-    for(let i=0;i<=5;i++){const v=max*i/5;svg+='<path d="M'+L+' '+y(v*scale)+'H'+(W-R)+'" stroke="#e5edf8"/><text x="'+(L-7)+'" y="'+(y(v*scale)+4)+'" text-anchor="end">'+num(v,max<5?1:0)+'</text>';}
+    const low=values.length?Math.min(...values)/scale:0,high=magnitude/scale,spread=high-low;
+    const padding=Math.max(spread*.8,high*.08,scale===1e6?1:.1),rawMin=Math.max(0,low-padding),rawMax=Math.max(rawMin+1,high+padding);
+    const desired=(rawMax-rawMin)/5,power=10**Math.floor(Math.log10(desired)),tick=[1,2,2.5,5,10].find(n=>n>=desired/power)*power;
+    const min=Math.floor(rawMin/tick)*tick,max=Math.ceil(rawMax/tick)*tick,W=640,H=232,L=46,R=28,T=25,B=31,pw=W-L-R,ph=H-T-B;
+    const x=i=>L+i*pw/Math.max(1,rows.length-1),y=value=>T+ph*(1-(value/scale-min)/(max-min));
+    let svg='<svg viewBox="0 0 '+W+' '+H+'" preserveAspectRatio="none" role="img" aria-label="แนวโน้มรายได้รายเดือน ช่วงแกน '+num(min,2)+' ถึง '+num(max,2)+' '+(scale===1e6?'ล้านบาท':'บาท')+'"><defs>'+colors.map((c,s)=>'<linearGradient id="exec-income-fill-'+s+'" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="'+c+'" stop-opacity=".24"/><stop offset="1" stop-color="'+c+'" stop-opacity=".015"/></linearGradient>').join('')+'</defs><text x="5" y="13">'+(scale===1e6?'ล้านบาท':'บาท')+'</text>';
+    const steps=Math.round((max-min)/tick);
+    for(let i=0;i<=steps;i++){const v=min+i*tick;svg+='<path d="M'+L+' '+y(v*scale)+'H'+(W-R)+'" stroke="#e5edf8"/><text x="'+(L-7)+'" y="'+(y(v*scale)+4)+'" text-anchor="end">'+num(v,tick<1?2:tick%1?1:0)+'</text>';}
     rows.forEach((r,i)=>{svg+='<path d="M'+x(i)+' '+T+'V'+(H-B)+'" stroke="#edf3fb"/><text x="'+x(i)+'" y="'+(H-9)+'" text-anchor="middle">'+esc(r.label)+'</text>';});
-    ['previous','current'].forEach((key,s)=>{
-      let path='',drawing=false,last=-1;
-      rows.forEach((r,i)=>{if(!Number.isFinite(r[key])){drawing=false;return;}path+=(drawing?' L':' M')+x(i)+' '+y(r[key]);drawing=true;last=i;});
-      svg+='<path d="'+path+'" fill="none" stroke="'+colors[s]+'" stroke-width="2.5"/>';
+    const series=['previous','current'].map((key,s)=>{
+      const runs=[];let run=[];
+      rows.forEach((r,i)=>{if(Number.isFinite(r[key]))run.push([x(i),y(r[key])]);else if(run.length){runs.push(run);run=[];}});if(run.length)runs.push(run);
+      const lines=runs.map(points=>{let d='M'+points[0].join(' ');for(let i=1;i<points.length;i++){const a=points[i-1],b=points[i],mid=(a[0]+b[0])/2;d+=' C'+mid+' '+a[1]+' '+mid+' '+b[1]+' '+b[0]+' '+b[1];}return {points,d};});
+      return {key,s,lines};
+    });
+    // Paint both translucent areas before the strokes so every point remains crisp.
+    series.forEach(({s,lines})=>lines.forEach(({points,d})=>{if(points.length>1)svg+='<path class="exec-income-area" d="'+d+' L'+points[points.length-1][0]+' '+(H-B)+' L'+points[0][0]+' '+(H-B)+' Z" fill="url(#exec-income-fill-'+s+')" pointer-events="none"/>';}));
+    series.forEach(({key,s,lines})=>{
+      lines.forEach(({d})=>{svg+='<path class="exec-income-line" d="'+d+'" fill="none" stroke="'+colors[s]+'" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"/>';});
       rows.forEach((r,i)=>{if(!Number.isFinite(r[key]))return;svg+='<g tabindex="0" role="button" class="chart-point" data-month="'+i+'" data-series="'+s+'" aria-label="'+esc(chartPointDescription(r,s,legends,'บาท'))+'"><circle cx="'+x(i)+'" cy="'+y(r[key])+'" r="3.4" fill="white" stroke="'+colors[s]+'" stroke-width="2"/><circle class="point-hit" cx="'+x(i)+'" cy="'+y(r[key])+'" r="10" fill="transparent"/></g>';});
-      if(last>=0){const label=num(rows[last][key]/scale,2),width=Math.max(46,label.length*7+10),xx=Math.min(W-width-2,Math.max(L,x(last)-width/2)),yy=Math.max(1,y(rows[last][key])+(s===0?-29:9));svg+='<rect x="'+xx+'" y="'+yy+'" width="'+width+'" height="21" rx="4" fill="'+colors[s]+'"/><text x="'+(xx+width/2)+'" y="'+(yy+15)+'" text-anchor="middle" style="fill:#fff;font-weight:700;font-size:15px">'+label+'</text>';}
     });
     if(!values.length)svg+='<text x="'+(W/2)+'" y="'+(H/2)+'" text-anchor="middle">ยังไม่มีข้อมูลรายเดือนครบทั้งสองฝั่ง</text>';
     $('#revenue-chart').innerHTML=svg+'</svg><div class="point-card" role="region" aria-label="รายละเอียดจุดกราฟ" hidden></div>';
     bindRevenueChart('revenue-chart',rows,legends,'บาท');
   }
+
   function renderRevenue(){
     if(!revenueOverview)return;
     revenueRefreshControl();
@@ -2013,7 +2034,11 @@ window.ASSETS = {"loaderCoach":"assets/shared-inline-57-913a14f5605d.webp","load
     const items=source.slice(0,5).map(x=>({...x}));
     if(source.length>5)items.push({label:'อื่นๆ',value:source.slice(5).reduce((sum,x)=>sum+x.value,0)});
     const colors=executivePalette;let offset=0;
-    const circles=items.map((item,i)=>{const pct=total?item.value/total*100:0,markup='<circle class="share-segment" data-share="'+i+'" cx="110" cy="110" r="83" fill="none" stroke="'+colors[i]+'" stroke-width="31" pathLength="100" stroke-dasharray="'+pct+' '+(100-pct)+'" stroke-dashoffset="'+(-offset)+'" transform="rotate(-90 110 110)"><title>'+esc(item.label)+' '+num(pct,2)+'%</title></circle>';offset+=pct;return markup;}).join('');
+    const point=(radius,degrees)=>{const angle=(degrees-90)*Math.PI/180;return [110+radius*Math.cos(angle),110+radius*Math.sin(angle)].map(n=>Number(n.toFixed(6))).join(' ');};
+    const arc=(start,end)=>{const outer=98.5,inner=67.5,large=end-start>180?1:0;
+      if(end-start>=359.999999)return 'M'+point(outer,start)+' A'+outer+' '+outer+' 0 1 1 '+point(outer,start+180)+' A'+outer+' '+outer+' 0 1 1 '+point(outer,end)+' L'+point(inner,end)+' A'+inner+' '+inner+' 0 1 0 '+point(inner,start+180)+' A'+inner+' '+inner+' 0 1 0 '+point(inner,start)+' Z';
+      return 'M'+point(outer,start)+' A'+outer+' '+outer+' 0 '+large+' 1 '+point(outer,end)+' L'+point(inner,end)+' A'+inner+' '+inner+' 0 '+large+' 0 '+point(inner,start)+' Z';};
+    const circles=items.map((item,i)=>{const pct=total?item.value/total*100:0,start=offset*3.6;offset+=pct;return '<path class="share-segment" data-share="'+i+'" d="'+(pct>0?arc(start,Math.min(360,offset*3.6)):'')+'" fill="'+colors[i]+'"><title>'+esc(item.label)+' '+num(pct,2)+'%</title></path>';}).join('');
     const a=executiveAmount(total);
     $('#revenue-share').innerHTML='<svg viewBox="10 10 200 200" role="img" aria-label="สัดส่วนรายได้รวม '+num(total,2)+' บาท"><circle cx="110" cy="110" r="83" fill="none" stroke="#e4edf7" stroke-width="31"/>'+circles+'<circle cx="110" cy="110" r="65" fill="#f8fcff"/><text x="110" y="88" text-anchor="middle" style="font-size:17px;font-weight:600">รวม</text><text class="share-total" x="110" y="122" text-anchor="middle" style="font-size:28px">'+a.number+'</text><text x="110" y="149" text-anchor="middle" style="font-size:17px">'+a.unit+'</text></svg><div class="share-legend">'+items.map((item,i)=>{const value=executiveAmount(item.value);return '<button type="button" data-share="'+i+'" aria-pressed="false"><i style="background:'+colors[i]+'"></i><span>'+esc(item.label)+'<strong>'+value.number+' <small>'+value.unit+'</small> ('+num(total?item.value/total*100:0,2)+'%)</strong></span></button>';}).join('')+'</div>';
     $$('#revenue-share .share-legend button').forEach(button=>button.onclick=()=>{const selected=button.dataset.share,clear=button.getAttribute('aria-pressed')==='true';$$('#revenue-share .share-segment').forEach(el=>el.style.opacity=clear||el.dataset.share===selected?'1':'.25');$$('#revenue-share .share-legend button').forEach(el=>el.setAttribute('aria-pressed',String(!clear&&el===button)));});
@@ -2412,6 +2437,7 @@ window.ASSETS = {"loaderCoach":"assets/shared-inline-57-913a14f5605d.webp","load
 
 </body>
 </html>
+
 
 
 
