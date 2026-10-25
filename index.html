@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-<meta name="bks-build" content="v54-regional">
+<meta name="bks-build" content="v55-weekly-heading">
   <meta charset="UTF-8">
   <base target="_top">
   <meta name="description" content="ฝ่ายบริหารการเดินรถ บริษัท ขนส่ง จำกัด — รายงานการเดินรถและข้อมูลหน่วยงาน">
@@ -2812,7 +2812,7 @@ window.ASSETS = {"loaderCoach":"assets/shared-inline-57-913a14f5605d.webp","load
 
 
   // Report module: RevenueWeekly (included inside Scripts.html)
-  function weeklyHeader(){return '<div class="detail-banner weekly-banner"><img data-asset="weeklyHero" alt="รถโดยสารจอดที่ชานชาลา 2 ท่ามกลางเมืองและแสงอาทิตย์"><div class="detail-breadcrumb">'+icon('station')+'<button data-back-report>หน้าแรก</button><span>›</span><button data-back-report>รายงานรายได้</button><span>›</span><span>รายงานรายได้ค่าธรรมเนียม</span></div><h1 id="revenue-detail-title" tabindex="-1">รายงานรายได้ค่าธรรมเนียม<br>ประจำปีงบประมาณ <em>2569</em></h1><p>'+icon('calendar')+'ข้อมูลรายสัปดาห์ (13 สัปดาห์ย้อนหลัง)</p><button class="detail-back" data-back-report>← กลับรายงานรายได้</button></div>';}
+  function weeklyHeader(){return '<div class="detail-banner weekly-banner"><img data-asset="weeklyHero" alt="รถโดยสารจอดที่ชานชาลา 2 ท่ามกลางเมืองและแสงอาทิตย์"><div class="detail-breadcrumb">'+icon('station')+'<button data-back-report>หน้าแรก</button><span>›</span><button data-back-report>รายงานรายได้</button><span>›</span><span>รายงานรายได้ค่าธรรมเนียม</span></div><h1 id="revenue-detail-title" tabindex="-1">รายงานรายได้ค่าธรรมเนียม<br>ประจำปีงบประมาณ <em>2569</em></h1><button class="detail-back" data-back-report>← กลับรายงานรายได้</button></div>';}
   const weeklyGroups=[{name:'รถหมวด 2',color:'#2085c8',total:[1975037,453983253.05]},{name:'รถหมวด 3',color:'#279df3',total:[463207,46719706.39]},{name:'รถหมวด 4',color:'#269ca9',total:[49419,894615.08]},{name:'รวมทั้งหมด',color:'#c39949',total:[2487663,501597574.52]}];
   function weeklyGroupValues(row,index){return index===3?[row[1]+row[3]+row[5],row[2]+row[4]+row[6]]:[row[index*2+1],row[index*2+2]];}
   function weeklyGridMarkup(group='all'){
