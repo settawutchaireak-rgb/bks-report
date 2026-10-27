@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-<meta name="bks-build" content="v57-weekly-colors">
+<meta name="bks-build" content="v58-rental-reference">
   <meta charset="UTF-8">
   <base target="_top">
   <meta name="description" content="ฝ่ายบริหารการเดินรถ บริษัท ขนส่ง จำกัด — รายงานการเดินรถและข้อมูลหน่วยงาน">
@@ -2127,6 +2127,45 @@ body[data-active-page=revenue]:has(#revenue-detail-view[data-report=issues]:not(
 .weekly-grid-table .weekly-subhead.group-3{background:#dce6f1}
 .weekly-category-table .weekly-data-bar{display:none}
 
+/* Revision 58: rental report matched to the supplied blue/cyan reference. */
+#revenue-detail-view[data-report=rental] .rental-banner .rental-period-short{color:#ff268c;font-weight:700;margin-left:4px}
+#revenue-detail-view[data-report=rental] .rental-panel-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-shrink:0}
+#revenue-detail-view[data-report=rental] .rental-panel-heading h2{margin-bottom:8px}
+#revenue-detail-view[data-report=rental] .rental-panel-unit{color:#355ca0;font-size:13px;line-height:1.2;white-space:nowrap;margin-left:auto}
+#revenue-detail-view[data-report=rental] .rental-trend-heading{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center}
+#revenue-detail-view[data-report=rental] .rental-trend-heading .rental-trend-legend{grid-column:1/-1;justify-content:flex-end;margin:0}
+#revenue-detail-view[data-report=rental] .rental-grid-table thead th,
+#revenue-detail-view[data-report=rental] .rental-grid-table tfoot th{--rental-column-fill:linear-gradient(135deg,#248bd3,#0665bb)}
+#revenue-detail-view[data-report=rental] .rental-grid-table .rental-col-0{--rental-column-fill:linear-gradient(135deg,#1673d0,#064eaa)}
+#revenue-detail-view[data-report=rental] .rental-grid-table .rental-col-1{--rental-column-fill:linear-gradient(135deg,#45a8f4,#167dd3)}
+#revenue-detail-view[data-report=rental] .rental-grid-table .rental-col-2{--rental-column-fill:linear-gradient(135deg,#27c4e3,#079fc4)}
+#revenue-detail-view[data-report=rental] .rental-grid-table .rental-col-3{--rental-column-fill:linear-gradient(135deg,#21b8bd,#078e9c)}
+#revenue-detail-view[data-report=rental] .rental-grid-table .rental-col-4{--rental-column-fill:linear-gradient(135deg,#1769bb,#073f8d)}
+#revenue-detail-view[data-report=rental] .rental-crown{display:inline-block;width:20px;height:20px;margin-right:6px;color:#ec0876;vertical-align:-4px}
+#revenue-detail-view[data-report=rental] .rental-crown.icon{stroke-width:2.2}
+
+@media(min-width:1200px) and (min-height:650px){
+ body[data-active-page=revenue]:has(#revenue-detail-view[data-report=rental]:not([hidden])){--ru:min(calc(100vw / 1672),calc(100dvh / 940))}
+ body[data-active-page=revenue]:has(#revenue-detail-view[data-report=rental]:not([hidden])) .site-header{height:calc(68 * var(--ru));gap:calc(44 * var(--ru))}
+ body[data-active-page=revenue]:has(#revenue-detail-view[data-report=rental]:not([hidden])) .brand img{width:calc(102 * var(--ru))}
+ body[data-active-page=revenue]:has(#revenue-detail-view[data-report=rental]:not([hidden])) .brand-name strong{font-size:calc(17 * var(--ru))}
+ body[data-active-page=revenue]:has(#revenue-detail-view[data-report=rental]:not([hidden])) .brand-name>span{font-size:calc(13 * var(--ru))}
+ body[data-active-page=revenue]:has(#revenue-detail-view[data-report=rental]:not([hidden])) .site-header nav a{font-size:calc(14 * var(--ru))}
+ #revenue-detail-view[data-report=rental]{grid-template-rows:calc(263 * var(--ru)) minmax(0,1fr)}
+ #revenue-detail-view[data-report=rental] .rental-banner{padding-left:3.35vw;padding-right:3.35vw}
+ #revenue-detail-view[data-report=rental] .rental-banner .detail-breadcrumb{margin-bottom:calc(22 * var(--ru))}
+ #revenue-detail-view[data-report=rental] .rental-banner h1{font-size:calc(38 * var(--ru))}
+ #revenue-detail-view[data-report=rental] .detail-content{grid-template-rows:calc(117 * var(--ru)) minmax(0,1fr);gap:calc(14 * var(--ru));margin-top:calc(-86 * var(--ru));padding-bottom:calc(33 * var(--ru))}
+ #revenue-detail-view[data-report=rental] .rental-layout{grid-template-columns:885fr 689fr;gap:calc(12 * var(--ru))}
+ #revenue-detail-view[data-report=rental] .rental-right-stack{grid-template-rows:minmax(0,290fr) minmax(0,204fr);gap:calc(12 * var(--ru))}
+ #revenue-detail-view[data-report=rental] .rental-grid-table thead th{height:calc(40 * var(--ru))}
+ #revenue-detail-view[data-report=rental] .rental-grid-table tfoot th,#revenue-detail-view[data-report=rental] .rental-grid-table tfoot td{height:calc(57 * var(--ru))}
+ #revenue-detail-view[data-report=rental] .rental-panel-unit{font-size:calc(13 * var(--ru))}
+ #revenue-detail-view[data-report=rental] .rental-panel-heading h2{margin-bottom:calc(12 * var(--ru))}
+ #revenue-detail-view[data-report=rental] .rental-trend-legend{font-size:calc(13 * var(--ru));gap:calc(18 * var(--ru))}
+ #revenue-detail-view[data-report=rental] .rental-share-design>svg{max-height:calc(184 * var(--ru))}
+}
+
 @media(min-width:1200px) and (min-height:700px){
  body[data-active-page=revenue] .site-header{height:calc(68 * var(--du));gap:calc(36 * var(--du))}
  body[data-active-page=revenue] .brand img{width:calc(84 * var(--du))}
@@ -2358,6 +2397,7 @@ window.ASSETS = {"loaderCoach":"assets/shared-inline-57-913a14f5605d.webp","load
   paths.executiveBus='<rect x="5" y="3" width="22" height="25" rx="5" fill="currentColor" stroke="none"/><path d="M9 8h14v11H9z" fill="white" stroke="none"/><path d="M11 5h10" stroke="white" stroke-width="1.2"/><circle cx="10" cy="23" r="1.7" fill="white"/><circle cx="22" cy="23" r="1.7" fill="white"/><path d="M8 27v3m16-3v3M3 10v9m26-9v9" stroke="currentColor" stroke-width="2.6"/>';
   paths.handshake='<path d="m2 13 5-7 6 2 6-2 6 2 5 7-4 4-6 8-3 1-3-2-3-1-4-4-5-4 4-8m7-1-4 6 3 2 5-5 8 8m-15-4 9 9m-6-13 9 9m-6-12 9 9M2 13l5 3m18-8-3 7" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>';
   paths.download='<path d="M16 3v18m-6-6 6 6 6-6M5 22v6h22v-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>';
+  paths.trophy='<path d="M10 4h12v5c0 6-2 10-6 10s-6-4-6-10V4Zm0 3H5v3c0 4 3 6 7 6m10-9h5v3c0 4-3 6-7 6M16 19v5m-5 4h10m-8-4h6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>';
   function icon(name) { return '<svg class="icon" viewBox="0 0 32 32" aria-hidden="true">' + (paths[name] || paths.document) + '</svg>'; }
   $$('[data-icon]').forEach(el => el.innerHTML = icon(el.dataset.icon));
   const pages = ['home','revenue','trips','departments','documents'];
@@ -2944,15 +2984,15 @@ window.ASSETS = {"loaderCoach":"assets/shared-inline-57-913a14f5605d.webp","load
   }
 
   // Report module: RevenueRental (included inside Scripts.html)
-  const rentalDesign={names:['จตุจักร','ใต้ทางด่วนจตุจักร','เอกมัย','ปิ่นเกล้า'],totals:[67028422.02,10200882.89,10092114.16,3053050.01],colors:['#164d91','#82a9db','#cea24c','#55a7ad'],total:90160776.73};
-  function rentalHeader(){return '<div class="detail-banner rental-banner"><img data-asset="rentalHero" alt="พื้นที่จำหน่ายตั๋วและร้านค้าภายในสถานีขนส่ง"><div class="detail-breadcrumb"><button data-back-report>หน้าแรก</button><span>›</span><button data-back-report>รายงานรายได้</button><span>›</span><span>รายงานรายได้ค่าเช่า 4 พื้นที่ส่วนกลาง</span></div><h1 id="revenue-detail-title" tabindex="-1">รายงานรายได้ค่าเช่า 4 พื้นที่ส่วนกลาง <small>(ต.ค. 68 - ส.ค. 69)</small></h1><p>'+icon('calendar')+' ข้อมูล ณ 1 ตุลาคม 2568 - 20 กันยายน 2569</p><button class="detail-back" data-back-report>← กลับรายงานรายได้</button></div>';}
+  const rentalDesign={names:['จตุจักร','ใต้ทางด่วนจตุจักร','เอกมัย','ปิ่นเกล้า'],totals:[67028422.02,10200882.89,10092114.16,3053050.01],colors:['#075ab8','#3298ed','#16b7d7','#079da6'],total:90160776.73};
+  function rentalHeader(){return '<div class="detail-banner rental-banner"><img data-asset="rentalHero" alt="พื้นที่จำหน่ายตั๋วและร้านค้าภายในสถานีขนส่ง"><div class="detail-breadcrumb"><button data-back-report>หน้าแรก</button><span>›</span><button data-back-report>รายงานรายได้</button><span>›</span><span>รายงานรายได้ค่าเช่า 4 พื้นที่ส่วนกลาง</span></div><h1 id="revenue-detail-title" tabindex="-1">รายงานรายได้ค่าเช่า 4 พื้นที่ส่วนกลาง</h1><p>'+icon('calendar')+' ข้อมูล ณ 1 ตุลาคม 2568 - 20 กันยายน 2569 <span class="rental-period-short">(ต.ค. 68 - ส.ค. 69)</span></p><button class="detail-back" data-back-report>← กลับรายงานรายได้</button></div>';}
   function rentalGrid(){
     const d=rentalDesign,rows=[...rentalRows,['กันยายน',null,null,null,null]],maxima=d.names.map((_,i)=>Math.max(...rentalRows.map(r=>r[i+1]))),maxTotal=Math.max(...rentalRows.map(r=>r.slice(1).reduce((a,b)=>a+b,0)));
-    return '<div class="rental-grid-scroll"><table class="rental-grid-table"><caption>รายได้ค่าเช่า 4 พื้นที่ส่วนกลาง รายเดือน หน่วยบาท</caption><colgroup><col class="rental-month-col">'+Array(5).fill('<col>').join('')+'</colgroup><thead><tr><th scope="col">เดือน</th>'+d.names.map((name,i)=>'<th scope="col" class="rental-col-'+i+'">'+icon(i===0||i===3?'station':i===1?'building':'shop')+' '+name+'</th>').join('')+'<th scope="col" class="rental-col-4">รวม</th></tr></thead><tbody>'+rows.map((r,i)=>{const valid=Number.isFinite(r[1]),sum=valid?r.slice(1).reduce((a,b)=>a+b,0):null;return '<tr class="'+(i===9?'rental-peak-row':'')+'" data-rental-row="'+i+'"><th scope="row">'+(valid?'<button type="button" data-rental-month="'+i+'">'+(i===9?'<span class="rental-crown" aria-label="เดือนที่รายได้สูงสุด">♛</span>':'')+r[0]+'</button>':r[0]+' <small>รอข้อมูล</small>')+'</th>'+r.slice(1).map((value,j)=>'<td>'+(Number.isFinite(value)?'<i class="rental-cell-bar" style="--fill:'+d.colors[j]+';--size:'+Math.max(0,value/maxima[j]*100)+'%" aria-hidden="true"></i><span>'+num(value,2)+'</span>':'<span class="rental-missing">—</span>')+'</td>').join('')+'<td class="rental-row-total">'+(valid?'<i class="rental-cell-bar" style="--fill:#348ad2;--size:'+sum/maxTotal*100+'%" aria-hidden="true"></i><strong>'+num(sum,2)+'</strong>':'<span class="rental-missing">—</span>')+'</td></tr>';}).join('')+'</tbody><tfoot><tr><th scope="row">รวมทั้งสิ้น</th>'+[...d.totals,d.total].map((v,i)=>'<td class="rental-col-'+i+'">'+num(v,2)+'</td>').join('')+'</tr></tfoot></table></div>';
+    return '<div class="rental-grid-scroll"><table class="rental-grid-table"><caption>รายได้ค่าเช่า 4 พื้นที่ส่วนกลาง รายเดือน หน่วยบาท</caption><colgroup><col class="rental-month-col">'+Array(5).fill('<col>').join('')+'</colgroup><thead><tr><th scope="col">เดือน</th>'+d.names.map((name,i)=>'<th scope="col" class="rental-col-'+i+'">'+icon(i===0||i===2?'bus':i===1?'building':'station')+' '+name+'</th>').join('')+'<th scope="col" class="rental-col-4">รวม</th></tr></thead><tbody>'+rows.map((r,i)=>{const valid=Number.isFinite(r[1]),sum=valid?r.slice(1).reduce((a,b)=>a+b,0):null;return '<tr class="'+(i===9?'rental-peak-row':'')+'" data-rental-row="'+i+'"><th scope="row">'+(valid?'<button type="button" data-rental-month="'+i+'">'+(i===9?icon('trophy').replace('class="icon"','class="icon rental-crown"'):'')+r[0]+'</button>':r[0]+' <small>รอข้อมูล</small>')+'</th>'+r.slice(1).map((value,j)=>'<td>'+(Number.isFinite(value)?'<i class="rental-cell-bar" style="--fill:'+d.colors[j]+';--size:'+Math.max(0,value/maxima[j]*100)+'%" aria-hidden="true"></i><span>'+num(value,2)+'</span>':'<span class="rental-missing">—</span>')+'</td>').join('')+'<td class="rental-row-total">'+(valid?'<i class="rental-cell-bar" style="--fill:#075ab8;--size:'+sum/maxTotal*100+'%" aria-hidden="true"></i><strong>'+num(sum,2)+'</strong>':'<span class="rental-missing">—</span>')+'</td></tr>';}).join('')+'</tbody><tfoot><tr><th scope="row">รวมทั้งสิ้น</th>'+[...d.totals,d.total].map((v,i)=>'<td class="rental-col-'+i+'">'+num(v,2)+'</td>').join('')+'</tr></tfoot></table></div>';
   }
   function rentalTrend(){
     const d=rentalDesign,W=780,H=205,L=48,R=18,T=17,B=28,pw=W-L-R,ph=H-T-B,max=10,x=i=>L+i*pw/11,y=v=>T+ph*(1-v/1e6/max),abbreviations=['ต.ค.','พ.ย.','ธ.ค.','ม.ค.','ก.พ.','มี.ค.','เม.ย.','พ.ค.','มิ.ย.','ก.ค.','ส.ค.','ก.ย.'];
-    let svg='<svg viewBox="0 0 '+W+' '+H+'" preserveAspectRatio="none" role="img" aria-label="แนวโน้มรายได้ค่าเช่า 4 พื้นที่ส่วนกลาง หน่วยล้านบาท กันยายนยังไม่มีข้อมูล"><defs><linearGradient id="rental-trend-fill" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#164d91" stop-opacity=".18"/><stop offset="1" stop-color="#164d91" stop-opacity=".015"/></linearGradient></defs><text x="5" y="10">ล้านบาท</text>';
+    let svg='<svg viewBox="0 0 '+W+' '+H+'" preserveAspectRatio="none" role="img" aria-label="แนวโน้มรายได้ค่าเช่า 4 พื้นที่ส่วนกลาง หน่วยล้านบาท กันยายนยังไม่มีข้อมูล"><defs><linearGradient id="rental-trend-fill" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#075ab8" stop-opacity=".18"/><stop offset="1" stop-color="#075ab8" stop-opacity=".015"/></linearGradient></defs><text x="5" y="10">ล้านบาท</text>';
     for(let v=0;v<=10;v+=2)svg+='<path d="M'+L+' '+y(v*1e6)+'H'+(W-R)+'" stroke="#e3edf8"/><text x="'+(L-8)+'" y="'+(y(v*1e6)+4)+'" text-anchor="end">'+num(v,1)+'</text>';
     abbreviations.forEach((label,i)=>{svg+='<text x="'+x(i)+'" y="'+(H-6)+'" text-anchor="middle">'+label+'</text>';});
     d.names.forEach((name,s)=>{let line='';rentalRows.forEach((r,i)=>{const xx=x(i),yy=y(r[s+1]);if(i===0)line='M'+xx+' '+yy;else{const px=x(i-1),py=y(rentalRows[i-1][s+1]),mid=(px+xx)/2;line+=' C'+mid+' '+py+' '+mid+' '+yy+' '+xx+' '+yy;}});if(s===0)svg+='<path d="'+line+' L'+x(rentalRows.length-1)+' '+(H-B)+' L'+x(0)+' '+(H-B)+' Z" fill="url(#rental-trend-fill)"/>';svg+='<path d="'+line+'" fill="none" stroke="'+d.colors[s]+'" stroke-width="2.5" stroke-linejoin="round"/>';rentalRows.forEach((r,i)=>{svg+='<g class="rental-chart-point" tabindex="0" role="button" data-rental-point="'+i+'" aria-label="'+esc(r[0]+' '+name+' '+num(r[s+1],2)+' บาท')+'"><circle cx="'+x(i)+'" cy="'+y(r[s+1])+'" r="3.2" stroke="'+d.colors[s]+'" stroke-width="2" fill="white"/><circle cx="'+x(i)+'" cy="'+y(r[s+1])+'" r="9" fill="transparent"/></g>';});});
@@ -2964,10 +3004,10 @@ window.ASSETS = {"loaderCoach":"assets/shared-inline-57-913a14f5605d.webp","load
     return '<div class="rental-share-design"><svg viewBox="0 0 200 200" role="img" aria-label="รายได้รวม 90.16 ล้านบาท">'+slices+'<text x="100" y="101" text-anchor="middle" class="rental-donut-total">90.16</text><text x="100" y="127" text-anchor="middle">ล้านบาท</text></svg><div class="rental-share-rows">'+d.names.map((name,i)=>'<div class="rental-share-line"><span class="rental-share-name"><i style="background:'+d.colors[i]+'"></i>'+name+'</span><strong>'+num(d.totals[i],2)+' <small>บาท</small></strong><b>'+num(d.totals[i]/d.total*100,2)+'%</b><span class="rental-share-track"><i style="width:'+d.totals[i]/d.total*100+'%;background:'+d.colors[i]+'"></i></span></div>').join('')+'</div></div>';
   }
   function rentalReport(){
-    const definitions=[['เป้าหมาย','99,800,000.00','บาท','trend',100,'#ee0579'],['รายได้รวม ปี 2569','90,160,776.73','บาท','coins',90.34,'#438be3'],['คงเหลือจากเป้าหมาย','9,639,223.27','บาท','document',9.66,'#c69a46'],['เฉลี่ย/เดือน','8,196,434.25','บาท','chart',null,'#547ddd'],['เดือนที่รายได้สูงสุด','กรกฎาคม 2569','8,972,370.44 บาท','calendar',null,'#547ddd']];
+    const definitions=[['เป้าหมาย','99,800,000.00','บาท','trend',100,'#ee0579'],['รายได้รวม ปี 2569','90,160,776.73','บาท','coins',90.34,'#3298ed'],['คงเหลือจากเป้าหมาย','9,639,223.27','บาท','document',9.66,'#168fe2'],['เฉลี่ย/เดือน','8,196,434.25','บาท','chart',null,'#3298ed'],['เดือนที่รายได้สูงสุด','กรกฎาคม 2569','8,972,370.44 บาท','calendar',null,'#3298ed']];
     const cards=definitions.map(([label,value,note,ico,pct,color],i)=>'<article class="rental-kpi rental-kpi-'+i+'"><img data-asset="rentalStat'+i+'" alt=""><span class="rental-kpi-icon" style="--kpi-color:'+color+'">'+icon(ico)+'</span><div class="rental-kpi-copy"><h3>'+label+'</h3><strong>'+value+'</strong><small>'+note+'</small></div>'+(pct!==null?'<div class="rental-kpi-progress"><span><i style="width:'+pct+'%;background:'+color+'"></i></span><b>'+num(pct,2)+'%</b></div>':'')+'</article>').join('');
     const legend=rentalDesign.names.map((name,i)=>'<span><i style="background:'+rentalDesign.colors[i]+'"></i>'+name+'</span>').join('');
-    return '<div class="rental-kpis">'+cards+'</div><div class="rental-layout"><article class="rental-report-panel rental-table-panel"><h2>'+icon('document')+'รายได้ค่าเช่า 4 พื้นที่ส่วนกลาง รายเดือน</h2>'+rentalGrid()+'</article><div class="rental-right-stack"><article class="rental-report-panel rental-trend-panel"><div class="rental-trend-heading"><h2>'+icon('chart')+'แนวโน้มรายได้ค่าเช่า 4 พื้นที่ส่วนกลาง</h2><div class="rental-trend-legend">'+legend+'</div></div>'+rentalTrend()+'</article><article class="rental-report-panel rental-donut-panel"><h2>'+icon('pie')+'สัดส่วนรายได้ค่าเช่า ปี 2569</h2>'+rentalDonut()+'</article></div></div>';
+    return '<div class="rental-kpis">'+cards+'</div><div class="rental-layout"><article class="rental-report-panel rental-table-panel"><div class="rental-panel-heading"><h2>'+icon('document')+'รายได้ค่าเช่า 4 พื้นที่ส่วนกลาง รายเดือน</h2><span class="rental-panel-unit">หน่วย : บาท</span></div>'+rentalGrid()+'</article><div class="rental-right-stack"><article class="rental-report-panel rental-trend-panel"><div class="rental-trend-heading"><h2>'+icon('chart')+'แนวโน้มรายได้ค่าเช่า 4 พื้นที่ส่วนกลาง</h2><span class="rental-panel-unit">หน่วย : ล้านบาท</span><div class="rental-trend-legend">'+legend+'</div></div>'+rentalTrend()+'</article><article class="rental-report-panel rental-donut-panel"><div class="rental-panel-heading"><h2>'+icon('pie')+'สัดส่วนรายได้ค่าเช่า ปี 2569</h2><span class="rental-panel-unit">หน่วย : บาท</span></div>'+rentalDonut()+'</article></div></div>';
   }
   function bindRentalReport(){
     const root=$('#revenue-detail-view'),canvas=root.querySelector('.rental-trend-canvas'),tooltip=root.querySelector('.rental-point-tooltip');
