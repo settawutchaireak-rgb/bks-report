@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-<meta name="bks-build" content="v58-rental-reference">
+<meta name="bks-build" content="v59-vehicle-standards">
   <meta charset="UTF-8">
   <base target="_top">
   <meta name="description" content="ฝ่ายบริหารการเดินรถ บริษัท ขนส่ง จำกัด — รายงานการเดินรถและข้อมูลหน่วยงาน">
@@ -2195,6 +2195,37 @@ body[data-active-page=revenue]:has(#revenue-detail-view[data-report=issues]:not(
  .weekly-category-table{min-width:980px}
 }
 
+/* Revision 59: passenger vehicle standards */
+.kpi-fleet-button{appearance:none;border:0;font:inherit;color:inherit;text-align:left;cursor:pointer;width:auto;min-width:0;transition:transform .18s ease,filter .18s ease}
+.kpi-fleet-button:hover{transform:translateY(-2px);filter:saturate(1.08)}
+.kpi-fleet-button:focus-visible{outline:3px solid #ec0984;outline-offset:-4px;border-radius:18px}
+.kpi-fleet-button .kpi-label::after{content:'  →';color:#ec0984;font-weight:800}
+.vehicle-standards-page{min-height:calc(100dvh - 84px);background:linear-gradient(180deg,#f7fbff 0,#eef8ff 58%,#f7fbff 100%);color:#05266a}
+.standards-hero{position:relative;height:254px;overflow:hidden;background:#064188}
+.standards-hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 55%}
+.standards-hero-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(2,44,103,.98) 0%,rgba(2,58,126,.9) 32%,rgba(5,63,132,.25) 66%,rgba(3,34,80,.08) 100%)}
+.standards-hero-copy{position:relative;z-index:1;display:flex;flex-direction:column;justify-content:center;height:100%;padding:0 5vw 32px;color:#fff}
+.standards-hero-copy h1{margin:0 0 3px;font-size:clamp(42px,4vw,62px);line-height:1.05;letter-spacing:-1.5px}
+.standards-hero-copy>p{margin:0 0 13px;font-size:clamp(15px,1.45vw,21px)}
+.standards-date{display:flex;align-items:center;gap:9px;width:max-content;padding:8px 16px;border-radius:999px;background:#fff;color:#123c79;font-weight:700;box-shadow:0 4px 14px rgba(0,26,70,.15)}
+.standards-summary{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.standards-shell{position:relative;z-index:2;margin-top:-44px;padding:0 2.4vw 46px}
+.standards-stat{position:relative;display:flex;align-items:center;gap:18px;min-height:108px;padding:17px 22px;overflow:hidden;border:1px solid #dceaf8;border-radius:16px;background:rgba(255,255,255,.94);box-shadow:0 8px 24px rgba(13,65,120,.09)}
+.standards-stat::after{content:'';position:absolute;width:130px;height:130px;right:-42px;bottom:-61px;border:2px solid #d7e9fb;border-radius:36px;transform:rotate(28deg)}
+.standards-stat-icon{display:grid;place-items:center;flex:0 0 62px;width:62px;height:62px;border-radius:50%;background:linear-gradient(145deg,#fff0f8,#f4f8ff);color:#073f89}
+.standards-stat-icon .icon{width:38px;height:38px;stroke-width:2}.standards-stat:nth-child(n+2) .standards-stat-icon{background:linear-gradient(145deg,#e9f3ff,#f6fbff)}
+.standards-stat h2{margin:0;font-size:16px;line-height:1.1}.standards-stat strong{display:inline-block;margin-top:4px;font-size:clamp(28px,2.7vw,40px);line-height:.95;color:#082568}.standards-stat small{font-size:17px;margin-left:6px}
+.standards-toolbar{display:flex;align-items:end;justify-content:space-between;gap:22px;margin:30px 2px 10px}.standards-toolbar h2{display:flex;align-items:center;gap:12px;margin:0;font-size:clamp(24px,2.35vw,34px);line-height:1.1}.standards-toolbar h2::before{content:'';width:8px;height:36px;border-radius:8px;background:#ed0a86}
+.standards-tabs{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end}.standards-tabs button{min-width:100px;padding:9px 18px;border:1px solid #cfe1f4;border-radius:999px;background:#f8fbff;color:#123b79;font:700 15px inherit;cursor:pointer;transition:.18s ease}.standards-tabs button:hover{border-color:#ec0984;color:#d80070}.standards-tabs button[aria-pressed=true]{border-color:#ec0984;background:linear-gradient(135deg,#f20b87,#ff2a9b);color:#fff;box-shadow:0 5px 14px rgba(236,9,132,.2)}.standards-tabs .all-standards-link{min-width:175px}
+.standards-list{display:grid;gap:15px}.standards-result-note{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.standard-card{--standard-accent:#ec0984;display:grid;grid-template-columns:minmax(310px,31%) minmax(0,1fr);min-height:164px;overflow:hidden;border:1px solid #dfebf7;border-radius:16px;background:rgba(255,255,255,.96);box-shadow:0 7px 22px rgba(12,68,126,.08)}
+.standard-photo{position:relative;min-width:0;min-height:164px;overflow:hidden;background:#d9e9f6}.standard-photo img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;object-position:center 62%;filter:saturate(.88) brightness(1.05)}.standard-photo::after{content:'';position:absolute;left:0;right:0;bottom:0;height:9px;background:linear-gradient(90deg,transparent 8%,var(--standard-accent) 23%,var(--standard-accent) 88%,transparent)}
+.standard-card-main{display:grid;grid-template-rows:1fr auto;min-width:0}.standard-card-top{display:grid;grid-template-columns:minmax(0,1fr) 190px 132px;align-items:center;gap:18px;padding:11px 18px 8px}.standard-tier{display:inline-flex;padding:4px 14px;border-radius:999px;background:var(--standard-accent);color:#fff;font-size:14px;font-weight:800;line-height:1.25}.standard-copy h3{display:inline;margin:0 0 0 10px;font-size:22px;line-height:1.15;color:#092d70}.standard-copy p{margin:6px 0 0;color:#54709b;font-size:15px;line-height:1.35}
+.standard-count{display:grid;grid-template-columns:48px 1fr;align-items:center;gap:10px}.standard-count .icon{grid-row:1/3;width:48px;height:48px;padding:11px;border-radius:50%;background:#f4f8ff;color:var(--standard-accent)}.standard-count span{align-self:end;font-weight:700;font-size:14px}.standard-count strong{align-self:start;font-size:34px;line-height:1;color:var(--standard-accent)}.standard-count small{font-size:16px;margin-left:3px;color:#143a72}.standard-detail{justify-self:end;padding:9px 15px;border:1.5px solid var(--standard-accent);border-radius:999px;background:#fff;color:var(--standard-accent);font:700 14px inherit;cursor:pointer;white-space:nowrap}
+.standard-features{display:grid;grid-template-columns:1.2fr 1fr 1fr 1.25fr .9fr;border-top:1px solid #dce7f2;min-height:55px}.standard-feature{display:flex;align-items:center;gap:7px;padding:8px 13px;border-right:1px solid #dce7f2;color:#234a80;font-size:12.5px;line-height:1.15}.standard-feature:last-child{border-right:0}.standard-feature .icon{width:25px;height:25px;flex:0 0 25px}.standard-feature b{display:grid;place-items:center;width:20px;height:20px;margin-left:auto;border-radius:50%;background:#f20b87;color:white;font-size:12px}.standard-feature b.no{background:#7c8ba1}
+@media(max-width:1050px){.standards-summary{grid-template-columns:repeat(2,minmax(0,1fr))}.standards-toolbar{align-items:flex-start;flex-direction:column}.standards-tabs{justify-content:flex-start}.standard-card{grid-template-columns:280px minmax(0,1fr)}.standard-card-top{grid-template-columns:minmax(0,1fr) 160px}.standard-detail{grid-column:2}.standard-features{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:720px){.standards-hero{height:265px}.standards-hero-copy{padding:0 20px 34px}.standards-hero-copy h1{font-size:36px}.standards-shell{padding:0 12px 32px}.standards-summary{grid-template-columns:1fr;gap:8px}.standards-stat{min-height:88px;padding:12px 16px}.standards-tabs{display:grid;grid-template-columns:repeat(2,1fr);width:100%}.standards-tabs button,.standards-tabs .all-standards-link{min-width:0;padding-inline:8px}.standards-tabs .all-standards-link{grid-column:1/-1}.standard-card{grid-template-columns:1fr}.standard-photo{height:190px}.standard-card-top{grid-template-columns:1fr auto;padding:14px}.standard-copy{grid-column:1/-1}.standard-detail{grid-column:2;grid-row:2}.standard-features{grid-template-columns:1fr 1fr}.standard-feature{border-bottom:1px solid #dce7f2}.standard-copy h3{display:block;margin:8px 0 0;font-size:20px}}
+
 </style>
 
 <script src="config.js"></script><script src="assets-manifest.js"></script><script src="sheet-csv.js"></script></head>
@@ -2277,6 +2308,33 @@ body[data-active-page=revenue]:has(#revenue-detail-view[data-report=issues]:not(
 
 
 
+
+<section class="page vehicle-standards-page" id="page-standards" aria-labelledby="standards-title" hidden>
+  <div class="standards-hero">
+    <img data-asset="heroPoster" alt="รถโดยสารในสถานีขนส่ง" decoding="async">
+    <div class="standards-hero-shade"></div>
+    <div class="standards-hero-copy">
+      <h1 id="standards-title">มาตรฐานรถโดยสาร</h1>
+      <p>สรุปข้อมูลรถโดยสารตามประเภทและมาตรฐาน (ตัวอย่าง 3 มาตรฐานจากทั้งหมด 11 มาตรฐาน)</p>
+      <span class="standards-date">ข้อมูลตัวอย่าง ณ ปีงบประมาณ 2569</span>
+    </div>
+  </div>
+  <div class="standards-shell">
+    <div class="standards-summary" id="standards-summary"></div>
+    <div class="standards-toolbar">
+      <h2>ตัวอย่างมาตรฐานรถโดยสาร</h2>
+      <div class="standards-tabs" role="group" aria-label="เลือกมาตรฐานรถโดยสาร">
+        <button type="button" data-standard-filter="all" aria-pressed="false">ทั้งหมด</button>
+        <button type="button" data-standard-filter="1" aria-pressed="true">มาตรฐาน 1</button>
+        <button type="button" data-standard-filter="2" aria-pressed="false">มาตรฐาน 2</button>
+        <button type="button" data-standard-filter="3" aria-pressed="false">มาตรฐาน 3</button>
+        <button type="button" class="all-standards-link" data-standard-filter="all" aria-pressed="false">ดูทั้ง 11 มาตรฐาน →</button>
+      </div>
+    </div>
+    <p class="standards-result-note" id="standards-result-note" aria-live="polite"></p>
+    <div class="standards-list" id="standards-list"></div>
+  </div>
+</section>
 
     <section class="page revenue-page" id="page-revenue" aria-labelledby="revenue-title" hidden>
   <div class="revenue-banner">
@@ -2400,7 +2458,7 @@ window.ASSETS = {"loaderCoach":"assets/shared-inline-57-913a14f5605d.webp","load
   paths.trophy='<path d="M10 4h12v5c0 6-2 10-6 10s-6-4-6-10V4Zm0 3H5v3c0 4 3 6 7 6m10-9h5v3c0 4-3 6-7 6M16 19v5m-5 4h10m-8-4h6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>';
   function icon(name) { return '<svg class="icon" viewBox="0 0 32 32" aria-hidden="true">' + (paths[name] || paths.document) + '</svg>'; }
   $$('[data-icon]').forEach(el => el.innerHTML = icon(el.dataset.icon));
-  const pages = ['home','revenue','trips','departments','documents'];
+  const pages = ['home','standards','revenue','trips','departments','documents'];
   const loaded = {};
   const cache = {};
   const errors = new Set();
@@ -2564,6 +2622,7 @@ window.ASSETS = {"loaderCoach":"assets/shared-inline-57-913a14f5605d.webp","load
     const pageEl=$('#page-'+page);
     try {
       if(page==='home')renderDashboard(await rpc('getDashboardData'));
+      if(page==='standards')renderVehicleStandards('1');
       if(page==='revenue'){
         revenueOverview=await rpc('getRevenueOverviewData');
         renderRevenue();markRevenueUpdated();
@@ -2609,12 +2668,48 @@ window.ASSETS = {"loaderCoach":"assets/shared-inline-57-913a14f5605d.webp","load
       ['เส้นทางที่ให้บริการ',select('route',924),'เส้นทาง','route','route',[['บริษัทฯ',187],['รถร่วม',737]]],
       ['จำนวนรถที่ให้บริการ (วันนี้)',select('fleet',1248),'คัน','bus','bus',[['รถใหญ่',760],['รถเล็ก',488]]]
     ];
-    $('#home-kpis').innerHTML=metrics.map(k=>'<div class="kpi"><div class="kpi-backdrop" aria-hidden="true">'+backdrop[k[4]]+'</div><div class="kpi-heading">'+icon(k[3])+'<div><p class="kpi-label">'+esc(k[0])+'</p><div class="kpi-value"><strong>'+num(k[1])+'</strong><span>'+esc(k[2])+'</span></div></div></div>'+(data.demo?split(k[5]):'<div class="kpi-breakdown muted">ข้อมูลจากหน่วยงาน</div>')+'</div>').join('')+
+    $('#home-kpis').innerHTML=metrics.map((k,index)=>'<'+(index===3?'button type="button" id="fleet-standards-button" aria-label="ดูมาตรฐานรถโดยสาร"':'div')+' class="kpi'+(index===3?' kpi-fleet-button':'')+'"><div class="kpi-backdrop" aria-hidden="true">'+backdrop[k[4]]+'</div><div class="kpi-heading">'+icon(k[3])+'<div><p class="kpi-label">'+esc(k[0])+'</p><div class="kpi-value"><strong>'+num(k[1])+'</strong><span>'+esc(k[2])+'</span></div></div></div>'+(data.demo?split(k[5]):'<div class="kpi-breakdown muted">ข้อมูลจากหน่วยงาน</div>')+'</'+(index===3?'button':'div')+'>').join('')+
       '<div class="kpi kpi-fare"><div class="kpi-backdrop" aria-hidden="true">'+backdrop.fare+'</div><button class="fare-button" id="fare-button">'+icon('coins')+'<span><span class="kpi-label">อัตราค่าโดยสาร</span><strong class="fare-latest">ตรวจสอบล่าสุด '+icon('arrow')+'</strong>'+(data.demo?'<span class="fare-date">อัปเดต 3 ต.ค. 2569</span>':'')+'</span></button></div>';
     applyAssets({});
+    $('#fleet-standards-button').addEventListener('click',()=>route('standards',true,true));
     $('#fare-button').addEventListener('click',()=>showDialog('อัตราค่าโดยสาร','<p>ค่าโดยสารขึ้นอยู่กับเส้นทาง ประเภทรถ และเงื่อนไขการเดินทาง</p><div class="notice">ยังไม่มีตารางอัตราค่าโดยสารที่หน่วยงานยืนยัน กรุณาเพิ่มเอกสารจริงในคลังเอกสารก่อนใช้อ้างอิง</div><p><a class="text-button" href="?page=documents" data-page="documents">ค้นหาเอกสารอัตราค่าโดยสาร '+icon('arrow')+'</a></p>'));
     fitHomeHero();
   }
+  const vehicleStandards=[
+    {id:'1a',group:'1',tier:'Premium Class',title:'รถโดยสารมาตรฐาน 1 (ก)',count:840,accent:'#ed0a86',description:'รถโดยสารปรับอากาศแบบพิเศษ ห้องโดยสารมีที่นั่งกว้างระดับไกล พร้อมสิ่งอำนวยความสะดวกครบถ้วน',storage:true,toilet:true},
+    {id:'1p',group:'1',tier:'Premium Plus',title:'รถโดยสารมาตรฐาน 1 (พ)',count:690,accent:'#f5a500',description:'รถโดยสารปรับอากาศมาตรฐานสูง สำหรับเส้นทางหลักและรองที่มีผู้โดยสารจำนวนมาก',storage:true,toilet:true},
+    {id:'1b',group:'1',tier:'Standard Class',title:'รถโดยสารมาตรฐาน 1 (ข)',count:904,accent:'#1473d4',description:'รถโดยสารปรับอากาศสำหรับการเดินทางระยะสั้น รองรับบริการได้ครอบคลุมหลายเส้นทาง',storage:false,toilet:true},
+    {id:'2a',group:'2',tier:'Comfort Class',title:'รถโดยสารมาตรฐาน 2 (ก)',count:510,accent:'#14a9d2',description:'รถโดยสารปรับอากาศชั้นเดียว ที่นั่งมาตรฐานและพื้นที่โดยสารโปร่งสบาย',storage:true,toilet:false},
+    {id:'2b',group:'2',tier:'City Comfort',title:'รถโดยสารมาตรฐาน 2 (ข)',count:430,accent:'#1b98c8',description:'รถโดยสารสำหรับเส้นทางระหว่างจังหวัด ให้บริการคล่องตัวและปลอดภัย',storage:true,toilet:false},
+    {id:'2c',group:'2',tier:'Regional Class',title:'รถโดยสารมาตรฐาน 2 (ค)',count:380,accent:'#2889c2',description:'รถโดยสารขนาดกลางสำหรับเชื่อมต่อจังหวัดและสถานีขนส่งภูมิภาค',storage:false,toilet:false},
+    {id:'2d',group:'2',tier:'Regional Plus',title:'รถโดยสารมาตรฐาน 2 (ง)',count:326,accent:'#397db8',description:'รถโดยสารปรับอากาศสำหรับเส้นทางภูมิภาค พร้อมพื้นที่สัมภาระมาตรฐาน',storage:true,toilet:false},
+    {id:'3a',group:'3',tier:'Mini Class',title:'รถโดยสารมาตรฐาน 3 (ก)',count:344,accent:'#0da5a5',description:'รถมินิบัสปรับอากาศสำหรับเส้นทางระยะสั้นและจุดเชื่อมต่อชุมชน',storage:false,toilet:false},
+    {id:'3b',group:'3',tier:'Mini Comfort',title:'รถโดยสารมาตรฐาน 3 (ข)',count:310,accent:'#15968f',description:'รถโดยสารขนาดเล็กที่คล่องตัว เหมาะกับเส้นทางชุมชนและตัวเมือง',storage:false,toilet:false},
+    {id:'3c',group:'3',tier:'Van Class',title:'รถโดยสารมาตรฐาน 3 (ค)',count:274,accent:'#288b85',description:'รถตู้โดยสารปรับอากาศสำหรับบริการเชื่อมต่อระหว่างสถานี',storage:true,toilet:false},
+    {id:'3d',group:'3',tier:'Local Class',title:'รถโดยสารมาตรฐาน 3 (ง)',count:232,accent:'#367c78',description:'รถโดยสารขนาดเล็กสำหรับเส้นทางท้องถิ่น เน้นความสะดวกและเข้าถึงง่าย',storage:false,toilet:false}
+  ];
+  function standardFeature(iconName,label,available=true){return '<span class="standard-feature">'+icon(iconName)+'<span>'+esc(label)+'</span><b class="'+(available?'':'no')+'">'+(available?'✓':'×')+'</b></span>';}
+  function vehicleStandardCard(item){
+    return '<article class="standard-card" style="--standard-accent:'+item.accent+'"><div class="standard-photo"><img data-asset="heroPoster" alt="รถโดยสาร '+esc(item.title)+'" loading="lazy"></div><div class="standard-card-main"><div class="standard-card-top"><div class="standard-copy"><span class="standard-tier">'+esc(item.tier)+'</span><h3>'+esc(item.title)+'</h3><p>'+esc(item.description)+'</p></div><div class="standard-count">'+icon('bus')+'<span>จำนวนรถ</span><strong>'+num(item.count)+' <small>คัน</small></strong></div><button type="button" class="standard-detail" data-standard-detail="'+item.id+'">ดูรายละเอียด →</button></div><div class="standard-features">'+standardFeature('station','ห้องโดยสารมาตรฐาน')+standardFeature('chart','เครื่องปรับอากาศ')+standardFeature('document','ที่เก็บสัมภาระ',item.storage)+standardFeature('fare','สิ่งอำนวยความสะดวก')+standardFeature('people','ห้องสุขภัณฑ์',item.toilet)+'</div></div></article>';
+  }
+  function renderVehicleStandards(filter='1'){
+    const summary=[['รถโดยสารทั้งหมด',5240,'bus'],['รถโดยสารขนาดใหญ่',3120,'bus'],['รถมินิบัส',980,'executiveBus'],['รถตู้โดยสาร',1140,'station']];
+    $('#standards-summary').innerHTML=summary.map(s=>'<article class="standards-stat"><span class="standards-stat-icon">'+icon(s[2])+'</span><div><h2>'+s[0]+'</h2><strong>'+num(s[1])+'</strong><small>คัน</small></div></article>').join('');
+    const items=filter==='all'?vehicleStandards:vehicleStandards.filter(item=>item.group===filter);
+    $('#standards-list').innerHTML=items.map(vehicleStandardCard).join('');
+    $('#standards-result-note').textContent=filter==='all'?'แสดงรายการมาตรฐานรถโดยสารทั้งหมด 11 รายการ':'แสดงตัวอย่างมาตรฐาน '+filter+' จำนวน '+items.length+' รายการ';
+    $$('.standards-tabs button').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.standardFilter===filter&&!button.classList.contains('all-standards-link'))));
+    applyAssets({});
+  }
+  $('.standards-tabs').addEventListener('click',event=>{
+    const button=event.target.closest('[data-standard-filter]');if(!button)return;
+    renderVehicleStandards(button.dataset.standardFilter);
+  });
+  $('#standards-list').addEventListener('click',event=>{
+    const button=event.target.closest('[data-standard-detail]');if(!button)return;
+    const item=vehicleStandards.find(entry=>entry.id===button.dataset.standardDetail);if(!item)return;
+    showDialog(item.title,'<p>'+esc(item.description)+'</p><div class="notice"><strong>จำนวนรถ '+num(item.count)+' คัน</strong><br>ข้อมูลมาตรฐานในหน้านี้เป็นข้อมูลตัวอย่างสำหรับแสดงรูปแบบรายงาน</div>');
+  });
   function summary(items) {return items.map(item=>'<div class="summary-item"><p>'+esc(item[0])+'</p><strong>'+num(item[1],item[3]||0)+'</strong><small>'+esc(item[2])+'</small></div>').join('');}
   let revenueRefreshing = false;
   function revenueRefreshControl() {
