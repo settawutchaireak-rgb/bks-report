@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-<meta name="bks-build" content="v61-route-fit">
+<meta name="bks-build" content="v62-original-clickable-kpis">
   <meta charset="UTF-8">
   <base target="_top">
   <meta name="description" content="ฝ่ายบริหารการเดินรถ บริษัท ขนส่ง จำกัด — รายงานการเดินรถและข้อมูลหน่วยงาน">
@@ -2196,17 +2196,8 @@ body[data-active-page=revenue]:has(#revenue-detail-view[data-report=issues]:not(
 }
 
 /* Revision 59: passenger vehicle standards */
-.kpi-fleet-button,.kpi-route-button{appearance:none;border:0;background:transparent;font:inherit;color:inherit;text-align:left;cursor:pointer;width:auto;min-width:0;margin:0;transition:transform .18s ease,filter .18s ease,box-shadow .18s ease}
-.kpi-fleet-button:hover{transform:translateY(-2px);filter:saturate(1.08)}
+.kpi-fleet-button,.kpi-route-button{appearance:none;border:0;background:transparent;font:inherit;color:inherit;text-align:left;cursor:pointer;width:auto;min-width:0;margin:0}
 .kpi-fleet-button:focus-visible,.kpi-route-button:focus-visible{outline:3px solid #ec0984;outline-offset:-4px;border-radius:18px}
-.kpi-fleet-button .kpi-label::after{content:'  →';color:#ec0984;font-weight:800}
-.kpi-route-button{position:relative;overflow:hidden;border-radius:18px}
-.kpi-route-button::after{content:'ดูเส้นทาง →';position:absolute;right:13px;top:10px;padding:4px 9px;border-radius:999px;background:#ed0a86;color:#fff;font-size:10px;font-weight:800;opacity:0;transform:translateX(8px);transition:.2s ease;box-shadow:0 5px 13px #ed0a8640}
-.kpi-route-button:hover{transform:translateY(-3px);filter:saturate(1.12);box-shadow:0 9px 22px #1457a524}
-.kpi-route-button:hover::after{opacity:1;transform:translateX(0)}
-.kpi-route-button:hover .kpi-heading>.icon{animation:route-icon-pulse .8s ease both}
-.kpi-route-button .kpi-label::after{content:'  →';color:#ec0984;font-weight:800}
-@keyframes route-icon-pulse{40%{transform:rotate(-8deg) scale(1.08)}70%{transform:rotate(5deg) scale(1.05)}}
 .kpi-route-button .kpi-backdrop,.kpi-fleet-button .kpi-backdrop{top:-36px;right:-18px;bottom:-22px;left:-18px;opacity:1}
 .kpi-route-button .kpi-backdrop>img,.kpi-fleet-button .kpi-backdrop>img{width:100%;height:100%;object-fit:cover;object-position:center top}
 .vehicle-standards-page{min-height:calc(100dvh - 84px);background:linear-gradient(180deg,#f7fbff 0,#eef8ff 58%,#f7fbff 100%);color:#05266a}
