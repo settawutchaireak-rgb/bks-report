@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-<meta name="bks-build" content="v59-vehicle-standards">
+<meta name="bks-build" content="v60-route-directory">
   <meta charset="UTF-8">
   <base target="_top">
   <meta name="description" content="ฝ่ายบริหารการเดินรถ บริษัท ขนส่ง จำกัด — รายงานการเดินรถและข้อมูลหน่วยงาน">
@@ -2196,10 +2196,17 @@ body[data-active-page=revenue]:has(#revenue-detail-view[data-report=issues]:not(
 }
 
 /* Revision 59: passenger vehicle standards */
-.kpi-fleet-button{appearance:none;border:0;font:inherit;color:inherit;text-align:left;cursor:pointer;width:auto;min-width:0;transition:transform .18s ease,filter .18s ease}
+.kpi-fleet-button,.kpi-route-button{appearance:none;border:0;background:transparent;font:inherit;color:inherit;text-align:left;cursor:pointer;width:auto;min-width:0;margin:0;transition:transform .18s ease,filter .18s ease,box-shadow .18s ease}
 .kpi-fleet-button:hover{transform:translateY(-2px);filter:saturate(1.08)}
-.kpi-fleet-button:focus-visible{outline:3px solid #ec0984;outline-offset:-4px;border-radius:18px}
+.kpi-fleet-button:focus-visible,.kpi-route-button:focus-visible{outline:3px solid #ec0984;outline-offset:-4px;border-radius:18px}
 .kpi-fleet-button .kpi-label::after{content:'  →';color:#ec0984;font-weight:800}
+.kpi-route-button{position:relative;overflow:hidden;border-radius:18px}
+.kpi-route-button::after{content:'ดูเส้นทาง →';position:absolute;right:13px;top:10px;padding:4px 9px;border-radius:999px;background:#ed0a86;color:#fff;font-size:10px;font-weight:800;opacity:0;transform:translateX(8px);transition:.2s ease;box-shadow:0 5px 13px #ed0a8640}
+.kpi-route-button:hover{transform:translateY(-3px);filter:saturate(1.12);box-shadow:0 9px 22px #1457a524}
+.kpi-route-button:hover::after{opacity:1;transform:translateX(0)}
+.kpi-route-button:hover .kpi-heading>.icon{animation:route-icon-pulse .8s ease both}
+.kpi-route-button .kpi-label::after{content:'  →';color:#ec0984;font-weight:800}
+@keyframes route-icon-pulse{40%{transform:rotate(-8deg) scale(1.08)}70%{transform:rotate(5deg) scale(1.05)}}
 .vehicle-standards-page{min-height:calc(100dvh - 84px);background:linear-gradient(180deg,#f7fbff 0,#eef8ff 58%,#f7fbff 100%);color:#05266a}
 .standards-hero{position:relative;height:254px;overflow:hidden;background:#064188}
 .standards-hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 55%}
@@ -2225,6 +2232,33 @@ body[data-active-page=revenue]:has(#revenue-detail-view[data-report=issues]:not(
 .standard-features{display:grid;grid-template-columns:1.2fr 1fr 1fr 1.25fr .9fr;border-top:1px solid #dce7f2;min-height:55px}.standard-feature{display:flex;align-items:center;gap:7px;padding:8px 13px;border-right:1px solid #dce7f2;color:#234a80;font-size:12.5px;line-height:1.15}.standard-feature:last-child{border-right:0}.standard-feature .icon{width:25px;height:25px;flex:0 0 25px}.standard-feature b{display:grid;place-items:center;width:20px;height:20px;margin-left:auto;border-radius:50%;background:#f20b87;color:white;font-size:12px}.standard-feature b.no{background:#7c8ba1}
 @media(max-width:1050px){.standards-summary{grid-template-columns:repeat(2,minmax(0,1fr))}.standards-toolbar{align-items:flex-start;flex-direction:column}.standards-tabs{justify-content:flex-start}.standard-card{grid-template-columns:280px minmax(0,1fr)}.standard-card-top{grid-template-columns:minmax(0,1fr) 160px}.standard-detail{grid-column:2}.standard-features{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:720px){.standards-hero{height:265px}.standards-hero-copy{padding:0 20px 34px}.standards-hero-copy h1{font-size:36px}.standards-shell{padding:0 12px 32px}.standards-summary{grid-template-columns:1fr;gap:8px}.standards-stat{min-height:88px;padding:12px 16px}.standards-tabs{display:grid;grid-template-columns:repeat(2,1fr);width:100%}.standards-tabs button,.standards-tabs .all-standards-link{min-width:0;padding-inline:8px}.standards-tabs .all-standards-link{grid-column:1/-1}.standard-card{grid-template-columns:1fr}.standard-photo{height:190px}.standard-card-top{grid-template-columns:1fr auto;padding:14px}.standard-copy{grid-column:1/-1}.standard-detail{grid-column:2;grid-row:2}.standard-features{grid-template-columns:1fr 1fr}.standard-feature{border-bottom:1px solid #dce7f2}.standard-copy h3{display:block;margin:8px 0 0;font-size:20px}}
+
+/* Revision 60: route directory */
+body[data-active-page=routes] .site-footer{display:none}
+.route-directory-page{--route-pink:#f20a86;--route-blue:#0878e8;position:relative;height:calc(100dvh - 68px);min-height:760px;overflow:hidden;background:#082b64;color:#08276f}
+.route-page-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scaleX(-1);filter:saturate(1.1) contrast(.92) brightness(.88)}
+.route-page-wash{position:absolute;inset:0;background:linear-gradient(90deg,rgba(3,45,94,.8) 0,rgba(7,82,153,.3) 39%,rgba(218,238,255,.27) 70%,rgba(236,247,255,.82) 100%)}
+.route-directory-layout{position:relative;z-index:1;display:grid;grid-template-columns:230px minmax(0,1fr);gap:28px;height:100%;padding:34px 22px 26px}
+.route-sidebar{align-self:start;overflow:hidden;border:1px solid #ffffff70;border-radius:16px;background:linear-gradient(180deg,#083b78e8,#0a4179b8);box-shadow:0 12px 30px #001a3d55;color:#fff;backdrop-filter:blur(8px)}
+.route-side-link{display:grid;grid-template-columns:43px 1fr;align-items:center;gap:10px;width:100%;min-height:72px;padding:10px 16px;border:0;border-bottom:1px solid #ffffff24;background:transparent;color:#fff;text-align:left;font:inherit;cursor:pointer}
+.route-side-link .icon{width:34px;height:34px}.route-side-link strong{display:block;font-size:16px}.route-side-link small{display:block;margin-top:3px;font-size:11px;color:#d7e9ff}
+.route-side-link.active{min-height:64px;background:linear-gradient(135deg,#ee087f,#ff66b6);box-shadow:inset 0 2px 0 #ffffff8a,0 5px 18px #df05764d}.route-side-link:hover:not(.active){background:#ffffff12}
+.route-workspace{position:relative;min-width:0;height:100%}
+.route-intro{position:absolute;left:4px;top:2px;color:#fff;text-shadow:0 2px 12px #02316666}.route-intro h1{display:flex;align-items:center;gap:14px;margin:0;font-size:45px;line-height:1.04;letter-spacing:-1.5px}.route-intro h1 .icon{width:57px;height:57px;color:#ff168f;stroke-width:2.5}.route-intro p{max-width:420px;margin:5px 0 0 74px;font-size:18px;line-height:1.35}
+.route-summary-board{position:absolute;top:20px;right:0;display:grid;grid-template-columns:220px minmax(520px,635px);gap:10px}
+.route-total-card{display:flex;align-items:center;gap:12px;padding:17px;border:1px solid #fff;border-radius:17px;background:linear-gradient(145deg,#ffffffed,#f8eff9df);box-shadow:0 8px 22px #163a6a30}.route-total-card .icon{width:65px;height:65px;padding:10px;border-radius:50%;background:#fff2f8;color:var(--route-pink)}.route-total-card span{font-size:19px;font-weight:800}.route-total-card strong{display:block;font-size:57px;line-height:.85}.route-total-card small{font-size:20px}
+.route-provider-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:10px;border:1px solid #ffffffaa;border-radius:17px;background:#d8e8fb80;box-shadow:0 8px 22px #163a6a30;backdrop-filter:blur(5px)}
+.route-provider{padding:13px 13px 10px;border-radius:13px;background:#ffffffd9}.route-provider-head{display:flex;align-items:center;gap:8px}.route-provider .icon{width:43px;height:43px;padding:9px;border-radius:50%;background:#ffe8f4;color:var(--route-pink)}.route-provider:nth-child(2) .icon{background:#eee7ff;color:#6923e8}.route-provider:nth-child(3) .icon{background:#e5f3ff;color:#0878e8}.route-provider span{font-size:12px;font-weight:800}.route-provider strong{display:block;font-size:29px;line-height:1}.route-provider small{font-size:12px}.route-provider-track{height:9px;margin-top:11px;border-radius:999px;background:#dce8f5;overflow:hidden}.route-provider-track i{display:block;height:100%;border-radius:inherit;background:linear-gradient(90deg,#f20a86,#ff78bf)}.route-provider:nth-child(2) i{background:linear-gradient(90deg,#7623ef,#b865ff)}.route-provider:nth-child(3) i{background:linear-gradient(90deg,#0878e8,#60c3ff)}.route-provider-percent{display:block;margin-top:3px;text-align:right;font-size:12px;font-weight:800}
+.route-map-zone{position:absolute;left:4px;top:168px;width:590px;height:660px}.route-map-stage{position:absolute;left:206px;top:32px;width:235px;height:520px;filter:drop-shadow(0 8px 12px #001e5255)}.route-map-stage svg{width:100%;height:100%;overflow:visible}.route-map-stage path{transition:.2s}.route-map-stage path:hover{filter:brightness(1.18);stroke:#fff;stroke-width:.8}
+.route-region-card{position:absolute;width:192px;min-height:139px;overflow:hidden;border:2px solid #fff;border-radius:18px;background:#fffffff0;box-shadow:0 9px 20px #001f4d42}.route-region-card img{display:block;width:100%;height:58px;object-fit:cover}.route-region-copy{padding:7px 14px 10px}.route-region-copy strong{font-size:17px}.route-region-copy strong em{font-style:normal;color:var(--route-pink)}.route-region-copy>span{margin-left:6px;font-size:12px}.route-region-lines{display:grid;grid-template-columns:1fr auto;gap:3px;margin-top:6px;font-size:11px}.route-region-lines b{color:#092871}.route-region-card.north{left:0;top:20px}.route-region-card.central{left:38px;top:252px}.route-region-card.south{left:78px;top:470px}.route-region-card.northeast{right:0;top:90px}.route-region-card.east{right:0;top:308px}.route-region-card.west{right:0;top:502px;min-height:122px}.route-region-card.west img{height:50px}
+.route-table-panel{position:absolute;right:0;top:246px;width:calc(100% - 610px);min-width:650px;height:545px;padding:17px;border:1px solid #fff;border-radius:18px;background:#ffffffed;box-shadow:0 12px 28px #082f6238;backdrop-filter:blur(7px)}
+.route-table-title{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px}.route-table-title h2{display:flex;align-items:center;gap:12px;margin:0;font-size:25px}.route-table-title h2 .icon{width:34px;height:34px;color:var(--route-pink)}.route-table-title strong{font-size:25px}.route-table-title small{font-size:13px;margin-left:6px}
+.route-filters{display:grid;grid-template-columns:minmax(250px,1fr) 128px 168px 65px 42px;gap:8px;margin-bottom:10px}.route-filters input,.route-filters select,.route-filters button{height:44px;border:1px solid #c7dbef;border-radius:7px;background:#fff;color:#0b2f70;font:600 13px inherit;padding:0 12px}.route-filters button{cursor:pointer}.route-filters .route-search-button{border-color:#f20a86;background:#fff0f7;color:#e40779}.route-filters .route-filter-button{padding:8px;color:#0b2f70}.route-filters .icon{width:22px;height:22px}
+.route-table-scroll{height:345px;overflow:hidden;border:1px solid #c8ddef;border-radius:8px}.route-table{width:100%;border-collapse:collapse;table-layout:fixed;font-size:12px}.route-table th{height:39px;background:linear-gradient(#306da7,#1d578f);color:#fff;font-weight:700}.route-table th:nth-child(1){width:6%}.route-table th:nth-child(2){width:10%}.route-table th:nth-child(3){width:29%}.route-table th:nth-child(4){width:9%}.route-table th:nth-child(5){width:14%}.route-table th:nth-child(6){width:20%}.route-table th:nth-child(7){width:12%}.route-table td{height:30px;padding:3px 9px;border-right:1px solid #c8ddef;border-bottom:1px solid #d9e7f3;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.route-table td.route-name{text-align:left;font-weight:600}.route-table tbody tr:nth-child(even){background:#e9f5ffb3}.provider-badge{display:inline-flex;align-items:center;justify-content:center;min-width:82px;padding:4px 8px;border-radius:999px;background:#ffd3e7;color:#e10b72;font-weight:800}.provider-badge.joint{background:#cfe9ff;color:#0872c9}.provider-badge.both{background:linear-gradient(90deg,#ffd2e6 0 48%,#bfe1ff 52%);color:#0d59a0}.route-detail-arrow{border:0;background:none;color:#062d78;font-size:22px;cursor:pointer}
+.route-pagination{display:flex;align-items:center;gap:8px;margin-top:16px}.route-per-page{height:40px;padding:0 12px;border:1px solid #c7dbef;border-radius:7px;background:#fff;color:#0c3474}.route-page-info{margin-left:5px;margin-right:auto;font-size:13px;font-weight:700}.route-page-button{display:grid;place-items:center;width:39px;height:39px;border:1px solid #c7dbef;border-radius:7px;background:#fff;color:#0a2d70;font-weight:800;cursor:pointer}.route-page-button.active{border-color:#f20a86;background:#f20a86;color:#fff;box-shadow:0 5px 12px #f20a8640}.route-ellipsis{padding:0 7px}
+@media(min-width:1200px){body[data-active-page=routes] .site-header{height:68px;gap:30px;padding-inline:3vw}body[data-active-page=routes] .brand img{width:96px}body[data-active-page=routes] .brand-name{padding-left:22px}body[data-active-page=routes] .brand-name strong{font-size:17px}body[data-active-page=routes] .brand-name>span{font-size:12px}body[data-active-page=routes] nav{gap:24px}body[data-active-page=routes] nav a{font-size:13px}}
+@media(max-width:1380px){.route-directory-layout{grid-template-columns:195px 1fr;gap:16px;padding-inline:14px}.route-summary-board{grid-template-columns:185px 500px}.route-intro h1{font-size:36px}.route-intro p{font-size:16px}.route-map-zone{transform:scale(.87);transform-origin:left top}.route-table-panel{width:calc(100% - 535px);min-width:590px}.route-filters{grid-template-columns:1fr 105px 135px 58px 40px}.route-sidebar{transform:scale(.92);transform-origin:left top;width:210px}}
+@media(max-width:1100px){body[data-active-page=routes] .site-footer{display:flex}.route-directory-page{height:auto;min-height:1000px;overflow:visible}.route-directory-layout{display:block;padding:18px}.route-sidebar{display:flex;width:100%;transform:none;margin-bottom:18px}.route-side-link{min-width:150px;border-right:1px solid #ffffff24}.route-workspace{display:flex;flex-direction:column;height:auto}.route-intro,.route-summary-board,.route-map-zone,.route-table-panel{position:relative;inset:auto;width:100%;min-width:0}.route-intro{margin-bottom:20px}.route-summary-board{grid-template-columns:1fr;order:1}.route-map-zone{order:2;transform:none;margin:20px auto;height:650px;max-width:620px}.route-table-panel{order:3;height:auto}.route-table-scroll{overflow:auto}.route-table{min-width:700px}}
 
 </style>
 
@@ -2273,6 +2307,8 @@ body[data-active-page=revenue]:has(#revenue-detail-view[data-report=issues]:not(
     <a href="?page=home" data-page="home">หน้าแรก</a>
     <a href="?page=revenue" data-page="revenue">รายงานรายได้</a>
     <a href="?page=trips" data-page="trips">รายงานเที่ยววิ่งและผู้โดยสาร</a>
+    <a href="?page=standards" data-page="standards">มาตรฐานรถโดยสาร</a>
+    <a href="?page=routes" data-page="routes">เส้นทางที่ให้บริการ</a>
     <a href="?page=departments" data-page="departments">หน่วยงานในสังกัด</a>
     <a href="?page=documents" data-page="documents">หลักเกณฑ์ คำสั่ง ระเบียบ</a>
   </nav>
@@ -2308,6 +2344,46 @@ body[data-active-page=revenue]:has(#revenue-detail-view[data-report=issues]:not(
 
 
 
+
+<section class="page route-directory-page" id="page-routes" aria-labelledby="routes-title" hidden>
+  <img class="route-page-bg" data-asset="routeBackdrop" alt="ทิวทัศน์ประเทศไทยและรถโดยสาร" decoding="async">
+  <div class="route-page-wash"></div>
+  <div class="route-directory-layout">
+    <aside class="route-sidebar" aria-label="หมวดเส้นทาง">
+      <button type="button" class="route-side-link active"> <span data-icon="route"></span><span><strong>เส้นทางที่ให้บริการ</strong></span></button>
+      <button type="button" class="route-side-link"><span data-icon="bus"></span><span><strong>หมวด 2</strong><small>กรุงเทพมหานคร - ส่วนภูมิภาค</small></span></button>
+      <button type="button" class="route-side-link"><span data-icon="bus"></span><span><strong>หมวด 3</strong><small>ระหว่างจังหวัด</small></span></button>
+      <button type="button" class="route-side-link"><span data-icon="bus"></span><span><strong>หมวด 4</strong><small>ภายในจังหวัด</small></span></button>
+      <button type="button" class="route-side-link"><span data-icon="route"></span><span><strong>ระหว่างประเทศ</strong></span></button>
+    </aside>
+    <div class="route-workspace">
+      <header class="route-intro"><h1 id="routes-title"><span data-icon="route"></span>เส้นทางที่ให้บริการ</h1><p>ครอบคลุมทั่วประเทศ เชื่อมโยงทุกภูมิภาค<br>ให้บริการโดย บริษัท ขนส่ง จำกัด และผู้ประกอบการรถร่วม</p></header>
+      <div class="route-summary-board">
+        <article class="route-total-card"><span data-icon="route"></span><div><span>รวมทั้งหมด</span><strong>924</strong><small>เส้นทาง</small></div></article>
+        <div class="route-provider-cards">
+          <article class="route-provider"><div class="route-provider-head"><span data-icon="bus"></span><div><span>บริษัทฯ อย่างเดียว</span><strong>187 <small>เส้นทาง</small></strong></div></div><div class="route-provider-track"><i style="width:20.24%"></i></div><span class="route-provider-percent">20.24%</span></article>
+          <article class="route-provider"><div class="route-provider-head"><span data-icon="bus"></span><div><span>บริษัทฯ + รถร่วม</span><strong>402 <small>เส้นทาง</small></strong></div></div><div class="route-provider-track"><i style="width:43.51%"></i></div><span class="route-provider-percent">43.51%</span></article>
+          <article class="route-provider"><div class="route-provider-head"><span data-icon="bus"></span><div><span>รถร่วม อย่างเดียว</span><strong>335 <small>เส้นทาง</small></strong></div></div><div class="route-provider-track"><i style="width:36.25%"></i></div><span class="route-provider-percent">36.25%</span></article>
+        </div>
+      </div>
+      <div class="route-map-zone" aria-label="สรุปเส้นทางรายภูมิภาค">
+        <div class="route-map-stage" id="route-map-stage" aria-label="แผนที่ประเทศไทยแบ่งสีตามภูมิภาค"></div>
+        <article class="route-region-card north"><img data-asset="routeRegionNorth" alt="ภาคเหนือ"><div class="route-region-copy"><strong>ภาคเหนือ <em>156</em></strong><span>เส้นทาง</span><div class="route-region-lines"><span>บริษัทฯ</span><b>32</b><span>รถร่วม</span><b>74</b><span>ร่วมกัน</span><b>50</b></div></div></article>
+        <article class="route-region-card northeast"><img data-asset="routeRegionNortheast" alt="ภาคตะวันออกเฉียงเหนือ"><div class="route-region-copy"><strong>ภาคตะวันออกเฉียงเหนือ <em>282</em></strong><span>เส้นทาง</span><div class="route-region-lines"><span>บริษัทฯ</span><b>61</b><span>รถร่วม</span><b>131</b><span>ร่วมกัน</span><b>90</b></div></div></article>
+        <article class="route-region-card central"><img data-asset="routeRegionCentral" alt="ภาคกลาง"><div class="route-region-copy"><strong>ภาคกลาง <em>154</em></strong><span>เส้นทาง</span><div class="route-region-lines"><span>บริษัทฯ</span><b>34</b><span>รถร่วม</span><b>68</b><span>ร่วมกัน</span><b>52</b></div></div></article>
+        <article class="route-region-card east"><img data-asset="routeRegionEast" alt="ภาคตะวันออก"><div class="route-region-copy"><strong>ภาคตะวันออก <em>132</em></strong><span>เส้นทาง</span><div class="route-region-lines"><span>บริษัทฯ</span><b>21</b><span>รถร่วม</span><b>41</b><span>ร่วมกัน</span><b>70</b></div></div></article>
+        <article class="route-region-card south"><img data-asset="routeRegionSouth" alt="ภาคใต้"><div class="route-region-copy"><strong>ภาคใต้ <em>133</em></strong><span>เส้นทาง</span><div class="route-region-lines"><span>บริษัทฯ</span><b>28</b><span>รถร่วม</span><b>60</b><span>ร่วมกัน</span><b>45</b></div></div></article>
+        <article class="route-region-card west"><img data-asset="routeRegionWest" alt="ภาคตะวันตก"><div class="route-region-copy"><strong>ภาคตะวันตก <em>62</em></strong><span>เส้นทาง</span><div class="route-region-lines"><span>บริษัทฯ</span><b>11</b><span>รถร่วม</span><b>28</b><span>ร่วมกัน</span><b>23</b></div></div></article>
+      </div>
+      <section class="route-table-panel" aria-labelledby="route-table-title">
+        <div class="route-table-title"><h2 id="route-table-title"><span data-icon="document"></span>เส้นทางที่ให้บริการ ทั้งหมด</h2><div><span>ทั้งหมด</span> <strong id="route-total-visible">522</strong><small>เส้นทาง</small></div></div>
+        <form class="route-filters" id="route-filters"><input type="search" id="route-search" aria-label="ค้นหาเส้นทาง" placeholder="ค้นหาชื่อเส้นทาง, รหัสสาย, จังหวัดปลายทาง"><select id="route-region-filter" aria-label="เลือกภูมิภาค"><option value="">ทุกภาค</option><option>เหนือ</option><option>กลาง</option><option>ตะวันออก</option></select><select id="route-provider-filter" aria-label="เลือกผู้ให้บริการ"><option value="">ผู้ให้บริการทั้งหมด</option><option value="บริษัทฯ">บริษัทฯ</option><option value="รถร่วม">รถร่วม</option><option value="บริษัทฯ + รถร่วม">บริษัทฯ + รถร่วม</option></select><button class="route-search-button" type="submit">ค้นหา</button><button class="route-filter-button" type="reset" aria-label="ล้างตัวกรอง"><span data-icon="route"></span></button></form>
+        <div class="route-table-scroll"><table class="route-table"><thead><tr><th>ลำดับ</th><th>รหัสสาย</th><th>ชื่อเส้นทาง</th><th>ภาค</th><th>ระยะทาง (กม.)</th><th>ผู้ให้บริการ</th><th>ดูรายละเอียด</th></tr></thead><tbody id="route-table-body"></tbody></table></div>
+        <div class="route-pagination"><select class="route-per-page" aria-label="จำนวนรายการต่อหน้า"><option>แสดง 10 รายการ</option></select><span class="route-page-info">1 - 10 จาก 522 รายการ</span><button class="route-page-button" type="button">‹</button><button class="route-page-button active" type="button">1</button><button class="route-page-button" type="button">2</button><button class="route-page-button" type="button">3</button><button class="route-page-button" type="button">4</button><button class="route-page-button" type="button">5</button><span class="route-ellipsis">…</span><button class="route-page-button" type="button">53</button><button class="route-page-button" type="button">›</button></div>
+      </section>
+    </div>
+  </div>
+</section>
 
 <section class="page vehicle-standards-page" id="page-standards" aria-labelledby="standards-title" hidden>
   <div class="standards-hero">
@@ -2406,7 +2482,7 @@ body[data-active-page=revenue]:has(#revenue-detail-view[data-report=issues]:not(
   </dialog>
   <div class="toast" id="toast" role="status" hidden></div>
   <noscript><style>.startup-loader{display:none}body.is-loading{overflow:auto}</style><p class="notice">กรุณาเปิด JavaScript เพื่อใช้งานเว็บไซต์</p></noscript>
-  <script>Object.assign(window.BKS_IMAGE_GROUPS.revenue,{"execTotalHero":"assets/execTotalHero-v45.webp","execTop0":"assets/execTop0-v45.webp","execTop1":"assets/execTop1-v45.webp","execTop2":"assets/execTop2-v45.webp","execRegionBg0":"assets/execRegionBg0-v45.webp","execRegionBg1":"assets/execRegionBg1-v45.webp","execRegionBg2":"assets/execRegionBg2-v45.webp","execRegionBg3":"assets/execRegionBg3-v45.webp","execRegionBg4":"assets/execRegionBg4-v45.webp","execRegionMap0":"assets/thailand-region-0-v45.svg","execRegionMap1":"assets/thailand-region-1-v45.svg","execRegionMap2":"assets/thailand-region-2-v45.svg","execRegionMap3":"assets/thailand-region-3-v45.svg","execRegionMap4":"assets/thailand-region-4-v45.svg"});Object.assign(window.BKS_IMAGE_GROUPS.revenue,{"targetHero":"assets/targetHero-v48.webp","targetStat0":"assets/targetStat0-v48.webp","targetStat1":"assets/targetStat1-v48.webp","targetStat2":"assets/targetStat2-v48.webp","targetStat3":"assets/targetStat3-v48.webp","targetStat4":"assets/targetStat4-v48.webp","targetStat5":"assets/targetStat5-v48.webp","targetSuccess":"assets/targetSuccess-v48.webp","targetSummary":"assets/targetSummary-v48.webp"});Object.assign(window.BKS_IMAGE_GROUPS.revenue,{"weeklyHero":"assets/weeklyHero-v49.webp","weeklyStat0":"assets/weeklyStat0-v49.webp","weeklyStat1":"assets/weeklyStat1-v49.webp","weeklyStat2":"assets/weeklyStat2-v49.webp","weeklyStat3":"assets/weeklyStat3-v49.webp"});Object.assign(window.BKS_IMAGE_GROUPS.revenue,{"weeklyStat0":"assets/weeklyStat0-v51.webp","weeklyStat1":"assets/weeklyStat1-v51.webp","weeklyStat2":"assets/weeklyStat2-v51.webp","weeklyStat3":"assets/weeklyStat3-v51.webp"});Object.assign(window.BKS_IMAGE_GROUPS.revenue,{"rentalStat0":"assets/rentalStat0-v52.webp","rentalStat1":"assets/rentalStat1-v52.webp","rentalStat2":"assets/rentalStat2-v52.webp","rentalStat3":"assets/rentalStat3-v52.webp","rentalStat4":"assets/rentalStat4-v52.webp"});Object.assign(window.BKS_IMAGE_GROUPS.revenue,{"contractStat0":"assets/contractStat0-v53.webp","contractStat1":"assets/contractStat1-v53.webp","contractStat2":"assets/contractStat2-v53.webp","contractStat3":"assets/contractStat3-v53.webp"});window.INITIAL_PAGE=new URLSearchParams(location.search).get('page')||'home';window.INITIAL_IMAGE_GROUP='home';window.INITIAL_IMAGES=Object.assign({},window.BKS_IMAGE_GROUPS.shared,window.BKS_IMAGE_GROUPS.home);</script>
+  <script>Object.assign(window.BKS_IMAGE_GROUPS.revenue,{"execTotalHero":"assets/execTotalHero-v45.webp","execTop0":"assets/execTop0-v45.webp","execTop1":"assets/execTop1-v45.webp","execTop2":"assets/execTop2-v45.webp","execRegionBg0":"assets/execRegionBg0-v45.webp","execRegionBg1":"assets/execRegionBg1-v45.webp","execRegionBg2":"assets/execRegionBg2-v45.webp","execRegionBg3":"assets/execRegionBg3-v45.webp","execRegionBg4":"assets/execRegionBg4-v45.webp","execRegionMap0":"assets/thailand-region-0-v45.svg","execRegionMap1":"assets/thailand-region-1-v45.svg","execRegionMap2":"assets/thailand-region-2-v45.svg","execRegionMap3":"assets/thailand-region-3-v45.svg","execRegionMap4":"assets/thailand-region-4-v45.svg"});Object.assign(window.BKS_IMAGE_GROUPS.revenue,{"targetHero":"assets/targetHero-v48.webp","targetStat0":"assets/targetStat0-v48.webp","targetStat1":"assets/targetStat1-v48.webp","targetStat2":"assets/targetStat2-v48.webp","targetStat3":"assets/targetStat3-v48.webp","targetStat4":"assets/targetStat4-v48.webp","targetStat5":"assets/targetStat5-v48.webp","targetSuccess":"assets/targetSuccess-v48.webp","targetSummary":"assets/targetSummary-v48.webp"});Object.assign(window.BKS_IMAGE_GROUPS.revenue,{"weeklyHero":"assets/weeklyHero-v49.webp","weeklyStat0":"assets/weeklyStat0-v49.webp","weeklyStat1":"assets/weeklyStat1-v49.webp","weeklyStat2":"assets/weeklyStat2-v49.webp","weeklyStat3":"assets/weeklyStat3-v49.webp"});Object.assign(window.BKS_IMAGE_GROUPS.revenue,{"weeklyStat0":"assets/weeklyStat0-v51.webp","weeklyStat1":"assets/weeklyStat1-v51.webp","weeklyStat2":"assets/weeklyStat2-v51.webp","weeklyStat3":"assets/weeklyStat3-v51.webp"});Object.assign(window.BKS_IMAGE_GROUPS.revenue,{"rentalStat0":"assets/rentalStat0-v52.webp","rentalStat1":"assets/rentalStat1-v52.webp","rentalStat2":"assets/rentalStat2-v52.webp","rentalStat3":"assets/rentalStat3-v52.webp","rentalStat4":"assets/rentalStat4-v52.webp"});Object.assign(window.BKS_IMAGE_GROUPS.revenue,{"contractStat0":"assets/contractStat0-v53.webp","contractStat1":"assets/contractStat1-v53.webp","contractStat2":"assets/contractStat2-v53.webp","contractStat3":"assets/contractStat3-v53.webp"});window.BKS_IMAGE_GROUPS.routes={"routeBackdrop":"assets/regionalStat0-34ee193ff166.jpg","routeRegionNorth":"assets/regionalStat0-34ee193ff166.jpg","routeRegionNortheast":"assets/regionalStat1-f8b262e35544.jpg","routeRegionCentral":"assets/regionalStat2-bfeebba78d87.jpg","routeRegionEast":"assets/regionalStat3-33de89ac8c45.jpg","routeRegionSouth":"assets/regionalStat4-c0431e6b64b6.jpg","routeRegionWest":"assets/regionalHero-b606ff5114c9.jpg"};window.INITIAL_PAGE=new URLSearchParams(location.search).get('page')||'home';window.INITIAL_IMAGE_GROUP='home';window.INITIAL_IMAGES=Object.assign({},window.BKS_IMAGE_GROUPS.shared,window.BKS_IMAGE_GROUPS.home);</script>
   <script>
 // Set HTTPS image URLs here. Empty reference image URLs use the packaged photos.
 // Station images stay as explicit placeholders until real photographs are supplied.
@@ -2458,7 +2534,7 @@ window.ASSETS = {"loaderCoach":"assets/shared-inline-57-913a14f5605d.webp","load
   paths.trophy='<path d="M10 4h12v5c0 6-2 10-6 10s-6-4-6-10V4Zm0 3H5v3c0 4 3 6 7 6m10-9h5v3c0 4-3 6-7 6M16 19v5m-5 4h10m-8-4h6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>';
   function icon(name) { return '<svg class="icon" viewBox="0 0 32 32" aria-hidden="true">' + (paths[name] || paths.document) + '</svg>'; }
   $$('[data-icon]').forEach(el => el.innerHTML = icon(el.dataset.icon));
-  const pages = ['home','standards','revenue','trips','departments','documents'];
+  const pages = ['home','standards','routes','revenue','trips','departments','documents'];
   const loaded = {};
   const cache = {};
   const errors = new Set();
@@ -2623,6 +2699,7 @@ window.ASSETS = {"loaderCoach":"assets/shared-inline-57-913a14f5605d.webp","load
     try {
       if(page==='home')renderDashboard(await rpc('getDashboardData'));
       if(page==='standards')renderVehicleStandards('1');
+      if(page==='routes')renderRouteDirectory();
       if(page==='revenue'){
         revenueOverview=await rpc('getRevenueOverviewData');
         renderRevenue();markRevenueUpdated();
@@ -2668,12 +2745,44 @@ window.ASSETS = {"loaderCoach":"assets/shared-inline-57-913a14f5605d.webp","load
       ['เส้นทางที่ให้บริการ',select('route',924),'เส้นทาง','route','route',[['บริษัทฯ',187],['รถร่วม',737]]],
       ['จำนวนรถที่ให้บริการ (วันนี้)',select('fleet',1248),'คัน','bus','bus',[['รถใหญ่',760],['รถเล็ก',488]]]
     ];
-    $('#home-kpis').innerHTML=metrics.map((k,index)=>'<'+(index===3?'button type="button" id="fleet-standards-button" aria-label="ดูมาตรฐานรถโดยสาร"':'div')+' class="kpi'+(index===3?' kpi-fleet-button':'')+'"><div class="kpi-backdrop" aria-hidden="true">'+backdrop[k[4]]+'</div><div class="kpi-heading">'+icon(k[3])+'<div><p class="kpi-label">'+esc(k[0])+'</p><div class="kpi-value"><strong>'+num(k[1])+'</strong><span>'+esc(k[2])+'</span></div></div></div>'+(data.demo?split(k[5]):'<div class="kpi-breakdown muted">ข้อมูลจากหน่วยงาน</div>')+'</'+(index===3?'button':'div')+'>').join('')+
+    $('#home-kpis').innerHTML=metrics.map((k,index)=>{const clickable=index===2||index===3;const id=index===2?'route-directory-button':index===3?'fleet-standards-button':'';const label=index===2?'ดูเส้นทางที่ให้บริการ':index===3?'ดูมาตรฐานรถโดยสาร':'';const extra=index===2?' kpi-route-button':index===3?' kpi-fleet-button':'';return '<'+(clickable?'button type="button" id="'+id+'" aria-label="'+label+'"':'div')+' class="kpi'+extra+'"><div class="kpi-backdrop" aria-hidden="true">'+backdrop[k[4]]+'</div><div class="kpi-heading">'+icon(k[3])+'<div><p class="kpi-label">'+esc(k[0])+'</p><div class="kpi-value"><strong>'+num(k[1])+'</strong><span>'+esc(k[2])+'</span></div></div></div>'+(data.demo?split(k[5]):'<div class="kpi-breakdown muted">ข้อมูลจากหน่วยงาน</div>')+'</'+(clickable?'button':'div')+'>';}).join('')+
       '<div class="kpi kpi-fare"><div class="kpi-backdrop" aria-hidden="true">'+backdrop.fare+'</div><button class="fare-button" id="fare-button">'+icon('coins')+'<span><span class="kpi-label">อัตราค่าโดยสาร</span><strong class="fare-latest">ตรวจสอบล่าสุด '+icon('arrow')+'</strong>'+(data.demo?'<span class="fare-date">อัปเดต 3 ต.ค. 2569</span>':'')+'</span></button></div>';
     applyAssets({});
+    $('#route-directory-button').addEventListener('click',()=>route('routes',true,true));
     $('#fleet-standards-button').addEventListener('click',()=>route('standards',true,true));
     $('#fare-button').addEventListener('click',()=>showDialog('อัตราค่าโดยสาร','<p>ค่าโดยสารขึ้นอยู่กับเส้นทาง ประเภทรถ และเงื่อนไขการเดินทาง</p><div class="notice">ยังไม่มีตารางอัตราค่าโดยสารที่หน่วยงานยืนยัน กรุณาเพิ่มเอกสารจริงในคลังเอกสารก่อนใช้อ้างอิง</div><p><a class="text-button" href="?page=documents" data-page="documents">ค้นหาเอกสารอัตราค่าโดยสาร '+icon('arrow')+'</a></p>'));
     fitHomeHero();
+  }
+  const routeDirectoryRows=[
+    {code:'3',name:'กรุงเทพฯ - เชียงแสน',region:'เหนือ',distance:785,provider:'บริษัทฯ + รถร่วม'},
+    {code:'6',name:'กรุงเทพฯ - สุโขทัย - อุตรดิตถ์',region:'เหนือ',distance:427,provider:'บริษัทฯ'},
+    {code:'13',name:'กรุงเทพฯ - น้ำตกแม่สา',region:'เหนือ',distance:412,provider:'รถร่วม'},
+    {code:'18',name:'กรุงเทพฯ - เชียงใหม่ (ข)',region:'เหนือ',distance:696,provider:'บริษัทฯ + รถร่วม'},
+    {code:'47',name:'กรุงเทพฯ - ทุ่งช้าง',region:'เหนือ',distance:682,provider:'รถร่วม'},
+    {code:'90',name:'กรุงเทพฯ - เชียงราย',region:'เหนือ',distance:829,provider:'บริษัทฯ'},
+    {code:'91',name:'กรุงเทพฯ - ลำปาง (ข)',region:'เหนือ',distance:602,provider:'บริษัทฯ + รถร่วม'},
+    {code:'92',name:'กรุงเทพฯ - เชียงใหม่ (ข)',region:'เหนือ',distance:701,provider:'รถร่วม'},
+    {code:'93',name:'กรุงเทพฯ - ตาก (ข)',region:'เหนือ',distance:426,provider:'บริษัทฯ + รถร่วม'},
+    {code:'94',name:'กรุงเทพฯ - กำแพงเพชร (ข)',region:'เหนือ',distance:358,provider:'รถร่วม'}
+  ];
+  function routeProviderBadge(provider){const type=provider==='รถร่วม'?'joint':provider.includes('+')?'both':'';return '<span class="provider-badge '+type+'">'+esc(provider)+'</span>';}
+  function renderRouteTable(rows=routeDirectoryRows){
+    $('#route-table-body').innerHTML=rows.map((row,index)=>'<tr><td>'+(index+1)+'</td><td>'+esc(row.code)+'</td><td class="route-name">'+esc(row.name)+'</td><td>'+esc(row.region)+'</td><td>'+num(row.distance)+'</td><td>'+routeProviderBadge(row.provider)+'</td><td><button type="button" class="route-detail-arrow" data-route-row="'+routeDirectoryRows.indexOf(row)+'" aria-label="ดูรายละเอียด '+esc(row.name)+'">›</button></td></tr>').join('')||'<tr><td colspan="7">ไม่พบเส้นทางที่ตรงกับตัวกรอง</td></tr>';
+  }
+  async function renderRouteMap(){
+    const stage=$('#route-map-stage');if(stage.dataset.ready)return;stage.dataset.ready='true';
+    try{const response=await fetch('assets/thailand-region-0-v45.svg');if(!response.ok)throw new Error();const text=await response.text();const doc=new DOMParser().parseFromString(text,'image/svg+xml');const svg=doc.documentElement;const colors=['#f22991','#12b9c9','#7c3cff','#148df0','#08b77c'];svg.querySelectorAll('path[data-region]').forEach(path=>{path.setAttribute('fill',colors[Number(path.dataset.region)]||'#52a9ee');path.setAttribute('stroke','#dff5ff');path.setAttribute('stroke-width','.42');});svg.removeAttribute('role');svg.setAttribute('aria-hidden','true');stage.replaceChildren(document.importNode(svg,true));}catch(_){stage.innerHTML='<div class="notice">แผนที่ประเทศไทย</div>';}
+  }
+  function filterRouteDirectory(){
+    const query=$('#route-search').value.trim().toLowerCase(),region=$('#route-region-filter').value,provider=$('#route-provider-filter').value;
+    const rows=routeDirectoryRows.filter(row=>(!query||(row.name+' '+row.code).toLowerCase().includes(query))&&(!region||row.region===region)&&(!provider||row.provider===provider));renderRouteTable(rows);
+  }
+  function renderRouteDirectory(){
+    renderRouteTable();renderRouteMap();applyAssets({});
+    $('#route-filters').addEventListener('submit',event=>{event.preventDefault();filterRouteDirectory();});
+    $('#route-filters').addEventListener('reset',()=>setTimeout(()=>renderRouteTable(),0));
+    $('#route-table-body').addEventListener('click',event=>{const button=event.target.closest('[data-route-row]');if(!button)return;const row=routeDirectoryRows[Number(button.dataset.routeRow)];showDialog('เส้นทาง '+row.code,'<h3>'+esc(row.name)+'</h3><p>ภูมิภาค: '+esc(row.region)+' · ระยะทาง '+num(row.distance)+' กิโลเมตร</p><div class="notice">ผู้ให้บริการ: <strong>'+esc(row.provider)+'</strong><br>ข้อมูลในหน้านี้เป็นข้อมูลตัวอย่างและสามารถปรับแก้ตัวเลขภายหลังได้</div>');});
+    $$('.route-side-link:not(.active)').forEach(button=>button.addEventListener('click',()=>toast('กำลังเตรียมข้อมูลหมวดเส้นทางนี้')));
   }
   const vehicleStandards=[
     {id:'1a',group:'1',tier:'Premium Class',title:'รถโดยสารมาตรฐาน 1 (ก)',count:840,accent:'#ed0a86',description:'รถโดยสารปรับอากาศแบบพิเศษ ห้องโดยสารมีที่นั่งกว้างระดับไกล พร้อมสิ่งอำนวยความสะดวกครบถ้วน',storage:true,toilet:true},
