@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-<meta name="bks-build" content="v67-kpi-hover-bounds-contrast">
+<meta name="bks-build" content="v68-route-map-dashboard">
   <meta charset="UTF-8">
   <base target="_top">
   <meta name="description" content="ฝ่ายบริหารการเดินรถ บริษัท ขนส่ง จำกัด — รายงานการเดินรถและข้อมูลหน่วยงาน">
@@ -2267,6 +2267,48 @@ body[data-active-page=routes] .site-footer{display:none}
 @media(max-width:1380px){.route-directory-layout{grid-template-columns:195px 1fr;gap:16px;padding-inline:14px}.route-summary-board{grid-template-columns:185px 500px}.route-intro h1{font-size:36px}.route-intro p{font-size:16px}.route-map-zone{transform:scale(.87);transform-origin:left top}.route-table-panel{width:calc(100% - 535px);min-width:590px}.route-filters{grid-template-columns:1fr 105px 135px 58px 40px}.route-sidebar{transform:scale(.92);transform-origin:left top;width:210px}}
 @media(max-width:1100px){body[data-active-page=routes] .site-footer{display:flex}.route-directory-page{height:auto;min-height:1000px;overflow:visible}.route-directory-layout{display:block;padding:18px}.route-sidebar{display:flex;width:100%;transform:none;margin-bottom:18px}.route-side-link{min-width:150px;border-right:1px solid #ffffff24}.route-workspace{display:flex;flex-direction:column;height:auto}.route-intro,.route-summary-board,.route-map-zone,.route-table-panel{position:relative;inset:auto;width:100%;min-width:0}.route-intro{margin-bottom:20px}.route-summary-board{grid-template-columns:1fr;order:1}.route-map-zone{order:2;transform:none;margin:20px auto;height:650px;max-width:620px}.route-table-panel{order:3;height:auto}.route-table-scroll{overflow:auto}.route-table{min-width:700px}}
 
+/* Revision 68: luminous route command centre */
+body[data-active-page=routes]{background:#041b43}
+.route-directory-page{--route-pink:#ff0787;--route-ice:#dff3ff;min-height:800px;background:#041b43}
+.route-page-bg{transform:none;filter:saturate(1.45) contrast(1.18) brightness(.38);opacity:.88}
+.route-page-wash{background:
+  radial-gradient(circle at 35% 46%,rgba(0,150,255,.22),transparent 31%),
+  radial-gradient(circle at 66% 22%,rgba(0,127,255,.18),transparent 34%),
+  linear-gradient(100deg,rgba(1,20,56,.94),rgba(1,49,101,.72) 52%,rgba(0,73,142,.48));
+  box-shadow:inset 0 0 120px #00122d}
+.route-directory-layout{grid-template-columns:258px minmax(0,1fr);gap:14px;padding:16px 20px 18px}
+.route-sidebar{margin-top:0;border-color:#49b9ff66;border-radius:18px;background:linear-gradient(180deg,#041b48f2,#062f66e8);box-shadow:0 16px 38px #00102caa,inset 0 1px 0 #ffffff30}
+.route-side-link{position:relative;grid-template-columns:47px 1fr 18px;min-height:82px;padding:12px 16px;border-color:#57b8ff36;transition:transform .2s ease,background .2s ease,box-shadow .2s ease}
+.route-side-link::after{content:'›';font-size:30px;line-height:1;color:#fff;opacity:.92}
+.route-side-link:first-child::before{content:'924';position:absolute;right:31px;top:50%;transform:translateY(-50%);padding:5px 9px;border-radius:999px;background:#fff;color:var(--route-pink);font-size:15px;font-weight:900}
+.route-side-link .icon{width:38px;height:38px;filter:drop-shadow(0 0 8px #41b8ff55)}
+.route-side-link strong{font-size:17px}.route-side-link small{font-size:11px;color:#d6eaff}
+.route-side-link.active{min-height:76px;background:linear-gradient(135deg,#ee047c,#ff4fac);box-shadow:inset 0 1px 0 #fff,0 8px 24px #ff08775c}
+.route-side-link.active:hover{transform:translateY(-2px)}
+.route-side-link:hover:not(.active){transform:translateX(4px);background:linear-gradient(90deg,#ffffff14,#1688db22)}
+.route-workspace{isolation:isolate}
+.route-intro{left:0;top:19px;width:390px}.route-intro h1{gap:10px;font-size:43px;letter-spacing:-1.2px;text-shadow:0 4px 18px #00132f}.route-intro h1 .icon{width:58px;height:58px;color:var(--route-pink);filter:drop-shadow(0 0 12px #ff168f77)}.route-intro p{margin:8px 0 0 68px;font-size:15px;line-height:1.45;color:#edf8ff}
+.route-summary-board{top:18px;right:0;width:min(970px,calc(100% - 410px));grid-template-columns:205px minmax(0,1fr);gap:10px}
+.route-total-card{min-height:132px;padding:14px;border-color:#bce7ff;border-radius:17px;background:linear-gradient(145deg,#fffafaed,#f5eaf9e8);box-shadow:0 10px 28px #001f5966,inset 0 1px 0 #fff}.route-total-card .icon{width:59px;height:59px}.route-total-card span{font-size:17px}.route-total-card strong{font-size:54px}.route-total-card small{font-size:17px}
+.route-provider-cards{padding:10px;border-color:#cceaff99;background:#b4dcfb45;box-shadow:0 10px 28px #001f5966;backdrop-filter:blur(12px)}
+.route-provider{display:flex;flex-direction:column;justify-content:center;padding:12px 12px 9px;background:linear-gradient(145deg,#fffffff2,#eaf5ffe5);box-shadow:inset 0 1px 0 #fff}.route-provider .icon{width:40px;height:40px}.route-provider strong{font-size:27px}.route-provider-track{height:8px;margin-top:10px}
+.route-map-zone{left:0;top:166px;width:630px;height:640px}
+.route-map-stage{left:190px;top:8px;width:265px;height:585px;filter:drop-shadow(0 0 7px #00afff) drop-shadow(0 0 22px #0079ff)}
+.route-map-stage path{stroke:#e7fbff!important;stroke-width:.65!important;filter:brightness(1.12)}
+.route-map-stage path:hover{filter:brightness(1.35) drop-shadow(0 0 8px #fff)}
+.route-connections{position:absolute;left:178px;top:20px;width:300px;height:540px;z-index:2;overflow:visible;pointer-events:none;filter:drop-shadow(0 0 6px #fff)}
+.route-connections path{fill:none;stroke:#f4fbff;stroke-width:1.5;stroke-linecap:round;opacity:.82}.route-connections circle{fill:#ff0b87;stroke:#fff;stroke-width:2;filter:drop-shadow(0 0 6px #ff0b87)}
+.route-region-card{z-index:3;width:174px;min-height:126px;border:1px solid #29d8ff;border-radius:15px;background:linear-gradient(145deg,#071e4bea,#06376ee8);box-shadow:0 0 0 1px #baf5ff55,0 0 19px #00bff36b,0 12px 28px #00102d99;color:#fff;backdrop-filter:blur(8px)}
+.route-region-card img{float:left;width:56px;height:56px;margin:10px 8px 0 10px;border:1px solid #fff;border-radius:50%;object-fit:cover}.route-region-copy{padding:13px 10px 9px}.route-region-copy strong{font-size:15px;line-height:1.08}.route-region-copy strong em{font-size:21px;text-shadow:0 0 9px #ff0b87}.route-region-copy>span{font-size:10px;color:#d8ecff}.route-region-lines{clear:both;padding-top:4px;margin-top:8px;font-size:10px}.route-region-lines b{color:#fff}
+.route-region-card.north{left:0;top:34px}.route-region-card.central{left:10px;top:235px}.route-region-card.south{left:30px;top:454px}.route-region-card.northeast{right:14px;top:68px}.route-region-card.east{right:8px;top:278px}.route-region-card.west{display:none}
+.route-region-card.northeast{border-color:#9a55ff;box-shadow:0 0 0 1px #d6baff55,0 0 19px #833dff70,0 12px 28px #00102d99}.route-region-card.central{border-color:#ff2bad;box-shadow:0 0 0 1px #ffc5e855,0 0 19px #ff168870,0 12px 28px #00102d99}.route-region-card.east{border-color:#ffac25;box-shadow:0 0 0 1px #ffe4ab55,0 0 19px #ff9e2570,0 12px 28px #00102d99}.route-region-card.south{border-color:#1cf1d1;box-shadow:0 0 0 1px #c5fff655,0 0 19px #00d9b770,0 12px 28px #00102d99}
+.route-table-panel{top:180px;width:calc(100% - 648px);min-width:650px;height:605px;padding:0 13px 13px;border-color:#95d8ff;border-radius:17px;background:linear-gradient(180deg,#dff2ffef,#cde9f9ed);box-shadow:0 18px 38px #001b4d88,0 0 0 1px #ffffff77;backdrop-filter:blur(14px)}
+.route-table-title{height:64px;margin:0 -13px 12px;padding:0 17px;border-radius:16px 16px 0 0;background:linear-gradient(100deg,#082e78,#073f88);color:#fff;box-shadow:inset 0 -1px 0 #58bfff55}.route-table-title h2{font-size:29px}.route-table-title h2 .icon{width:39px;height:39px}.route-table-title strong{font-size:27px}.route-table-title small{color:#d8ebff}
+.route-filters{grid-template-columns:minmax(230px,1fr) 126px 165px 66px 45px;gap:8px;margin-bottom:9px}.route-filters input,.route-filters select,.route-filters button{height:43px;border-color:#9dc9ee;background:#eff8ff;color:#092d70}.route-filters .route-search-button{border-color:#f20a86;background:#f20a86;color:#fff;box-shadow:0 5px 12px #f20a8630}.route-filters .route-filter-button{background:#eff8ff}
+.route-table-scroll{height:365px;border-color:#9fc8e7;background:#eaf6ff}.route-table{font-size:12px;color:#082d70}.route-table th{height:43px;background:linear-gradient(180deg,#0a4088,#082e70)}.route-table td{height:31px;border-color:#afd1e8;background:#eaf6ffcc}.route-table tbody tr:nth-child(even) td{background:#d7ecfacc}.route-table tbody tr:hover td{background:#fff2fa}.route-table td.route-name{font-weight:750}
+.route-pagination{margin-top:13px}.route-per-page,.route-page-button{border-color:#9fc8e7;background:#eef8ff}.route-page-button.active{background:var(--route-pink)}
+@media(max-width:1500px) and (min-width:1101px){.route-directory-layout{grid-template-columns:215px 1fr;gap:12px;padding-inline:12px}.route-sidebar{width:auto;transform:none}.route-side-link{min-height:72px;padding-inline:12px}.route-intro{transform:scale(.86);transform-origin:left top}.route-summary-board{width:760px;grid-template-columns:175px 1fr}.route-map-zone{transform:scale(.82);transform-origin:left top}.route-table-panel{top:190px;width:calc(100% - 520px);min-width:560px}.route-filters{grid-template-columns:1fr 100px 125px 58px 42px}.route-table-title h2{font-size:23px}}
+
 </style>
 
 <script src="config.js"></script><script src="assets-manifest.js"></script><script src="sheet-csv.js"></script></head>
@@ -2778,9 +2820,15 @@ window.ASSETS = {"loaderCoach":"assets/shared-inline-57-913a14f5605d.webp","load
     {code:'93',name:'กรุงเทพฯ - ตาก (ข)',region:'เหนือ',distance:426,provider:'บริษัทฯ + รถร่วม'},
     {code:'94',name:'กรุงเทพฯ - กำแพงเพชร (ข)',region:'เหนือ',distance:358,provider:'รถร่วม'}
   ];
+  routeDirectoryRows.forEach((row,index)=>row.category=index<3?'2':index<6?'3':index<9?'4':'international');
+  let activeRouteCategory='all';
+  const routeCategoryTotals={all:522,'2':214,'3':176,'4':120,international:12};
   function routeProviderBadge(provider){const type=provider==='รถร่วม'?'joint':provider.includes('+')?'both':'';return '<span class="provider-badge '+type+'">'+esc(provider)+'</span>';}
   function renderRouteTable(rows=routeDirectoryRows){
     $('#route-table-body').innerHTML=rows.map((row,index)=>'<tr><td>'+(index+1)+'</td><td>'+esc(row.code)+'</td><td class="route-name">'+esc(row.name)+'</td><td>'+esc(row.region)+'</td><td>'+num(row.distance)+'</td><td>'+routeProviderBadge(row.provider)+'</td><td><button type="button" class="route-detail-arrow" data-route-row="'+routeDirectoryRows.indexOf(row)+'" aria-label="ดูรายละเอียด '+esc(row.name)+'">›</button></td></tr>').join('')||'<tr><td colspan="7">ไม่พบเส้นทางที่ตรงกับตัวกรอง</td></tr>';
+    const total=routeCategoryTotals[activeRouteCategory]||rows.length;
+    $('#route-total-visible').textContent=num(total);
+    const info=$('.route-page-info');if(info)info.textContent='1 - '+Math.min(10,rows.length)+' จาก '+num(total)+' รายการ';
   }
   async function renderRouteMap(){
     const stage=$('#route-map-stage');if(stage.dataset.ready)return;stage.dataset.ready='true';
@@ -2788,14 +2836,23 @@ window.ASSETS = {"loaderCoach":"assets/shared-inline-57-913a14f5605d.webp","load
   }
   function filterRouteDirectory(){
     const query=$('#route-search').value.trim().toLowerCase(),region=$('#route-region-filter').value,provider=$('#route-provider-filter').value;
-    const rows=routeDirectoryRows.filter(row=>(!query||(row.name+' '+row.code).toLowerCase().includes(query))&&(!region||row.region===region)&&(!provider||row.provider===provider));renderRouteTable(rows);
+    const rows=routeDirectoryRows.filter(row=>(activeRouteCategory==='all'||row.category===activeRouteCategory)&&(!query||(row.name+' '+row.code).toLowerCase().includes(query))&&(!region||row.region===region)&&(!provider||row.provider===provider));renderRouteTable(rows);
   }
   function renderRouteDirectory(){
     renderRouteTable();renderRouteMap();applyAssets({});
-    $('#route-filters').addEventListener('submit',event=>{event.preventDefault();filterRouteDirectory();});
-    $('#route-filters').addEventListener('reset',()=>setTimeout(()=>renderRouteTable(),0));
-    $('#route-table-body').addEventListener('click',event=>{const button=event.target.closest('[data-route-row]');if(!button)return;const row=routeDirectoryRows[Number(button.dataset.routeRow)];showDialog('เส้นทาง '+row.code,'<h3>'+esc(row.name)+'</h3><p>ภูมิภาค: '+esc(row.region)+' · ระยะทาง '+num(row.distance)+' กิโลเมตร</p><div class="notice">ผู้ให้บริการ: <strong>'+esc(row.provider)+'</strong><br>ข้อมูลในหน้านี้เป็นข้อมูลตัวอย่างและสามารถปรับแก้ตัวเลขภายหลังได้</div>');});
-    $$('.route-side-link:not(.active)').forEach(button=>button.addEventListener('click',()=>toast('กำลังเตรียมข้อมูลหมวดเส้นทางนี้')));
+    const mapStage=$('#route-map-stage');
+    if(mapStage&&!$('.route-connections'))mapStage.insertAdjacentHTML('afterend','<svg class="route-connections" viewBox="0 0 300 540" aria-hidden="true"><path d="M151 258 Q90 145 128 62 M151 258 Q213 121 218 92 M151 258 Q92 259 57 265 M151 258 Q236 251 263 322 M151 258 Q128 386 142 493"/><circle cx="151" cy="258" r="8"/><circle cx="128" cy="62" r="5"/><circle cx="218" cy="92" r="5"/><circle cx="57" cy="265" r="5"/><circle cx="263" cy="322" r="5"/><circle cx="142" cy="493" r="5"/></svg>');
+    const sideButtons=$$('.route-side-link');
+    ['all','2','3','4','international'].forEach((category,index)=>{if(sideButtons[index])sideButtons[index].dataset.routeCategory=category;});
+    const allLabel=sideButtons[0]?.querySelector('strong');if(allLabel)allLabel.textContent='รวมทั้งหมด';
+    const tableHeading=$('#route-table-title');if(tableHeading)tableHeading.innerHTML=icon('route')+'ค้นหาเส้นทาง';
+    sideButtons.forEach(button=>button.onclick=()=>{activeRouteCategory=button.dataset.routeCategory||'all';sideButtons.forEach(item=>item.classList.toggle('active',item===button));filterRouteDirectory();});
+    const routeForm=$('#route-filters');
+    routeForm.onsubmit=event=>{event.preventDefault();filterRouteDirectory();};
+    routeForm.onreset=()=>setTimeout(filterRouteDirectory,0);
+    $('#route-table-body').onclick=event=>{const button=event.target.closest('[data-route-row]');if(!button)return;const row=routeDirectoryRows[Number(button.dataset.routeRow)];showDialog('เส้นทาง '+row.code,'<h3>'+esc(row.name)+'</h3><p>ภูมิภาค: '+esc(row.region)+' · ระยะทาง '+num(row.distance)+' กิโลเมตร</p><div class="notice">ผู้ให้บริการ: <strong>'+esc(row.provider)+'</strong><br>ข้อมูลในหน้านี้เป็นข้อมูลตัวอย่างและสามารถปรับแก้ตัวเลขภายหลังได้</div>');};
+    if($('#route-directory-page').dataset.bound==='true')return;
+    $('#route-directory-page').dataset.bound='true';
   }
   const vehicleStandards=[
     {id:'1a',group:'1',tier:'Premium Class',title:'รถโดยสารมาตรฐาน 1 (ก)',count:840,accent:'#ed0a86',description:'รถโดยสารปรับอากาศแบบพิเศษ ห้องโดยสารมีที่นั่งกว้างระดับไกล พร้อมสิ่งอำนวยความสะดวกครบถ้วน',storage:true,toilet:true},
