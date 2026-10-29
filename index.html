@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-<meta name="bks-build" content="v69-route-category-kpis">
+<meta name="bks-build" content="v70-international-routes-fast-bg">
   <meta charset="UTF-8">
   <base target="_top">
+  <link rel="preload" as="image" href="assets/route-backdrop-v70.webp" type="image/webp">
   <meta name="description" content="ฝ่ายบริหารการเดินรถ บริษัท ขนส่ง จำกัด — รายงานการเดินรถและข้อมูลหน่วยงาน">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -2306,6 +2307,8 @@ body[data-active-page=routes]{background:#041b43}
 .route-table-title{height:64px;margin:0 -13px 12px;padding:0 17px;border-radius:16px 16px 0 0;background:linear-gradient(100deg,#082e78,#073f88);color:#fff;box-shadow:inset 0 -1px 0 #58bfff55}.route-table-title h2{font-size:29px}.route-table-title h2 .icon{width:39px;height:39px}.route-table-title strong{font-size:27px}.route-table-title small{color:#d8ebff}
 .route-filters{grid-template-columns:minmax(230px,1fr) 126px 165px 66px 45px;gap:8px;margin-bottom:9px}.route-filters input,.route-filters select,.route-filters button{height:43px;border-color:#9dc9ee;background:#eff8ff;color:#092d70}.route-filters .route-search-button{border-color:#f20a86;background:#f20a86;color:#fff;box-shadow:0 5px 12px #f20a8630}.route-filters .route-filter-button{background:#eff8ff}
 .route-table-scroll{height:365px;border-color:#9fc8e7;background:#eaf6ff}.route-table{font-size:12px;color:#082d70}.route-table th{height:43px;background:linear-gradient(180deg,#0a4088,#082e70)}.route-table td{height:31px;border-color:#afd1e8;background:#eaf6ffcc}.route-table tbody tr:nth-child(even) td{background:#d7ecfacc}.route-table tbody tr:hover td{background:#fff2fa}.route-table td.route-name{font-weight:750}
+.route-international-zone{display:none;position:absolute;inset:0;isolation:isolate;color:#fff}.route-map-zone.is-international .route-map-stage,.route-map-zone.is-international .route-connections,.route-map-zone.is-international>.route-region-card{display:none}.route-map-zone.is-international .route-international-zone{display:block}.route-international-map{position:absolute;left:112px;top:0;width:390px;height:620px;overflow:visible;filter:drop-shadow(0 0 16px #00b9ff66)}.intl-country{stroke-width:3;stroke-linejoin:round}.intl-country.thailand{fill:url(#intl-th);stroke:#a8f6ff}.intl-country.laos{fill:url(#intl-laos);stroke:#61ddff}.intl-country.cambodia{fill:url(#intl-cambodia);stroke:#ff69be}.intl-border{fill:none;stroke:#d9fbff;stroke-width:1.3;stroke-dasharray:4 5;opacity:.75}.intl-route{fill:none;stroke:url(#intl-route);stroke-width:2.3;stroke-linecap:round;filter:url(#intl-glow);opacity:.95}.intl-route.cambodia{stroke:#ff43ad}.intl-node{fill:#fff;stroke:#ff0a87;stroke-width:3;filter:url(#intl-glow)}.intl-hub{fill:#ff0a87;stroke:#fff;stroke-width:4;filter:url(#intl-strong-glow)}.intl-map-label{fill:#dff7ff;font-size:17px;font-weight:800;paint-order:stroke;stroke:#061d54;stroke-width:4px}.intl-map-label.country{font-size:21px}.route-country-card{position:absolute;width:178px;padding:14px 15px;border:1.5px solid;border-radius:18px;background:linear-gradient(145deg,#08285be8,#03163ee8);box-shadow:0 10px 28px #00122b99,inset 0 0 22px currentColor;backdrop-filter:blur(8px);z-index:3}.route-country-card.laos{right:0;top:95px;color:#43d9ff}.route-country-card.cambodia{right:0;top:355px;color:#ff4eb2}.route-country-card h3{font-size:20px;color:#fff}.route-country-card h3 strong{display:block;font-size:36px;line-height:1;color:#ff178f;margin-top:2px}.route-country-card h3 small{font-size:12px;font-weight:600;color:#dcecff}.route-country-lines{display:grid;grid-template-columns:1fr auto;gap:1px 10px;margin-top:10px;padding-top:9px;border-top:1px solid #ffffff30;color:#fff;font-size:12px}.route-country-lines b{font-size:14px}.route-origin-chip{position:absolute;z-index:4;display:flex;align-items:center;gap:7px;padding:8px 13px;border:1px solid #66d9ff;border-radius:999px;background:#061f50e8;box-shadow:0 0 18px #00b8ff66;color:#dff7ff;font-size:12px;font-weight:700}.route-origin-chip b{color:#ff2a98;font-size:18px}.route-origin-chip.bangkok{left:35px;top:292px}.route-origin-chip.north{left:62px;top:74px}.route-origin-chip.northeast{left:401px;top:245px}.route-international-caption{position:absolute;left:72px;bottom:12px;width:450px;text-align:center;color:#c7eaff;font-size:12px;letter-spacing:.02em}.route-international-caption strong{display:block;color:#fff;font-size:17px}.route-map-zone.is-international:before{content:'';position:absolute;left:90px;top:10px;width:430px;height:600px;background:radial-gradient(circle at 45% 44%,#087eea55,transparent 48%),radial-gradient(circle at 68% 52%,#ff16874d,transparent 44%);filter:blur(12px);pointer-events:none}.route-map-zone.is-international+.route-table-panel{}
+.route-table-scroll{overflow:auto;scrollbar-color:#4e8fc2 #d7ebfa;scrollbar-width:thin}.route-table-scroll::-webkit-scrollbar{width:8px}.route-table-scroll::-webkit-scrollbar-thumb{background:#4e8fc2;border-radius:9px}.route-table-scroll::-webkit-scrollbar-track{background:#d7ebfa}
 .route-pagination{margin-top:13px}.route-per-page,.route-page-button{border-color:#9fc8e7;background:#eef8ff}.route-page-button.active{background:var(--route-pink)}
 @media(max-width:1500px) and (min-width:1101px){.route-directory-layout{grid-template-columns:215px 1fr;gap:12px;padding-inline:12px}.route-sidebar{width:auto;transform:none}.route-side-link{min-height:72px;padding-inline:12px}.route-intro{transform:scale(.86);transform-origin:left top}.route-summary-board{width:760px;grid-template-columns:175px 1fr}.route-map-zone{transform:scale(.82);transform-origin:left top}.route-region-card.northeast,.route-region-card.east{right:92px}.route-table-panel{top:190px;width:calc(100% - 520px);min-width:560px}.route-filters{grid-template-columns:1fr 100px 125px 58px 42px}.route-table-title h2{font-size:23px}}
 @media(max-width:1300px) and (min-width:1101px){.route-intro{transform:scale(.72)}.route-summary-board{width:700px;grid-template-columns:170px 1fr}}
@@ -2397,7 +2400,7 @@ body[data-active-page=routes]{background:#041b43}
 
 
 <section class="page route-directory-page" id="page-routes" aria-labelledby="routes-title" hidden>
-  <img class="route-page-bg" data-asset="routeBackdrop" alt="ทิวทัศน์ประเทศไทยและรถโดยสาร" decoding="async">
+  <img class="route-page-bg" src="assets/route-backdrop-v70.webp" data-asset="routeBackdrop" alt="ทิวทัศน์ประเทศไทยและรถโดยสาร" decoding="async" fetchpriority="high">
   <div class="route-page-wash"></div>
   <div class="route-directory-layout">
     <aside class="route-sidebar" aria-label="หมวดเส้นทาง">
@@ -2425,10 +2428,36 @@ body[data-active-page=routes]{background:#041b43}
         <article class="route-region-card east"><img data-asset="routeRegionEast" alt="ภาคตะวันออก"><div class="route-region-copy"><strong>ภาคตะวันออก <em>132</em></strong><span>เส้นทาง</span><div class="route-region-lines"><span>บริษัทฯ</span><b>21</b><span>รถร่วม</span><b>41</b><span>ร่วมกัน</span><b>70</b></div></div></article>
         <article class="route-region-card south"><img data-asset="routeRegionSouth" alt="ภาคใต้"><div class="route-region-copy"><strong>ภาคใต้ <em>133</em></strong><span>เส้นทาง</span><div class="route-region-lines"><span>บริษัทฯ</span><b>28</b><span>รถร่วม</span><b>60</b><span>ร่วมกัน</span><b>45</b></div></div></article>
         <article class="route-region-card west"><img data-asset="routeRegionWest" alt="ภาคตะวันตก"><div class="route-region-copy"><strong>ภาคตะวันตก <em>62</em></strong><span>เส้นทาง</span><div class="route-region-lines"><span>บริษัทฯ</span><b>11</b><span>รถร่วม</span><b>28</b><span>ร่วมกัน</span><b>23</b></div></div></article>
+        <div class="route-international-zone" aria-label="แผนที่เส้นทางระหว่างประเทศไทย สปป.ลาว และกัมพูชา">
+          <svg class="route-international-map" viewBox="0 0 420 640" role="img" aria-label="เส้นทางระหว่างประเทศ 15 เส้นทาง">
+            <defs>
+              <linearGradient id="intl-th" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#058ff0"/><stop offset=".48" stop-color="#11c3db"/><stop offset="1" stop-color="#00b775"/></linearGradient>
+              <linearGradient id="intl-laos" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#1ec8ff"/><stop offset="1" stop-color="#704dff"/></linearGradient>
+              <linearGradient id="intl-cambodia" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ff2391"/><stop offset="1" stop-color="#ff785d"/></linearGradient>
+              <linearGradient id="intl-route" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff"/><stop offset=".45" stop-color="#35d9ff"/><stop offset="1" stop-color="#b35cff"/></linearGradient>
+              <filter id="intl-glow"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+              <filter id="intl-strong-glow"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            </defs>
+            <path class="intl-country thailand" d="M135 78l26 20 12 42-17 42 19 42-18 51 25 48-13 52 22 46-3 55 21 52-20 62-25-26-5-61-28-57 7-67-26-54 20-58-21-50 18-47-15-46z"/>
+            <path class="intl-country laos" d="M183 70l35 22 9 49 30 33-11 45 29 43-20 51-42-8-30-39 9-49-22-35 15-46-18-37z"/>
+            <path class="intl-country cambodia" d="M211 327l50-8 39 24-11 49-55 18-48-31 8-37z"/>
+            <path class="intl-border" d="M136 126l30 18m-36 73l35 12m-38 100l50-6m-40 100l51-1M188 119l35 20m-40 72l67 16m-62 61l64 14M208 350l78 22"/>
+            <g aria-hidden="true">
+              <path class="intl-route" d="M163 331Q186 179 205 112"/><path class="intl-route" d="M163 331Q223 213 233 164"/><path class="intl-route" d="M163 331Q220 279 247 245"/><path class="intl-route" d="M163 331Q189 254 205 208"/><path class="intl-route" d="M163 331Q248 324 257 298"/><path class="intl-route" d="M163 331Q166 202 177 155"/><path class="intl-route" d="M163 331Q124 192 151 115"/><path class="intl-route" d="M163 331Q214 126 217 88"/><path class="intl-route" d="M163 331Q267 227 267 193"/>
+              <path class="intl-route cambodia" d="M163 331Q224 348 246 361"/><path class="intl-route cambodia" d="M163 331Q208 390 259 385"/>
+              <circle class="intl-hub" cx="163" cy="331" r="9"/><circle class="intl-node" cx="205" cy="112" r="5"/><circle class="intl-node" cx="233" cy="164" r="5"/><circle class="intl-node" cx="247" cy="245" r="5"/><circle class="intl-node" cx="205" cy="208" r="5"/><circle class="intl-node" cx="257" cy="298" r="5"/><circle class="intl-node" cx="177" cy="155" r="5"/><circle class="intl-node" cx="151" cy="115" r="5"/><circle class="intl-node" cx="217" cy="88" r="5"/><circle class="intl-node" cx="267" cy="193" r="5"/><circle class="intl-node" cx="246" cy="361" r="5"/><circle class="intl-node" cx="259" cy="385" r="5"/>
+            </g>
+            <text class="intl-map-label country" x="83" y="308">ประเทศไทย</text><text class="intl-map-label country" x="225" y="135">สปป.ลาว</text><text class="intl-map-label country" x="247" y="425">กัมพูชา</text><text class="intl-map-label" x="106" y="355">กรุงเทพฯ</text>
+          </svg>
+          <div class="route-origin-chip north">ภาคเหนือ <b>2</b></div><div class="route-origin-chip bangkok">กรุงเทพฯ <b>4</b></div><div class="route-origin-chip northeast">ภาคอีสาน <b>9</b></div>
+          <article class="route-country-card laos"><h3>สปป.ลาว <strong>13 <small>เส้นทาง</small></strong></h3><div class="route-country-lines"><span>กรุงเทพฯ</span><b>2</b><span>ภาคเหนือ</span><b>2</b><span>ภาคอีสาน</span><b>9</b></div></article>
+          <article class="route-country-card cambodia"><h3>กัมพูชา <strong>2 <small>เส้นทาง</small></strong></h3><div class="route-country-lines"><span>กรุงเทพฯ</span><b>2</b><span>ภาคเหนือ</span><b>0</b><span>ภาคอีสาน</span><b>0</b></div></article>
+          <p class="route-international-caption"><strong>เครือข่ายเส้นทางระหว่างประเทศ</strong>เชื่อมไทยสู่ สปป.ลาว และกัมพูชา รวม 15 เส้นทาง</p>
+        </div>
       </div>
       <section class="route-table-panel" aria-labelledby="route-table-title">
         <div class="route-table-title"><h2 id="route-table-title"><span data-icon="document"></span>เส้นทางที่ให้บริการ ทั้งหมด</h2><div><span>ทั้งหมด</span> <strong id="route-total-visible">522</strong><small>เส้นทาง</small></div></div>
-        <form class="route-filters" id="route-filters"><input type="search" id="route-search" aria-label="ค้นหาเส้นทาง" placeholder="ค้นหาชื่อเส้นทาง, รหัสสาย, จังหวัดปลายทาง"><select id="route-region-filter" aria-label="เลือกภูมิภาค"><option value="">ทุกภาค</option><option>เหนือ</option><option>กลาง</option><option>ตะวันออก</option></select><select id="route-provider-filter" aria-label="เลือกผู้ให้บริการ"><option value="">ผู้ให้บริการทั้งหมด</option><option value="บริษัทฯ">บริษัทฯ</option><option value="รถร่วม">รถร่วม</option><option value="บริษัทฯ + รถร่วม">บริษัทฯ + รถร่วม</option></select><button class="route-search-button" type="submit">ค้นหา</button><button class="route-filter-button" type="reset" aria-label="ล้างตัวกรอง"><span data-icon="route"></span></button></form>
+        <form class="route-filters" id="route-filters"><input type="search" id="route-search" aria-label="ค้นหาเส้นทาง" placeholder="ค้นหาชื่อเส้นทาง, รหัสสาย, จังหวัดปลายทาง"><select id="route-region-filter" aria-label="เลือกภูมิภาค"><option value="">ทุกภาค</option><option>กรุงเทพฯ</option><option>เหนือ</option><option>ตะวันออกเฉียงเหนือ</option><option>กลาง</option><option>ตะวันออก</option></select><select id="route-provider-filter" aria-label="เลือกผู้ให้บริการ"><option value="">ผู้ให้บริการทั้งหมด</option><option value="บริษัทฯ">บริษัทฯ</option><option value="รถร่วม">รถร่วม</option><option value="บริษัทฯ + รถร่วม">บริษัทฯ + รถร่วม</option></select><button class="route-search-button" type="submit">ค้นหา</button><button class="route-filter-button" type="reset" aria-label="ล้างตัวกรอง"><span data-icon="route"></span></button></form>
         <div class="route-table-scroll"><table class="route-table"><thead><tr><th>ลำดับ</th><th>รหัสสาย</th><th>ชื่อเส้นทาง</th><th>ภาค</th><th>ระยะทาง (กม.)</th><th>ผู้ให้บริการ</th><th>ดูรายละเอียด</th></tr></thead><tbody id="route-table-body"></tbody></table></div>
         <div class="route-pagination"><select class="route-per-page" aria-label="จำนวนรายการต่อหน้า"><option>แสดง 10 รายการ</option></select><span class="route-page-info">1 - 10 จาก 522 รายการ</span><button class="route-page-button" type="button">‹</button><button class="route-page-button active" type="button">1</button><button class="route-page-button" type="button">2</button><button class="route-page-button" type="button">3</button><button class="route-page-button" type="button">4</button><button class="route-page-button" type="button">5</button><span class="route-ellipsis">…</span><button class="route-page-button" type="button">53</button><button class="route-page-button" type="button">›</button></div>
       </section>
@@ -2533,7 +2562,7 @@ body[data-active-page=routes]{background:#041b43}
   </dialog>
   <div class="toast" id="toast" role="status" hidden></div>
   <noscript><style>.startup-loader{display:none}body.is-loading{overflow:auto}</style><p class="notice">กรุณาเปิด JavaScript เพื่อใช้งานเว็บไซต์</p></noscript>
-  <script>Object.assign(window.BKS_IMAGE_GROUPS.revenue,{"execTotalHero":"assets/execTotalHero-v45.webp","execTop0":"assets/execTop0-v45.webp","execTop1":"assets/execTop1-v45.webp","execTop2":"assets/execTop2-v45.webp","execRegionBg0":"assets/execRegionBg0-v45.webp","execRegionBg1":"assets/execRegionBg1-v45.webp","execRegionBg2":"assets/execRegionBg2-v45.webp","execRegionBg3":"assets/execRegionBg3-v45.webp","execRegionBg4":"assets/execRegionBg4-v45.webp","execRegionMap0":"assets/thailand-region-0-v45.svg","execRegionMap1":"assets/thailand-region-1-v45.svg","execRegionMap2":"assets/thailand-region-2-v45.svg","execRegionMap3":"assets/thailand-region-3-v45.svg","execRegionMap4":"assets/thailand-region-4-v45.svg"});Object.assign(window.BKS_IMAGE_GROUPS.revenue,{"targetHero":"assets/targetHero-v48.webp","targetStat0":"assets/targetStat0-v48.webp","targetStat1":"assets/targetStat1-v48.webp","targetStat2":"assets/targetStat2-v48.webp","targetStat3":"assets/targetStat3-v48.webp","targetStat4":"assets/targetStat4-v48.webp","targetStat5":"assets/targetStat5-v48.webp","targetSuccess":"assets/targetSuccess-v48.webp","targetSummary":"assets/targetSummary-v48.webp"});Object.assign(window.BKS_IMAGE_GROUPS.revenue,{"weeklyHero":"assets/weeklyHero-v49.webp","weeklyStat0":"assets/weeklyStat0-v49.webp","weeklyStat1":"assets/weeklyStat1-v49.webp","weeklyStat2":"assets/weeklyStat2-v49.webp","weeklyStat3":"assets/weeklyStat3-v49.webp"});Object.assign(window.BKS_IMAGE_GROUPS.revenue,{"weeklyStat0":"assets/weeklyStat0-v51.webp","weeklyStat1":"assets/weeklyStat1-v51.webp","weeklyStat2":"assets/weeklyStat2-v51.webp","weeklyStat3":"assets/weeklyStat3-v51.webp"});Object.assign(window.BKS_IMAGE_GROUPS.revenue,{"rentalStat0":"assets/rentalStat0-v52.webp","rentalStat1":"assets/rentalStat1-v52.webp","rentalStat2":"assets/rentalStat2-v52.webp","rentalStat3":"assets/rentalStat3-v52.webp","rentalStat4":"assets/rentalStat4-v52.webp"});Object.assign(window.BKS_IMAGE_GROUPS.revenue,{"contractStat0":"assets/contractStat0-v53.webp","contractStat1":"assets/contractStat1-v53.webp","contractStat2":"assets/contractStat2-v53.webp","contractStat3":"assets/contractStat3-v53.webp"});window.BKS_IMAGE_GROUPS.routes={"routeBackdrop":"assets/route-backdrop-v68.png","routeRegionNorth":"assets/regionalStat0-34ee193ff166.jpg","routeRegionNortheast":"assets/regionalStat1-f8b262e35544.jpg","routeRegionCentral":"assets/regionalStat2-bfeebba78d87.jpg","routeRegionEast":"assets/regionalStat3-33de89ac8c45.jpg","routeRegionSouth":"assets/regionalStat4-c0431e6b64b6.jpg","routeRegionWest":"assets/regionalHero-b606ff5114c9.jpg"};window.INITIAL_PAGE=new URLSearchParams(location.search).get('page')||'home';window.INITIAL_IMAGE_GROUP='home';window.INITIAL_IMAGES=Object.assign({},window.BKS_IMAGE_GROUPS.shared,window.BKS_IMAGE_GROUPS.home);</script>
+  <script>Object.assign(window.BKS_IMAGE_GROUPS.revenue,{"execTotalHero":"assets/execTotalHero-v45.webp","execTop0":"assets/execTop0-v45.webp","execTop1":"assets/execTop1-v45.webp","execTop2":"assets/execTop2-v45.webp","execRegionBg0":"assets/execRegionBg0-v45.webp","execRegionBg1":"assets/execRegionBg1-v45.webp","execRegionBg2":"assets/execRegionBg2-v45.webp","execRegionBg3":"assets/execRegionBg3-v45.webp","execRegionBg4":"assets/execRegionBg4-v45.webp","execRegionMap0":"assets/thailand-region-0-v45.svg","execRegionMap1":"assets/thailand-region-1-v45.svg","execRegionMap2":"assets/thailand-region-2-v45.svg","execRegionMap3":"assets/thailand-region-3-v45.svg","execRegionMap4":"assets/thailand-region-4-v45.svg"});Object.assign(window.BKS_IMAGE_GROUPS.revenue,{"targetHero":"assets/targetHero-v48.webp","targetStat0":"assets/targetStat0-v48.webp","targetStat1":"assets/targetStat1-v48.webp","targetStat2":"assets/targetStat2-v48.webp","targetStat3":"assets/targetStat3-v48.webp","targetStat4":"assets/targetStat4-v48.webp","targetStat5":"assets/targetStat5-v48.webp","targetSuccess":"assets/targetSuccess-v48.webp","targetSummary":"assets/targetSummary-v48.webp"});Object.assign(window.BKS_IMAGE_GROUPS.revenue,{"weeklyHero":"assets/weeklyHero-v49.webp","weeklyStat0":"assets/weeklyStat0-v49.webp","weeklyStat1":"assets/weeklyStat1-v49.webp","weeklyStat2":"assets/weeklyStat2-v49.webp","weeklyStat3":"assets/weeklyStat3-v49.webp"});Object.assign(window.BKS_IMAGE_GROUPS.revenue,{"weeklyStat0":"assets/weeklyStat0-v51.webp","weeklyStat1":"assets/weeklyStat1-v51.webp","weeklyStat2":"assets/weeklyStat2-v51.webp","weeklyStat3":"assets/weeklyStat3-v51.webp"});Object.assign(window.BKS_IMAGE_GROUPS.revenue,{"rentalStat0":"assets/rentalStat0-v52.webp","rentalStat1":"assets/rentalStat1-v52.webp","rentalStat2":"assets/rentalStat2-v52.webp","rentalStat3":"assets/rentalStat3-v52.webp","rentalStat4":"assets/rentalStat4-v52.webp"});Object.assign(window.BKS_IMAGE_GROUPS.revenue,{"contractStat0":"assets/contractStat0-v53.webp","contractStat1":"assets/contractStat1-v53.webp","contractStat2":"assets/contractStat2-v53.webp","contractStat3":"assets/contractStat3-v53.webp"});window.BKS_IMAGE_GROUPS.routes={"routeBackdrop":"assets/route-backdrop-v70.webp","routeRegionNorth":"assets/regionalStat0-34ee193ff166.jpg","routeRegionNortheast":"assets/regionalStat1-f8b262e35544.jpg","routeRegionCentral":"assets/regionalStat2-bfeebba78d87.jpg","routeRegionEast":"assets/regionalStat3-33de89ac8c45.jpg","routeRegionSouth":"assets/regionalStat4-c0431e6b64b6.jpg","routeRegionWest":"assets/regionalHero-b606ff5114c9.jpg"};window.INITIAL_PAGE=new URLSearchParams(location.search).get('page')||'home';window.INITIAL_IMAGE_GROUP='home';window.INITIAL_IMAGES=Object.assign({},window.BKS_IMAGE_GROUPS.shared,window.BKS_IMAGE_GROUPS.home);</script>
   <script>
 // Set HTTPS image URLs here. Empty reference image URLs use the packaged photos.
 // Station images stay as explicit placeholders until real photographs are supplied.
@@ -2811,26 +2840,39 @@ window.ASSETS = {"loaderCoach":"assets/shared-inline-57-913a14f5605d.webp","load
     fitHomeHero();
   }
   const routeDirectoryRows=[
-    {code:'3',name:'กรุงเทพฯ - เชียงแสน',region:'เหนือ',distance:785,provider:'บริษัทฯ + รถร่วม'},
-    {code:'6',name:'กรุงเทพฯ - สุโขทัย - อุตรดิตถ์',region:'เหนือ',distance:427,provider:'บริษัทฯ'},
-    {code:'13',name:'กรุงเทพฯ - น้ำตกแม่สา',region:'เหนือ',distance:412,provider:'รถร่วม'},
-    {code:'18',name:'กรุงเทพฯ - เชียงใหม่ (ข)',region:'เหนือ',distance:696,provider:'บริษัทฯ + รถร่วม'},
-    {code:'47',name:'กรุงเทพฯ - ทุ่งช้าง',region:'เหนือ',distance:682,provider:'รถร่วม'},
-    {code:'90',name:'กรุงเทพฯ - เชียงราย',region:'เหนือ',distance:829,provider:'บริษัทฯ'},
-    {code:'91',name:'กรุงเทพฯ - ลำปาง (ข)',region:'เหนือ',distance:602,provider:'บริษัทฯ + รถร่วม'},
-    {code:'92',name:'กรุงเทพฯ - เชียงใหม่ (ข)',region:'เหนือ',distance:701,provider:'รถร่วม'},
-    {code:'93',name:'กรุงเทพฯ - ตาก (ข)',region:'เหนือ',distance:426,provider:'บริษัทฯ + รถร่วม'},
-    {code:'94',name:'กรุงเทพฯ - กำแพงเพชร (ข)',region:'เหนือ',distance:358,provider:'รถร่วม'}
+    {code:'3',name:'กรุงเทพฯ - เชียงแสน',region:'เหนือ',distance:785,provider:'บริษัทฯ + รถร่วม',category:'2'},
+    {code:'6',name:'กรุงเทพฯ - สุโขทัย - อุตรดิตถ์',region:'เหนือ',distance:427,provider:'บริษัทฯ',category:'2'},
+    {code:'13',name:'กรุงเทพฯ - น้ำตกแม่สา',region:'เหนือ',distance:412,provider:'รถร่วม',category:'2'},
+    {code:'18',name:'กรุงเทพฯ - เชียงใหม่ (ข)',region:'เหนือ',distance:696,provider:'บริษัทฯ + รถร่วม',category:'3'},
+    {code:'47',name:'กรุงเทพฯ - ทุ่งช้าง',region:'เหนือ',distance:682,provider:'รถร่วม',category:'3'},
+    {code:'90',name:'กรุงเทพฯ - เชียงราย',region:'เหนือ',distance:829,provider:'บริษัทฯ',category:'3'},
+    {code:'91',name:'กรุงเทพฯ - ลำปาง (ข)',region:'เหนือ',distance:602,provider:'บริษัทฯ + รถร่วม',category:'4'},
+    {code:'92',name:'กรุงเทพฯ - เชียงใหม่ (ข)',region:'เหนือ',distance:701,provider:'รถร่วม',category:'4'},
+    {code:'93',name:'กรุงเทพฯ - ตาก (ข)',region:'เหนือ',distance:426,provider:'บริษัทฯ + รถร่วม',category:'4'},
+    {code:'6',name:'กรุงเทพมหานคร - นครหลวงเวียงจันทน์',region:'กรุงเทพฯ',distance:615,provider:'รถร่วม',category:'international',country:'สปป.ลาว'},
+    {code:'10',name:'กรุงเทพมหานคร - ปากเซ',region:'กรุงเทพฯ',distance:654,provider:'รถร่วม',category:'international',country:'สปป.ลาว'},
+    {code:'12',name:'กรุงเทพมหานคร - อรัญประเทศ - ปอยเปต - เสียมราฐ',region:'กรุงเทพฯ',distance:428,provider:'รถร่วม',category:'international',country:'กัมพูชา'},
+    {code:'13',name:'กรุงเทพมหานคร - อรัญประเทศ - ปอยเปต - พนมเปญ',region:'กรุงเทพฯ',distance:659,provider:'รถร่วม',category:'international',country:'กัมพูชา'},
+    {code:'11',name:'จังหวัดเชียงราย - แขวงบ่อแก้ว',region:'เหนือ',distance:180,provider:'รถร่วม',category:'international',country:'สปป.ลาว'},
+    {code:'15',name:'จังหวัดน่าน - แขวงไชยะบุรี - แขวงหลวงพระบาง',region:'เหนือ',distance:350,provider:'รถร่วม',category:'international',country:'สปป.ลาว'},
+    {code:'1',name:'จังหวัดหนองคาย - นครหลวงเวียงจันทน์',region:'ตะวันออกเฉียงเหนือ',distance:24,provider:'รถร่วม',category:'international',country:'สปป.ลาว'},
+    {code:'2',name:'จังหวัดอุดรธานี - นครหลวงเวียงจันทน์',region:'ตะวันออกเฉียงเหนือ',distance:80,provider:'รถร่วม',category:'international',country:'สปป.ลาว'},
+    {code:'3',name:'จังหวัดอุบลราชธานี - เมืองปากเซ',region:'ตะวันออกเฉียงเหนือ',distance:180,provider:'รถร่วม',category:'international',country:'สปป.ลาว'},
+    {code:'4',name:'จังหวัดมุกดาหาร - แขวงสะหวันนะเขต',region:'ตะวันออกเฉียงเหนือ',distance:50,provider:'รถร่วม',category:'international',country:'สปป.ลาว'},
+    {code:'5',name:'จังหวัดขอนแก่น - นครหลวงเวียงจันทน์',region:'ตะวันออกเฉียงเหนือ',distance:250,provider:'รถร่วม',category:'international',country:'สปป.ลาว'},
+    {code:'7',name:'จังหวัดนครพนม - เมืองท่าแขก',region:'ตะวันออกเฉียงเหนือ',distance:30,provider:'รถร่วม',category:'international',country:'สปป.ลาว'},
+    {code:'9',name:'จังหวัดอุดรธานี - ท่าอากาศยานนานาชาติอุดรธานี - จังหวัดหนองคาย - เมืองวังเวียง',region:'ตะวันออกเฉียงเหนือ',distance:170,provider:'รถร่วม',category:'international',country:'สปป.ลาว'},
+    {code:'14',name:'จังหวัดเลย - แขวงไชยะบุรี - แขวงหลวงพระบาง',region:'ตะวันออกเฉียงเหนือ',distance:340,provider:'รถร่วม',category:'international',country:'สปป.ลาว'},
+    {code:'16',name:'จังหวัดบึงกาฬ - แขวงบอลิคำไซ',region:'ตะวันออกเฉียงเหนือ',distance:110,provider:'รถร่วม',category:'international',country:'สปป.ลาว'}
   ];
-  routeDirectoryRows.forEach((row,index)=>row.category=index<3?'2':index<6?'3':index<9?'4':'international');
   let activeRouteCategory='all';
-  const routeCategoryTotals={all:522,'2':214,'3':176,'4':120,international:12};
+  const routeCategoryTotals={all:522,'2':214,'3':176,'4':120,international:15};
   const routeCategoryKpis={
     all:{label:'รวมทั้งหมด',total:924,company:187,both:402,joint:335},
     '2':{label:'หมวด 2',total:318,company:72,both:147,joint:99},
     '3':{label:'หมวด 3',total:276,company:55,both:121,joint:100},
     '4':{label:'หมวด 4',total:248,company:47,both:101,joint:100},
-    international:{label:'ระหว่างประเทศ',total:82,company:13,both:33,joint:36}
+    international:{label:'ระหว่างประเทศ',total:15,company:4,both:2,joint:9,groupLabels:['กรุงเทพฯ','ภาคเหนือ','ภาคตะวันออกเฉียงเหนือ']}
   };
   function updateRouteSummary(){
     const data=routeCategoryKpis[activeRouteCategory]||routeCategoryKpis.all;
@@ -2838,8 +2880,10 @@ window.ASSETS = {"loaderCoach":"assets/shared-inline-57-913a14f5605d.webp","load
     totalCard.querySelector('div>span').textContent=data.label;
     totalCard.querySelector('strong').textContent=num(data.total);
     const values=[data.company,data.both,data.joint];
+    const labels=data.groupLabels||['บริษัทฯ อย่างเดียว','บริษัทฯ + รถร่วม','รถร่วม อย่างเดียว'];
     $$('.route-provider').forEach((card,index)=>{
       const value=values[index],percent=(value/data.total*100).toFixed(2);
+      card.querySelector('.route-provider-head div>span').textContent=labels[index];
       card.querySelector('strong').innerHTML=num(value)+' <small>เส้นทาง</small>';
       card.querySelector('.route-provider-track i').style.width=percent+'%';
       card.querySelector('.route-provider-percent').textContent=percent+'%';
@@ -2860,15 +2904,18 @@ window.ASSETS = {"loaderCoach":"assets/shared-inline-57-913a14f5605d.webp","load
     const query=$('#route-search').value.trim().toLowerCase(),region=$('#route-region-filter').value,provider=$('#route-provider-filter').value;
     const rows=routeDirectoryRows.filter(row=>(activeRouteCategory==='all'||row.category===activeRouteCategory)&&(!query||(row.name+' '+row.code).toLowerCase().includes(query))&&(!region||row.region===region)&&(!provider||row.provider===provider));renderRouteTable(rows);
   }
+  function updateRouteMapMode(){
+    const mapZone=$('.route-map-zone');if(mapZone)mapZone.classList.toggle('is-international',activeRouteCategory==='international');
+  }
   function renderRouteDirectory(){
-    renderRouteTable();renderRouteMap();applyAssets({});updateRouteSummary();
+    renderRouteTable();renderRouteMap();applyAssets({});updateRouteSummary();updateRouteMapMode();
     const mapStage=$('#route-map-stage');
     if(mapStage&&!$('.route-connections'))mapStage.insertAdjacentHTML('afterend','<svg class="route-connections" viewBox="0 0 300 540" aria-hidden="true"><path d="M151 258 Q90 145 128 62 M151 258 Q213 121 218 92 M151 258 Q92 259 57 265 M151 258 Q236 251 263 322 M151 258 Q128 386 142 493"/><circle cx="151" cy="258" r="8"/><circle cx="128" cy="62" r="5"/><circle cx="218" cy="92" r="5"/><circle cx="57" cy="265" r="5"/><circle cx="263" cy="322" r="5"/><circle cx="142" cy="493" r="5"/></svg>');
     const sideButtons=$$('.route-side-link');
     ['all','2','3','4','international'].forEach((category,index)=>{if(sideButtons[index])sideButtons[index].dataset.routeCategory=category;});
     const allLabel=sideButtons[0]?.querySelector('strong');if(allLabel)allLabel.textContent='รวมทั้งหมด';
     const tableHeading=$('#route-table-title');if(tableHeading)tableHeading.innerHTML=icon('route')+'ค้นหาเส้นทาง';
-    sideButtons.forEach(button=>button.onclick=()=>{activeRouteCategory=button.dataset.routeCategory||'all';sideButtons.forEach(item=>item.classList.toggle('active',item===button));updateRouteSummary();filterRouteDirectory();});
+    sideButtons.forEach(button=>button.onclick=()=>{activeRouteCategory=button.dataset.routeCategory||'all';sideButtons.forEach(item=>item.classList.toggle('active',item===button));$('#route-search').value='';$('#route-region-filter').value='';$('#route-provider-filter').value='';updateRouteSummary();updateRouteMapMode();filterRouteDirectory();});
     const routeForm=$('#route-filters');
     routeForm.onsubmit=event=>{event.preventDefault();filterRouteDirectory();};
     routeForm.onreset=()=>setTimeout(filterRouteDirectory,0);
