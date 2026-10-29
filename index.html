@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-<meta name="bks-build" content="v63-kpi-hover-lift-glow">
+<meta name="bks-build" content="v64-kpi-icon-refresh">
   <meta charset="UTF-8">
   <base target="_top">
   <meta name="description" content="ฝ่ายบริหารการเดินรถ บริษัท ขนส่ง จำกัด — รายงานการเดินรถและข้อมูลหน่วยงาน">
@@ -392,7 +392,13 @@ body[data-active-page=revenue]{color:#08086b;background:#f3f9fd}
 .kpi-backdrop{inset:-20px -12px -18px;width:auto;opacity:.8;mask-image:none;-webkit-mask-image:none;z-index:-1}
 .kpi-backdrop>img{object-fit:cover;object-position:right center}
 .kpi-heading{gap:12px}
-.kpi-heading>.icon,.fare-button>.icon{width:clamp(48px,3.5vw,64px);height:clamp(48px,3.5vw,64px);padding:12px;box-sizing:border-box;border-radius:50%;background:linear-gradient(140deg,#fff,#ffd7ee);color:#f50088;flex-shrink:0}
+.kpi-icon-shell{position:relative;display:grid;place-items:center;width:clamp(48px,3.5vw,64px);height:clamp(48px,3.5vw,64px);box-sizing:border-box;border:2px solid rgba(8,52,112,.18);border-radius:50%;background:rgba(255,255,255,.94);box-shadow:0 5px 14px rgba(8,49,102,.11);color:#093b7c;flex:0 0 auto}
+.kpi-icon-shell>.icon{width:58%;height:58%;padding:0;background:none;border:0;border-radius:0;color:inherit;stroke-width:1.85}
+.kpi-icon-shell::after{content:'';position:absolute;top:7%;right:7%;width:clamp(7px,.52vw,9px);height:clamp(7px,.52vw,9px);border-radius:50%;background:#ed138e;box-shadow:0 0 0 3px rgba(255,255,255,.96)}
+.kpi-fare{padding-left:clamp(20px,1.35vw,28px)!important}
+.kpi-fare .fare-button{gap:clamp(10px,.75vw,14px);min-width:0}
+.kpi-fare .fare-button>span{min-width:0}
+.kpi-fare .kpi-icon-shell{width:clamp(46px,3.15vw,58px);height:clamp(46px,3.15vw,58px)}
 .kpi-label{font-size:clamp(11px,.82vw,15px);font-weight:600}
 .kpi-value{margin-top:4px;gap:6px}.kpi-value strong{font-size:clamp(29px,2.3vw,44px);letter-spacing:-1.2px}.kpi-value span{font-size:12px}
 .kpi-breakdown{gap:8px;font-size:clamp(10px,.78vw,14px)}
@@ -411,7 +417,7 @@ body[data-active-page=revenue]{color:#08086b;background:#f3f9fd}
 @media(min-width:1051px) and (max-width:1400px){
  .kpi-strip{padding:18px 12px 16px;min-height:132px;border-radius:36px}
  .kpi,.kpi:first-child,.kpi:last-child{padding:0 8px;gap:8px}.kpi-heading{gap:8px}
- .kpi-heading>.icon,.fare-button>.icon{width:46px;height:46px;padding:10px}
+ .kpi-icon-shell{width:46px;height:46px}.kpi-fare .kpi-icon-shell{width:43px;height:43px}
  .kpi-label{font-size:10px}.kpi-value strong{font-size:28px}.kpi-value span{font-size:10px}
  .kpi-breakdown{gap:4px;font-size:9px}.kpi-breakdown>span,.kpi-breakdown>span+span{padding:3px 5px;gap:3px}
  .fare-button{gap:8px}.fare-latest{font-size:14px}.fare-date{font-size:10px}
@@ -422,14 +428,14 @@ body[data-active-page=revenue]{color:#08086b;background:#f3f9fd}
  .kpi:nth-child(3){border:0}.kpi:last-child{grid-column:span 2;border:0}
  .kpi-backdrop{inset:-10px 0;opacity:.75}
  .kpi-label{font-size:12px}.kpi-breakdown{font-size:11px}.kpi-value strong{font-size:30px}
- .kpi-heading>.icon,.fare-button>.icon{width:50px;height:50px;padding:11px}
+ .kpi-icon-shell{width:50px;height:50px}.kpi-fare .kpi-icon-shell{width:46px;height:46px}
 }
 @media(max-width:767px){
  .kpi-strip{margin:0 12px;border-radius:26px;padding:20px 10px;gap:22px 0}
  .kpi,.kpi:first-child,.kpi:last-child{padding:0 8px;gap:10px}
  .kpi:nth-child(odd){border-right:1px solid #dce0ef}.kpi:nth-child(even){border:0}
  .kpi:last-child{grid-column:1/-1;border:0;padding:14px 8px 0;border-top:1px solid #dce0ef}
- .kpi-heading{gap:6px}.kpi-heading>.icon,.fare-button>.icon{width:36px;height:36px;padding:8px}
+ .kpi-heading{gap:6px}.kpi-icon-shell{width:36px;height:36px}.kpi-icon-shell::after{box-shadow:0 0 0 2px #fff}.kpi-fare .kpi-icon-shell{width:36px;height:36px}
  .kpi-label{font-size:9px}.kpi-value strong{font-size:24px;letter-spacing:-1px}.kpi-value span{font-size:9px}
  .kpi-breakdown{font-size:8px;gap:3px;flex-wrap:wrap}.kpi-breakdown>span,.kpi-breakdown>span+span{padding:2px 4px;gap:3px}
  .metric-dot{width:6px;height:6px}.fare-latest{font-size:16px}.fare-date{font-size:11px}
@@ -2519,6 +2525,11 @@ window.ASSETS = {"loaderCoach":"assets/shared-inline-57-913a14f5605d.webp","load
     people:'<circle cx="12" cy="10" r="5"/><path d="M3 28v-3c0-6 18-6 18 0v3zM22 5c8 0 8 10 0 10m3 5c5 1 5 4 5 8h-5"/>',
     coins:'<ellipse cx="21" cy="8" rx="8" ry="4"/><path d="M13 8v12c0 5 16 5 16 0V8M13 14c3 4 13 4 16 0M13 20c3 4 13 4 16 0"/><ellipse cx="10" cy="20" rx="8" ry="4"/><path d="M2 20v7c0 5 16 5 16 0v-7M2 25c3 4 13 4 16 0"/>',
     route:'<circle cx="6" cy="6" r="3"/><circle cx="26" cy="26" r="3"/><path d="M12 6h11c9 0 9 10 0 10H9c-9 0-9 10 0 10h11"/>',
+    kpiTrips:'<rect x="7" y="4" width="18" height="21" rx="4"/><path d="M10 9h12v8H10zM10 25v3m12-3v3M5 11v6m22-6v6"/><circle cx="11" cy="21" r="1.25"/><circle cx="21" cy="21" r="1.25"/>',
+    kpiPassengers:'<circle cx="12" cy="10" r="4"/><path d="M4 27v-2c0-4.3 3.1-7 8-7s8 2.7 8 7v2M22 7a3.5 3.5 0 0 1 0 7m1 5c3.2.7 5 2.8 5 6v2"/>',
+    kpiRoute:'<path d="M7 7h12a5 5 0 0 1 0 10h-7a4.5 4.5 0 0 0 0 9h13"/><circle cx="7" cy="7" r="2"/><circle cx="25" cy="26" r="2"/>',
+    kpiFleet:'<rect x="6" y="4" width="20" height="22" rx="4"/><path d="M9 9h14v9H9zM9 26v3m14-3v3M4 11v7m24-7v7"/><circle cx="10" cy="22" r="1.3"/><circle cx="22" cy="22" r="1.3"/>',
+    kpiFare:'<path d="M5 6h14a3 3 0 0 1 3 3v5M5 6v18h11M5 11h16M9 17h6"/><ellipse cx="23" cy="21" rx="5" ry="2.5"/><path d="M18 21v5c0 1.5 2.2 2.7 5 2.7s5-1.2 5-2.7v-5m-10 2.5c0 1.5 2.2 2.7 5 2.7s5-1.2 5-2.7"/>',
     document:'<path d="M8 3h13l5 5v21H8zM21 3v7h5M12 14h10m-10 5h10m-10 5h7"/>',
     chart:'<path d="M5 28V17h4v11zm9 0V10h4v18zm9 0V3h4v25z"/>',
     arrow:'<path d="M7 16h18m-7-7 7 7-7 7"/>',
@@ -2531,6 +2542,7 @@ window.ASSETS = {"loaderCoach":"assets/shared-inline-57-913a14f5605d.webp","load
   paths.download='<path d="M16 3v18m-6-6 6 6 6-6M5 22v6h22v-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>';
   paths.trophy='<path d="M10 4h12v5c0 6-2 10-6 10s-6-4-6-10V4Zm0 3H5v3c0 4 3 6 7 6m10-9h5v3c0 4-3 6-7 6M16 19v5m-5 4h10m-8-4h6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>';
   function icon(name) { return '<svg class="icon" viewBox="0 0 32 32" aria-hidden="true">' + (paths[name] || paths.document) + '</svg>'; }
+  function kpiIcon(name) { return '<span class="kpi-icon-shell" aria-hidden="true">' + icon(name) + '</span>'; }
   $$('[data-icon]').forEach(el => el.innerHTML = icon(el.dataset.icon));
   const pages = ['home','standards','routes','revenue','trips','departments','documents'];
   const loaded = {};
@@ -2738,13 +2750,13 @@ window.ASSETS = {"loaderCoach":"assets/shared-inline-57-913a14f5605d.webp","load
     ].map(([name,asset])=>[name,'<img data-asset="'+asset+'" alt="" decoding="async">']));
     const split=(entries)=>'<div class="kpi-breakdown">'+entries.map((entry,i)=>'<span><i class="metric-dot '+(i?'blue-dot':'')+'"></i>'+esc(entry[0])+' <b>'+num(entry[1])+'</b></span>').join('')+'</div>';
     const metrics=[
-      ['เที่ยววิ่งทั้งหมด (วันนี้)',select('bus',3428),'เที่ยว','bus','road',[['รถใหญ่',2614],['รถเล็ก',814]]],
-      ['ผู้โดยสารทั้งหมด (วันนี้)',select('people',125430),'คน','people','people',[['รถใหญ่',95320],['รถเล็ก',30110]]],
-      ['เส้นทางที่ให้บริการ',select('route',924),'เส้นทาง','route','route',[['บริษัทฯ',187],['รถร่วม',737]]],
-      ['จำนวนรถที่ให้บริการ (วันนี้)',select('fleet',1248),'คัน','bus','bus',[['รถใหญ่',760],['รถเล็ก',488]]]
+      ['เที่ยววิ่งทั้งหมด (วันนี้)',select('bus',3428),'เที่ยว','kpiTrips','road',[['รถใหญ่',2614],['รถเล็ก',814]]],
+      ['ผู้โดยสารทั้งหมด (วันนี้)',select('people',125430),'คน','kpiPassengers','people',[['รถใหญ่',95320],['รถเล็ก',30110]]],
+      ['เส้นทางที่ให้บริการ',select('route',924),'เส้นทาง','kpiRoute','route',[['บริษัทฯ',187],['รถร่วม',737]]],
+      ['จำนวนรถที่ให้บริการ (วันนี้)',select('fleet',1248),'คัน','kpiFleet','bus',[['รถใหญ่',760],['รถเล็ก',488]]]
     ];
-    $('#home-kpis').innerHTML=metrics.map((k,index)=>{const clickable=index===2||index===3;const id=index===2?'route-directory-button':index===3?'fleet-standards-button':'';const label=index===2?'ดูเส้นทางที่ให้บริการ':index===3?'ดูมาตรฐานรถโดยสาร':'';const extra=index===2?' kpi-route-button':index===3?' kpi-fleet-button':'';return '<'+(clickable?'button type="button" id="'+id+'" aria-label="'+label+'"':'div')+' class="kpi'+extra+'"><div class="kpi-backdrop" aria-hidden="true">'+backdrop[k[4]]+'</div><div class="kpi-heading">'+icon(k[3])+'<div><p class="kpi-label">'+esc(k[0])+'</p><div class="kpi-value"><strong>'+num(k[1])+'</strong><span>'+esc(k[2])+'</span></div></div></div>'+(data.demo?split(k[5]):'<div class="kpi-breakdown muted">ข้อมูลจากหน่วยงาน</div>')+'</'+(clickable?'button':'div')+'>';}).join('')+
-      '<div class="kpi kpi-fare"><div class="kpi-backdrop" aria-hidden="true">'+backdrop.fare+'</div><button class="fare-button" id="fare-button">'+icon('coins')+'<span><span class="kpi-label">อัตราค่าโดยสาร</span><strong class="fare-latest">ตรวจสอบล่าสุด '+icon('arrow')+'</strong>'+(data.demo?'<span class="fare-date">อัปเดต 3 ต.ค. 2569</span>':'')+'</span></button></div>';
+    $('#home-kpis').innerHTML=metrics.map((k,index)=>{const clickable=index===2||index===3;const id=index===2?'route-directory-button':index===3?'fleet-standards-button':'';const label=index===2?'ดูเส้นทางที่ให้บริการ':index===3?'ดูมาตรฐานรถโดยสาร':'';const extra=index===2?' kpi-route-button':index===3?' kpi-fleet-button':'';return '<'+(clickable?'button type="button" id="'+id+'" aria-label="'+label+'"':'div')+' class="kpi'+extra+'"><div class="kpi-backdrop" aria-hidden="true">'+backdrop[k[4]]+'</div><div class="kpi-heading">'+kpiIcon(k[3])+'<div><p class="kpi-label">'+esc(k[0])+'</p><div class="kpi-value"><strong>'+num(k[1])+'</strong><span>'+esc(k[2])+'</span></div></div></div>'+(data.demo?split(k[5]):'<div class="kpi-breakdown muted">ข้อมูลจากหน่วยงาน</div>')+'</'+(clickable?'button':'div')+'>';}).join('')+
+      '<div class="kpi kpi-fare"><div class="kpi-backdrop" aria-hidden="true">'+backdrop.fare+'</div><button class="fare-button" id="fare-button">'+kpiIcon('kpiFare')+'<span><span class="kpi-label">อัตราค่าโดยสาร</span><strong class="fare-latest">ตรวจสอบล่าสุด '+icon('arrow')+'</strong>'+(data.demo?'<span class="fare-date">อัปเดต 3 ต.ค. 2569</span>':'')+'</span></button></div>';
     applyAssets({});
     $('#route-directory-button').addEventListener('click',()=>route('routes',true,true));
     $('#fleet-standards-button').addEventListener('click',()=>route('standards',true,true));
