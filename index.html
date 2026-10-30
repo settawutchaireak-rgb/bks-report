@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-<meta name="bks-build" content="v72-route-map-terrain-blend">
+<meta name="bks-build" content="v73-route-map-region-hover">
   <meta charset="UTF-8">
   <base target="_top">
   <link rel="preload" as="image" href="assets/route-backdrop-v70.webp" type="image/webp">
@@ -2322,6 +2322,22 @@ body[data-active-page=routes]{background:#041b43}
 .route-map-zone:not(.is-international) .route-connections{left:134px;top:10px;width:390px;height:620px;z-index:2;filter:drop-shadow(0 0 4px #fff) drop-shadow(0 0 9px #00b7ff)}
 .route-map-zone:not(.is-international) .route-connections path{stroke:#f5fdff;stroke-width:1.65;opacity:.9}
 .route-map-zone:not(.is-international) .route-connections circle{filter:drop-shadow(0 0 4px #fff) drop-shadow(0 0 9px #ff0b87)}
+/* Route map v73: sapphire-platinum regional interaction. */
+.route-map-zone:not(.is-international) .route-map-stage{mix-blend-mode:normal;opacity:1;filter:drop-shadow(0 0 3px #f5fbff) drop-shadow(0 0 12px #4f8fd5) drop-shadow(0 14px 32px #001b4da8)}
+.route-map-zone:not(.is-international) .route-map-stage svg{isolation:isolate}
+.route-map-zone:not(.is-international) .route-region-shape{cursor:pointer;transform-box:fill-box;transform-origin:center;transition:opacity .28s ease,filter .28s ease,transform .28s ease}
+.route-map-zone:not(.is-international) .route-region-shape path{transition:fill-opacity .28s ease,stroke .28s ease,stroke-width .28s ease,filter .28s ease}
+.route-map-zone:not(.is-international) .route-map-stage svg.is-region-hovering .route-region-shape:not(.is-hovered){opacity:.46;filter:saturate(.55) brightness(.66)}
+.route-map-zone:not(.is-international) .route-region-shape.is-hovered{transform:translateY(-1.2px);filter:brightness(1.23) saturate(1.12) drop-shadow(0 0 2px #fff) drop-shadow(0 0 9px #8cc6ff) drop-shadow(0 10px 12px #00173e99)}
+.route-map-zone:not(.is-international) .route-region-shape.is-hovered path{fill-opacity:1;stroke:#fff!important;stroke-width:.82!important}
+.route-map-zone:not(.is-international) .route-region-shape:focus{outline:none}.route-map-zone:not(.is-international) .route-region-shape:focus-visible{filter:brightness(1.22) drop-shadow(0 0 10px #fff)}
+.route-map-zone:not(.is-international) .route-connections{transition:opacity .25s ease,filter .25s ease}.route-map-zone:not(.is-international) .route-connections.is-region-hovering path:not(.is-hovered),.route-map-zone:not(.is-international) .route-connections.is-region-hovering circle:not(.is-hovered):not(.route-hub){opacity:.22}
+.route-map-zone:not(.is-international) .route-connections path,.route-map-zone:not(.is-international) .route-connections circle{transition:stroke .25s ease,stroke-width .25s ease,opacity .25s ease,filter .25s ease}
+.route-map-zone:not(.is-international) .route-connections path.is-hovered{stroke:#e5bd70!important;stroke-width:2.7;opacity:1;filter:drop-shadow(0 0 2px #fff7d5) drop-shadow(0 0 9px #d9a94c)}
+.route-map-zone:not(.is-international) .route-connections circle.is-hovered{fill:#f4cf83;stroke:#fff8df;opacity:1;filter:drop-shadow(0 0 4px #fff) drop-shadow(0 0 11px #e4b85d)}
+.route-region-card{transition:opacity .25s ease,transform .25s ease,filter .25s ease,box-shadow .25s ease}.route-map-zone.is-region-hovering>.route-region-card:not(.is-hovered){opacity:.48;filter:saturate(.55)}.route-map-zone>.route-region-card.is-hovered{transform:translateY(-4px) scale(1.025);filter:brightness(1.12);box-shadow:0 0 0 1px #f4d99a99,0 0 24px #72aee88a,0 16px 32px #00102dcc}
+.route-map-tooltip{position:absolute;z-index:9;width:236px;padding:13px 15px;border:1px solid #dceaff;border-radius:15px;background:linear-gradient(145deg,#061b42f2,#0a3768ed);box-shadow:inset 0 1px 0 #ffffff42,0 14px 34px #00112dbd,0 0 18px #76aeeb55;color:#fff;opacity:0;transform:translateY(7px) scale(.97);pointer-events:none;backdrop-filter:blur(14px);transition:opacity .18s ease,transform .18s ease}
+.route-map-tooltip.is-visible{opacity:1;transform:translateY(0) scale(1)}.route-map-tooltip::before{content:'';position:absolute;inset:0 0 auto;height:3px;border-radius:15px 15px 0 0;background:linear-gradient(90deg,#d9b769,#f7e5ad,#8eb9e9)}.route-map-tooltip strong{display:block;margin-bottom:2px;font-size:17px}.route-map-tooltip .route-tooltip-total{color:#f0cf82;font-size:24px;font-weight:850}.route-map-tooltip .route-tooltip-total small{color:#dbeaff;font-size:11px;font-weight:600}.route-map-tooltip p{margin:6px 0 0;padding-top:6px;border-top:1px solid #ffffff24;color:#dcecff;font-size:11px}.route-map-tooltip p b{color:#fff}.route-map-zone.is-international .route-map-tooltip{display:none}
 .route-pagination{margin-top:13px}.route-per-page,.route-page-button{border-color:#9fc8e7;background:#eef8ff}.route-page-button.active{background:var(--route-pink)}
 @media(max-width:1500px) and (min-width:1101px){.route-directory-layout{grid-template-columns:215px 1fr;gap:12px;padding-inline:12px}.route-sidebar{width:auto;transform:none}.route-side-link{min-height:72px;padding-inline:12px}.route-intro{transform:scale(.86);transform-origin:left top}.route-summary-board{width:760px;grid-template-columns:175px 1fr}.route-map-zone{transform:scale(.82);transform-origin:left top}.route-region-card.northeast,.route-region-card.east{right:92px}.route-table-panel{top:190px;width:calc(100% - 520px);min-width:560px}.route-filters{grid-template-columns:1fr 100px 125px 58px 42px}.route-table-title h2{font-size:23px}}
 @media(max-width:1300px) and (min-width:1101px){.route-intro{transform:scale(.72)}.route-summary-board{width:700px;grid-template-columns:170px 1fr}}
@@ -2918,19 +2934,45 @@ window.ASSETS = {"loaderCoach":"assets/shared-inline-57-913a14f5605d.webp","load
   }
   async function renderRouteMap(){
     const stage=$('#route-map-stage');if(stage.dataset.ready)return;stage.dataset.ready='true';
-    try{const response=await fetch('assets/thailand-region-0-v45.svg');if(!response.ok)throw new Error();const text=await response.text();const doc=new DOMParser().parseFromString(text,'image/svg+xml');const svg=doc.documentElement;const colors=['#f22991','#ff841c','#7c3cff','#148df0','#08b77c'];svg.querySelectorAll('path[data-region]').forEach(path=>{path.setAttribute('fill',colors[Number(path.dataset.region)]||'#52a9ee');path.setAttribute('stroke','#f2fdff');path.setAttribute('stroke-width','.48');});svg.removeAttribute('role');svg.setAttribute('aria-hidden','true');svg.setAttribute('preserveAspectRatio','xMidYMid meet');stage.replaceChildren(document.importNode(svg,true));}catch(_){stage.innerHTML='<div class="notice">แผนที่ประเทศไทย</div>';}
+    try{const response=await fetch('assets/thailand-region-0-v45.svg');if(!response.ok)throw new Error();const text=await response.text();const doc=new DOMParser().parseFromString(text,'image/svg+xml');const svg=doc.documentElement;const colors=['#b96f9c','#c89352','#776db4','#4c83b8','#428f91'];const regionNames=['ภาคกลาง','ภาคตะวันออก','ภาคตะวันออกเฉียงเหนือ','ภาคเหนือ','ภาคใต้'];const ns='http://www.w3.org/2000/svg';const groups=regionNames.map((name,index)=>{const group=doc.createElementNS(ns,'g');group.setAttribute('class','route-region-shape');group.setAttribute('data-map-region',String(index));group.setAttribute('role','button');group.setAttribute('tabindex','0');group.setAttribute('aria-label',name);return group;});svg.querySelectorAll('path[data-region]').forEach(path=>{const region=Number(path.dataset.region);path.setAttribute('fill',colors[region]||'#688eaf');path.setAttribute('stroke','#eef6ff');path.setAttribute('stroke-width','.48');groups[region]?.appendChild(path);});groups.forEach(group=>svg.appendChild(group));svg.setAttribute('role','img');svg.setAttribute('aria-label','แผนที่ประเทศไทย แสดงเส้นทางแยกตามภูมิภาค');svg.removeAttribute('aria-hidden');svg.setAttribute('preserveAspectRatio','xMidYMid meet');stage.replaceChildren(document.importNode(svg,true));}catch(_){stage.innerHTML='<div class="notice">แผนที่ประเทศไทย</div>';}
+  }
+  const routeRegionDetails={
+    0:{name:'ภาคกลาง',total:154,company:34,joint:68,both:52,card:'central'},
+    1:{name:'ภาคตะวันออก',total:132,company:21,joint:41,both:70,card:'east'},
+    2:{name:'ภาคตะวันออกเฉียงเหนือ',total:282,company:61,joint:131,both:90,card:'northeast'},
+    3:{name:'ภาคเหนือ',total:156,company:32,joint:74,both:50,card:'north'},
+    4:{name:'ภาคใต้',total:133,company:28,joint:60,both:45,card:'south'}
+  };
+  function setRouteRegionHover(region,event){
+    const zone=$('.route-map-zone'),stage=$('#route-map-stage'),svg=stage?.querySelector('svg'),connections=$('.route-connections'),tooltip=$('#route-map-tooltip');if(!zone||zone.classList.contains('is-international')||!svg)return;
+    const key=String(region),data=routeRegionDetails[key];if(!data)return;
+    zone.classList.add('is-region-hovering');svg.classList.add('is-region-hovering');connections?.classList.add('is-region-hovering');
+    svg.querySelectorAll('.route-region-shape').forEach(group=>group.classList.toggle('is-hovered',group.dataset.mapRegion===key));
+    connections?.querySelectorAll('[data-route-region]').forEach(item=>item.classList.toggle('is-hovered',item.dataset.routeRegion===key));
+    zone.querySelectorAll(':scope>.route-region-card').forEach(card=>card.classList.toggle('is-hovered',card.classList.contains(data.card)));
+    if(tooltip){tooltip.innerHTML='<strong>'+data.name+'</strong><span class="route-tooltip-total">'+num(data.total)+' <small>เส้นทาง</small></span><p>บริษัทฯ <b>'+num(data.company)+'</b> &nbsp;•&nbsp; รถร่วม <b>'+num(data.joint)+'</b> &nbsp;•&nbsp; ร่วมกัน <b>'+num(data.both)+'</b></p>';tooltip.classList.add('is-visible');moveRouteTooltip(event);}
+  }
+  function moveRouteTooltip(event){const zone=$('.route-map-zone'),tooltip=$('#route-map-tooltip');if(!zone||!tooltip||!event?.clientX)return;const rect=zone.getBoundingClientRect(),scaleX=zone.offsetWidth/rect.width,scaleY=zone.offsetHeight/rect.height;let x=(event.clientX-rect.left)*scaleX+18,y=(event.clientY-rect.top)*scaleY+18;x=Math.max(8,Math.min(x,zone.offsetWidth-244));y=Math.max(8,Math.min(y,zone.offsetHeight-116));tooltip.style.left=x+'px';tooltip.style.top=y+'px';}
+  function clearRouteRegionHover(){const zone=$('.route-map-zone'),svg=$('#route-map-stage svg'),connections=$('.route-connections'),tooltip=$('#route-map-tooltip');zone?.classList.remove('is-region-hovering');svg?.classList.remove('is-region-hovering');svg?.querySelectorAll('.route-region-shape.is-hovered').forEach(item=>item.classList.remove('is-hovered'));connections?.classList.remove('is-region-hovering');connections?.querySelectorAll('.is-hovered').forEach(item=>item.classList.remove('is-hovered'));zone?.querySelectorAll(':scope>.route-region-card.is-hovered').forEach(item=>item.classList.remove('is-hovered'));tooltip?.classList.remove('is-visible');}
+  function bindRouteMapInteraction(){
+    const stage=$('#route-map-stage'),zone=$('.route-map-zone');if(!stage||stage.dataset.interactionBound)return;stage.dataset.interactionBound='true';
+    stage.addEventListener('pointerover',event=>{const group=event.target.closest?.('.route-region-shape');if(group)setRouteRegionHover(group.dataset.mapRegion,event);});stage.addEventListener('pointermove',moveRouteTooltip);stage.addEventListener('pointerleave',clearRouteRegionHover);
+    stage.addEventListener('focusin',event=>{const group=event.target.closest?.('.route-region-shape');if(group){const rect=group.getBoundingClientRect();setRouteRegionHover(group.dataset.mapRegion,{clientX:rect.right,clientY:rect.top+rect.height/2});}});stage.addEventListener('focusout',clearRouteRegionHover);
+    stage.addEventListener('click',event=>{const group=event.target.closest?.('.route-region-shape');if(!group)return;event.preventDefault();setRouteRegionHover(group.dataset.mapRegion,event);});zone?.addEventListener('pointerdown',event=>{if(!event.target.closest?.('.route-region-shape'))clearRouteRegionHover();});
   }
   function filterRouteDirectory(){
     const query=$('#route-search').value.trim().toLowerCase(),region=$('#route-region-filter').value,provider=$('#route-provider-filter').value;
     const rows=routeDirectoryRows.filter(row=>(activeRouteCategory==='all'||row.category===activeRouteCategory)&&(!query||(row.name+' '+row.code).toLowerCase().includes(query))&&(!region||row.region===region)&&(!provider||row.provider===provider));renderRouteTable(rows);
   }
   function updateRouteMapMode(){
-    const mapZone=$('.route-map-zone');if(mapZone)mapZone.classList.toggle('is-international',activeRouteCategory==='international');
+    const mapZone=$('.route-map-zone');if(mapZone)mapZone.classList.toggle('is-international',activeRouteCategory==='international');clearRouteRegionHover();
   }
   function renderRouteDirectory(){
     renderRouteTable();renderRouteMap();applyAssets({});updateRouteSummary();updateRouteMapMode();
     const mapStage=$('#route-map-stage');
-    if(mapStage&&!$('.route-connections'))mapStage.insertAdjacentHTML('afterend','<svg class="route-connections" viewBox="0 0 300 540" aria-hidden="true"><path d="M151 258 Q90 145 128 62 M151 258 Q213 121 218 92 M151 258 Q92 259 57 265 M151 258 Q236 251 263 322 M151 258 Q128 386 142 493"/><circle cx="151" cy="258" r="8"/><circle cx="128" cy="62" r="5"/><circle cx="218" cy="92" r="5"/><circle cx="57" cy="265" r="5"/><circle cx="263" cy="322" r="5"/><circle cx="142" cy="493" r="5"/></svg>');
+    if(mapStage&&!$('.route-connections'))mapStage.insertAdjacentHTML('afterend','<svg class="route-connections" viewBox="0 0 300 540" aria-hidden="true"><path data-route-region="3" d="M151 258 Q90 145 128 62"/><path data-route-region="2" d="M151 258 Q213 121 218 92"/><path data-route-region="0" d="M151 258 Q92 259 57 265"/><path data-route-region="1" d="M151 258 Q236 251 263 322"/><path data-route-region="4" d="M151 258 Q128 386 142 493"/><circle class="route-hub" cx="151" cy="258" r="8"/><circle data-route-region="3" cx="128" cy="62" r="5"/><circle data-route-region="2" cx="218" cy="92" r="5"/><circle data-route-region="0" cx="57" cy="265" r="5"/><circle data-route-region="1" cx="263" cy="322" r="5"/><circle data-route-region="4" cx="142" cy="493" r="5"/></svg>');
+    if(!$('#route-map-tooltip'))$('.route-map-zone')?.insertAdjacentHTML('beforeend','<div class="route-map-tooltip" id="route-map-tooltip" role="status" aria-live="polite"></div>');
+    bindRouteMapInteraction();
     const sideButtons=$$('.route-side-link');
     ['all','2','3','4','international'].forEach((category,index)=>{if(sideButtons[index])sideButtons[index].dataset.routeCategory=category;});
     const allLabel=sideButtons[0]?.querySelector('strong');if(allLabel)allLabel.textContent='รวมทั้งหมด';
